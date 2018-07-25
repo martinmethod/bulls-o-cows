@@ -1,18 +1,26 @@
-// =========================| Bulls`O`Cows |========================= //
-
+//====================================================|
+// BULLS`O`COWS
 
 
 //--------------------------| Import
 
+// Libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+
+// Styles
 import 'normalize.css/normalize.css';
+import './app/styles/scaffolding.scss';
+
+// Store
 import configureStore from './app/store/configureStore';
-import './styles/scaffolding.scss';
+
+// Images
 import './images/logo.png';
 import './images/app.png';
 
+// App
 import App from './app';
 
 

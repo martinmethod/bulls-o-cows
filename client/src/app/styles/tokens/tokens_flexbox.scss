@@ -1,10 +1,9 @@
 //====================================================|
-// ACTIONS: GAME
+// TOKENS: FLEXBOX
 
 
 //--------------------------|
 
-export const gameAction = prop => ({
-  type: 'ACTION',
-  prop
-});
+.flex {
+  display: flex;
+}

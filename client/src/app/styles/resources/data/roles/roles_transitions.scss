@@ -1,0 +1,7 @@
+//====================================================|
+// ROLES: TRANSITIONS
+
+
+$roles-transitions: (
+  'glow': map-get($reg-transitions, '100ms')
+);
