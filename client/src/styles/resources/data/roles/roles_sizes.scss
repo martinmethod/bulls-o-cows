@@ -1,0 +1,12 @@
+// =========================| Roles: Sizes |========================= //
+
+
+
+//--------------------------| Switcher
+
+$wings-per-row: 12;
+$wing-side-offset: 1;
+
+$roles-size-switcher-base: ((map-get($reg-screens, 'min') - (map-get($roles-offsets, 'board') * 2)) / $wings-per-row) - ($wing-side-offset * 2);
+$roles-size-switcher-width: $roles-size-switcher-base;
+$roles-size-switcher-height: $roles-size-switcher-base * 2.5;

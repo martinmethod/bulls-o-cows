@@ -1,0 +1,47 @@
+// =========================| Roles: Typography |========================= //
+
+
+
+//--------------------------| Base font size
+
+$roles-base-font-size: 16px;
+
+
+//--------------------------| Font families
+
+$roles-typo-font-families: (
+  'text': unquote(map-get($reg-font-families, 'pp–sans'))
+);
+
+
+//--------------------------| Font sizes range
+
+$roles-typo-font-sizes-base: (
+  'min': $roles-base-font-size,
+  'max': 32px
+);
+
+
+//--------------------------| Font sizes hierarchy
+
+$roles-typo-font-sizes: (
+  'app-title': get-em-unit(24),
+  'label':     get-em-unit(14),
+  'button':    get-em-unit(12),
+  'meta':      get-em-unit(8)
+);
+
+
+//--------------------------| Line-heights
+
+$roles-typo-line-heights: (
+  'text': map-get($reg-line-heights, '140%')
+);
+
+
+//--------------------------| Font weights
+
+$roles-typo-font-weights: (
+  'text': map-get($reg-font-weights, 'light'),
+  'meta': map-get($reg-font-weights, 'bold')
+);

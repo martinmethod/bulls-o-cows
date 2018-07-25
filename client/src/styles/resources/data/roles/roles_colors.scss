@@ -1,0 +1,42 @@
+// =========================| Roles: Colors |========================= //
+
+
+
+//--------------------------| States
+
+$roles-col-states: (
+  'selected': map-get($reg-colors, 'blue')
+);
+
+
+//--------------------------| Text
+
+$roles-col-texts: (
+  'system':   map-get($reg-colors, 'graphite'),
+  'meta':     map-get($reg-colors, 'graphite'),
+  'negative': map-get($reg-colors, 'white')
+);
+
+
+//--------------------------| Links
+
+$roles-col-links: (
+  'link':      map-get($reg-colors, 'blue')
+  //'hover':     map-get($reg-colors, 'governor-bay'),
+  //'active':    map-get($reg-colors, 'red-berry'),
+  //'visited':   map-get($reg-colors, 'bossanova')
+);
+
+
+//--------------------------| Backgrounds
+
+$roles-col-backgrounds: (
+
+);
+
+
+//--------------------------| Borders
+
+$roles-col-borders: (
+
+);
