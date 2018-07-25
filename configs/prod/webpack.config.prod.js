@@ -50,11 +50,11 @@ const config = {
             options: {
               resources: [
                 './node_modules/compass-mixins/lib/_compass.scss',
-                './client/src/styles/resources/data/registries/core/**/*.scss',
-                './client/src/styles/resources/data/registries/items/**/*.scss',
-                './client/src/styles/resources/functions/**/*.scss',
-                './client/src/styles/resources/data/roles/**/*.scss',
-                './client/src/styles/resources/mixins/**/*.scss'
+                './client/src/app/styles/resources/data/registries/core/**/*.scss',
+                './client/src/app/styles/resources/data/registries/items/**/*.scss',
+                './client/src/app/styles/resources/functions/**/*.scss',
+                './client/src/app/styles/resources/data/roles/**/*.scss',
+                './client/src/app/styles/resources/mixins/**/*.scss'
               ]
             },
           }
