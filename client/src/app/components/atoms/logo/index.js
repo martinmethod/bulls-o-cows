@@ -1,10 +1,10 @@
 //====================================================|
-// ATOM
+// LOGO
 
 
 //--------------------------| Import
 
-import Component from './atom';
+import Component from './logo';
 
 
 //--------------------------| Export

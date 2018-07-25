@@ -1,10 +1,10 @@
 //====================================================|
-// ORGANISM
+// RESULT
 
 
 //--------------------------| Import
 
-import Component from './organism';
+import Component from './result';
 
 
 //--------------------------| Export

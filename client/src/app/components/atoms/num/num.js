@@ -1,5 +1,5 @@
 //====================================================|
-// ORGANISM
+// NUM
 
 
 //--------------------------| Import
@@ -8,16 +8,16 @@
 import React from 'react';
 
 // Styles
-import './organism.scss';
+import './num.scss';
 
 
 //--------------------------| Body
 
-const Organism = props => (
-  <div className="po-organism" />
+const Num = props => (
+  <div className="pa-num" />
 );
 
 
 //--------------------------| Export
 
-export default Organism;
+export default Num;

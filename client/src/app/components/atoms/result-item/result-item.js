@@ -1,5 +1,5 @@
 //====================================================|
-// ATOM
+// RESULT ITEM
 
 
 //--------------------------| Import
@@ -8,16 +8,16 @@
 import React from 'react';
 
 // Styles
-import './atom.scss';
+import './result-item.scss';
 
 
 //--------------------------| Body
 
-const Atom = props => (
-  <div className="po-atom" />
+const ResultItem = props => (
+  <div className="pa-result-item" />
 );
 
 
 //--------------------------| Export
 
-export default Atom;
+export default ResultItem;

@@ -1,5 +1,5 @@
 //====================================================|
-// MOLECULE
+// LABEL
 
 
 //--------------------------| Import
@@ -8,16 +8,16 @@
 import React from 'react';
 
 // Styles
-import './molecule.scss';
+import './label.scss';
 
 
 //--------------------------| Body
 
-const Molecule = props => (
-  <div className="po-molecule" />
+const Label = props => (
+  <div className="pa-label" />
 );
 
 
 //--------------------------| Export
 
-export default Molecule;
+export default Label;

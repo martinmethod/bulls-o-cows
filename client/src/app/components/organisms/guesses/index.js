@@ -1,10 +1,10 @@
 //====================================================|
-// MOLECULE
+// GUESSES
 
 
 //--------------------------| Import
 
-import Component from './molecule';
+import Component from './guesses';
 
 
 //--------------------------| Export
