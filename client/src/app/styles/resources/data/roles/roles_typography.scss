@@ -10,7 +10,10 @@ $roles-base-font-size: 16px;
 //--------------------------| Font families
 
 $roles-typo-font-families: (
-  'text': unquote(map-get($reg-font-families, 'pp–sans'))
+  'title':  unquote(map-get($reg-font-families, 'boc–bull')),
+  'text':   unquote(map-get($reg-font-families, 'boc-sans')),
+  'digits': unquote(map-get($reg-font-families, 'boc-mono')),
+  'sys':    unquote(map-get($reg-font-families, 'boc-sys'))
 );
 
 
@@ -25,23 +28,33 @@ $roles-typo-font-sizes-base: (
 //--------------------------| Font sizes hierarchy
 
 $roles-typo-font-sizes: (
-  'app-title': get-em-unit(24),
-  'label':     get-em-unit(14),
-  'button':    get-em-unit(12),
-  'meta':      get-em-unit(8)
+  'title':       get-em-unit(92),
+  'system':      get-em-unit(24),
+  'input':       get-em-unit(60),
+  'button':      get-em-unit(42),
+  'num':         get-em-unit(32),
+  'guess':       get-em-unit(42),
+  'result':      get-em-unit(42),
+  'hyperlink':   get-em-unit(32),
+  'message':     get-em-unit(72)
 );
 
 
 //--------------------------| Line-heights
 
 $roles-typo-line-heights: (
-  'text': map-get($reg-line-heights, '140%')
+  'text':        map-get($reg-line-heights, 'normal')
 );
 
 
 //--------------------------| Font weights
 
 $roles-typo-font-weights: (
-  'text': map-get($reg-font-weights, 'light'),
-  'meta': map-get($reg-font-weights, 'bold')
+  'title':       map-get($reg-font-weights, 'normal'),
+  'text':        map-get($reg-font-weights, 'normal'),
+  'sys':         map-get($reg-font-weights, 'normal'),
+  'input':       map-get($reg-font-weights, 'bold'),
+  'guess':       map-get($reg-font-weights, 'bold'),
+  'null-point':  map-get($reg-font-weights, 'normal'),
+  'score-point': map-get($reg-font-weights, 'bold')
 );

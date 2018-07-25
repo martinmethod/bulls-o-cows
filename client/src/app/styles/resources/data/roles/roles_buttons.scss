@@ -5,8 +5,8 @@
 //--------------------------| Types
 
 $roles-button-types: (
-  'default': (
-    'txt-color': map-get($reg-colors, 'blue'),
-    'bgr-color': map-get($reg-backgrounds, 'white')
+  'primary': (
+    'txt-color': map-get($reg-colors, 'white'),
+    'bgr-color': map-get($reg-backgrounds, 'red')
   )
 );

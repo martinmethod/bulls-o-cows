@@ -2,41 +2,43 @@
 // ROLES: COLORS
 
 
-//--------------------------| States
+//--------------------------| Animals
 
-$roles-col-states: (
-  'selected': map-get($reg-colors, 'blue')
+$roles-col-animals: (
+  'bull':        map-get($reg-colors, 'red'),
+  'cow':         map-get($reg-colors, 'green')
 );
 
 
 //--------------------------| Text
 
 $roles-col-texts: (
-  'system':   map-get($reg-colors, 'graphite'),
-  'meta':     map-get($reg-colors, 'graphite'),
-  'negative': map-get($reg-colors, 'white')
+  'title':       map-get($reg-colors, 'white'),
+  'system':      map-get($reg-colors, 'dusty-gray'),
+  'input':       map-get($reg-colors, 'white'),
+  'button':      map-get($reg-colors, 'white'),
+  'placeholder': map-get($reg-colors, 'dove-gray'),
+  'written':     map-get($reg-colors, 'blue'),
+  'null-point':  map-get($reg-colors, 'dove-gray'),
+  'score-point': map-get($reg-colors, 'black'),
+  'message':     map-get($reg-colors, 'red')
 );
 
 
 //--------------------------| Links
 
 $roles-col-links: (
-  'link':      map-get($reg-colors, 'blue')
-  //'hover':     map-get($reg-colors, 'governor-bay'),
-  //'active':    map-get($reg-colors, 'red-berry'),
-  //'visited':   map-get($reg-colors, 'bossanova')
+  'link':        map-get($reg-colors, 'green'),
+  'hover':       light(map-get($reg-colors, 'green'), 20%),
+  'active':      light(map-get($reg-colors, 'green'), 30%)
 );
 
 
 //--------------------------| Backgrounds
 
 $roles-col-backgrounds: (
-
-);
-
-
-//--------------------------| Borders
-
-$roles-col-borders: (
-
+  'button':      map-get($reg-backgrounds, 'red'),
+  'input':       map-get($reg-backgrounds, 'black'),
+  'success':     map-get($reg-backgrounds, 'green'),
+  'guess-line':  map-get($reg-backgrounds, 'glass')
 );

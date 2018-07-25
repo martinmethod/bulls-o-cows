@@ -3,5 +3,6 @@
 
 
 $roles-transitions: (
-  'glow': map-get($reg-transitions, '100ms')
+  'buttons':    map-get($reg-transitions, '100ms'),
+  'hyperlinks': map-get($reg-transitions, '100ms')
 );

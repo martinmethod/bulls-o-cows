@@ -4,34 +4,29 @@
 
 $reg-colors: (
 
-  //--------------------------| Black & White
+  //--------------------------| Mono
 
-  'black':        #000,
-  'white':        #fff,
+  'black':      #000,
 
+  'dove-gray':  #666,
+  'dusty-gray': #999,
+  'wild-sand':  #f5f5f5,
 
-  //--------------------------| Gray
-
-  'silver':       #d3d3d3,
-  'graphite':     #676767,
-  'dark-silver':  #e7e7e7,
-  'pale-silver':  #eee,
-  'dirty-white':  #f5f5f5,
+  'white':      #fff,
 
 
-  //--------------------------| Orange
+  //--------------------------| Red
 
-  'orange-light': #ff9c00,
-  'orange-dark':  #ff4800,
+  'red':        #c00,
 
 
-  //--------------------------| Yellow
+  //--------------------------| Green
 
-  'yellow':       #ffd,
+  'green':      #060,
 
 
   //--------------------------| Blue
 
-  'blue':         #369
+  'blue':       #009
 
 );

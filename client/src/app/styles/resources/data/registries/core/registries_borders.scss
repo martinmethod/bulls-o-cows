@@ -1,0 +1,22 @@
+//====================================================|
+// REGISTRIES: BORDERS
+
+
+//--------------------------| Base
+
+$reg-borders: (
+
+  'transparent': 1px solid transparent,
+
+  'white':       1px solid map-get($reg-colors, 'white')
+
+);
+
+
+//--------------------------| Radiuses
+
+$reg-border-radiuses: (
+
+  'tiny': 5px
+
+);
