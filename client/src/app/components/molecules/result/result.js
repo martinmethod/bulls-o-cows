@@ -11,7 +11,7 @@ import React from 'react';
 import './result.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Result = props => (
   <div className="pm-result" />

@@ -11,7 +11,7 @@ import React from 'react';
 import './hyperlink.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Hyperlink = props => (
   <div className="pa-hyperlink" />

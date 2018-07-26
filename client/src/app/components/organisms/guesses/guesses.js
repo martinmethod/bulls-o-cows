@@ -11,7 +11,7 @@ import React from 'react';
 import './guesses.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Guesses = props => (
   <div className="po-guesses" />

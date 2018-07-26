@@ -11,7 +11,7 @@ import React from 'react';
 import './stamp.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Stamp = props => (
   <div className="pa-stamp" />

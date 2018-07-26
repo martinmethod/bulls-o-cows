@@ -11,7 +11,7 @@ import React from 'react';
 import './guess-line.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const GuessLine = props => (
   <div className="pm-guess-line" />

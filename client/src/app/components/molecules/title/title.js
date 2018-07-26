@@ -11,7 +11,7 @@ import React from 'react';
 import './title.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Title = props => (
   <div className="pm-title" />

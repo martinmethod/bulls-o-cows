@@ -11,7 +11,7 @@ import React from 'react';
 import './logo.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Logo = props => (
   <div className="pa-logo" />

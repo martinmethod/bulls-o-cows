@@ -11,7 +11,7 @@ import React from 'react';
 import './num.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Num = props => (
   <div className="pa-num" />

@@ -1,5 +1,5 @@
-// =========================| Webpack Config: Prod |========================= //
-
+//====================================================|
+// WEBPACK CONFIG: PROD
 
 
 //--------------------------| Import
@@ -16,12 +16,12 @@ const pkg = require('../../package.json');
 const banner = require('./banner');
 
 
-//--------------------------| Define
+//--------------------------| Definitions
 
 const dist = path.join(__dirname, '../../client/dist');
 
 
-//--------------------------| Body
+//--------------------------| Configuration
 
 const config = {
   mode: 'production',
@@ -50,11 +50,12 @@ const config = {
             options: {
               resources: [
                 './node_modules/compass-mixins/lib/_compass.scss',
-                './client/src/app/styles/resources/data/registries/core/**/*.scss',
-                './client/src/app/styles/resources/data/registries/items/**/*.scss',
-                './client/src/app/styles/resources/functions/**/*.scss',
-                './client/src/app/styles/resources/data/roles/**/*.scss',
-                './client/src/app/styles/resources/mixins/**/*.scss'
+                './client/src/styles/resources/functions/**/*.scss',
+                './client/src/styles/resources/data/registries/core/**/*.scss',
+                './client/src/styles/resources/data/registries/items/**/*.scss',
+                './client/src/styles/resources/data/roles/**/*.scss',
+                './client/src/styles/resources/mixins/**/*.scss',
+                './client/src/styles/resources/functions/**/*.scss'
               ]
             },
           }
@@ -95,7 +96,7 @@ const config = {
       cover: `${pkg.homepage}/images/logo.png`,
       homepage: pkg.homepage,
       description: pkg.description,
-      template: './client/src/markup.html',
+      template: './client/src/markup/index.html',
       minify: {
         minifyCSS: true,
         minifyJS: true,
@@ -126,7 +127,7 @@ const config = {
     }),
     new FaviconsWebpackPlugin({
       // Your source logo
-      logo: './client/src/images/logo.png',
+      logo: './client/src/assets/images/logo.png',
       // The prefix for all image files (might be a folder or a name)
       prefix: 'icons-[hash]/',
       // Emit all stats of the generated icons

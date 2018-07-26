@@ -11,7 +11,7 @@ import React from 'react';
 import './label.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Label = props => (
   <div className="pa-label" />

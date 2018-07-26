@@ -11,7 +11,7 @@ import React from 'react';
 import './message.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Message = props => (
   <div className="pa-message" />

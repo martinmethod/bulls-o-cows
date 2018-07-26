@@ -11,7 +11,7 @@ import React from 'react';
 import './footer.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Footer = props => (
   <footer className="po-footer" />

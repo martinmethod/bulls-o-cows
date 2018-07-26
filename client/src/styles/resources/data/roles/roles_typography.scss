@@ -10,7 +10,7 @@ $roles-base-font-size: 16px;
 //--------------------------| Font families
 
 $roles-typo-font-families: (
-  'title':  unquote(map-get($reg-font-families, 'boc–bull')),
+  'title':  unquote(map-get($reg-font-families, 'boc-bull')),
   'text':   unquote(map-get($reg-font-families, 'boc-sans')),
   'digits': unquote(map-get($reg-font-families, 'boc-mono')),
   'sys':    unquote(map-get($reg-font-families, 'boc-sys'))

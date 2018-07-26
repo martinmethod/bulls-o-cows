@@ -11,20 +11,20 @@ import { Provider } from 'react-redux';
 
 // Styles
 import 'normalize.css/normalize.css';
-import './app/styles/scaffolding.scss';
+import './styles/scaffolding.scss';
 
 // Store
 import configureStore from './app/store/configureStore';
 
 // Images
-import './images/logo.png';
-import './images/app.png';
+import './assets/images/logo.png';
+import './assets/images/app.png';
 
 // App
 import App from './app';
 
 
-//--------------------------| Body
+//--------------------------| Root
 
 const root = document.createElement('div');
 

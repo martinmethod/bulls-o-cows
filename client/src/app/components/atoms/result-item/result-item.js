@@ -11,7 +11,7 @@ import React from 'react';
 import './result-item.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const ResultItem = props => (
   <div className="pa-result-item" />

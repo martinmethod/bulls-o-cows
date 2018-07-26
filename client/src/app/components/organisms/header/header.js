@@ -11,7 +11,7 @@ import React from 'react';
 import './header.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Header = props => (
   <header className="po-header" />

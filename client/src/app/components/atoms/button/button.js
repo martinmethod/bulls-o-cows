@@ -11,7 +11,7 @@ import React from 'react';
 import './button.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Button = props => (
   <div className="pa-button" />

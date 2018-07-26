@@ -11,7 +11,7 @@ import React from 'react';
 import './title-word.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const TitleWord = props => (
   <div className="pa-title-word" />

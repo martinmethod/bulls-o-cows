@@ -11,7 +11,7 @@ import React from 'react';
 import './input.scss';
 
 
-//--------------------------| Body
+//--------------------------| Component
 
 const Input = props => (
   <div className="pa-input" />
