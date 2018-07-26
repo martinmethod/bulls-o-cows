@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: map-get($reg-backgrounds, 'black');
+  background-color: map-get($roles-col-backgrounds, 'ground');
   -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);
 }
 

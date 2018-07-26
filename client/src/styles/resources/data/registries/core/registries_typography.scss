@@ -2,6 +2,11 @@
 // REGISTRIES: TYPOGRAPHY
 
 
+//--------------------------| Base font size
+
+$reg-base-font-size: 10; // pixels
+
+
 //--------------------------| Font families
 
 $reg-font-families: (
@@ -9,6 +14,18 @@ $reg-font-families: (
   'boc-sans': '"Open Sans", sans-serif',
   'boc-mono': '"Courier New", monospace',
   'boc-sys':  '"Verdana", sans-serif'
+);
+
+
+//--------------------------| Font sizes
+
+$reg-typo-font-sizes: (
+  '10': get-em-unit(10.00),
+  '13': get-em-unit(13.33),
+  '17': get-em-unit(17.50),
+  '25': get-em-unit(25.00),
+  '30': get-em-unit(30.00),
+  '38': get-em-unit(38.33)
 );
 
 

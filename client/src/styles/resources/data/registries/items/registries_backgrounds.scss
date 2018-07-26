@@ -4,16 +4,18 @@
 
 $reg-backgrounds: (
 
-  'white':     map-get($reg-colors, 'white'),
+  'white':      map-get($reg-colors, 'white'),
 
-  'black':     map-get($reg-colors, 'black'),
+  'mine-shaft': map-get($reg-colors, 'mine-shaft'),
 
-  'wild-sand': map-get($reg-colors, 'wild-sand'),
+  'black':      map-get($reg-colors, 'black'),
 
-  'red':       map-get($reg-colors, 'red'),
+  'wild-sand':  map-get($reg-colors, 'wild-sand'),
 
-  'green':     map-get($reg-colors, 'green'),
+  'red':        map-get($reg-colors, 'red'),
 
-  'glass':     rgba(map-get($reg-colors, 'white'), .75)
+  'green':      map-get($reg-colors, 'green'),
+
+  'glass':      rgba(map-get($reg-colors, 'white'), .75)
 
 );

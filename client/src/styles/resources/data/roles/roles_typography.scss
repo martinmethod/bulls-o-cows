@@ -2,11 +2,6 @@
 // ROLES: TYPOGRAPHY
 
 
-//--------------------------| Base font size
-
-$roles-base-font-size: 16px;
-
-
 //--------------------------| Font families
 
 $roles-typo-font-families: (
@@ -20,23 +15,23 @@ $roles-typo-font-families: (
 //--------------------------| Font sizes range
 
 $roles-typo-font-sizes-base: (
-  'min': $roles-base-font-size,
-  'max': 32px
+  'min': $reg-base-font-size,
+  'max': 18px
 );
 
 
 //--------------------------| Font sizes hierarchy
 
 $roles-typo-font-sizes: (
-  'title':       get-em-unit(92),
-  'system':      get-em-unit(24),
-  'input':       get-em-unit(60),
-  'button':      get-em-unit(42),
-  'num':         get-em-unit(32),
-  'guess':       get-em-unit(42),
-  'result':      get-em-unit(42),
-  'hyperlink':   get-em-unit(32),
-  'message':     get-em-unit(72)
+  'title':       map-get($reg-typo-font-sizes, '38'), // 92
+  'system':      map-get($reg-typo-font-sizes, '10'), // 24
+  'input':       map-get($reg-typo-font-sizes, '25'), // 60
+  'button':      map-get($reg-typo-font-sizes, '17'), // 42
+  'num':         map-get($reg-typo-font-sizes, '13'), // 32
+  'guess':       map-get($reg-typo-font-sizes, '17'), // 42
+  'result':      map-get($reg-typo-font-sizes, '17'), // 42
+  'hyperlink':   map-get($reg-typo-font-sizes, '13'), // 32
+  'message':     map-get($reg-typo-font-sizes, '30')  // 72
 );
 
 

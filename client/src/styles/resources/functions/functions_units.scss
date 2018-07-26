@@ -16,5 +16,5 @@
 //--------------------------| Get em unit
 
 @function get-em-unit($num, $unit: 'em') {
-  @return #{strip-unit($num) / strip-unit($roles-base-font-size)}#{$unit};
+  @return #{strip-unit($num) / $reg-base-font-size}#{$unit};
 }

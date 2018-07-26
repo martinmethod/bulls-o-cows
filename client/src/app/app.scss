@@ -7,7 +7,7 @@
   //--------------------------| Base
 
   @include font-smoothing();
-  @include box-shadow(0 0 80em -2em map-get($reg-colors, 'dove-gray'));
+  @include box-shadow(map-get($reg-shadows, 'scattered'));
   @include user-select(none);
 
   min-width: map-get($reg-screens, 'min');
@@ -16,6 +16,7 @@
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
   cursor: default;
+  background-color: map-get($roles-col-backgrounds, 'app');
 
 
 } // #app

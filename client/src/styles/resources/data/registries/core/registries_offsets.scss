@@ -3,5 +3,10 @@
 
 
 $reg-offsets: (
-  '10': 10px
+  '05':  6px, // between guess lines
+  '10': 10px, // left & right in guess line
+  '15': 16px, // below shots link
+  '25': 24px, // above button | above message
+  '32': 32px, // left & right off guess lines
+  '36': 36px  // below input
 );
