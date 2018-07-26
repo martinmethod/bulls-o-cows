@@ -16,11 +16,19 @@ import './app.scss';
 // Organisms
 //
 
+// Molecules
+//
+
+// Atoms
+import Stamp from './components/atoms/stamp';
+
 
 //--------------------------| Component
 
 const App = () => (
-  <div id="app" />
+  <div id="app">
+    <Stamp />
+  </div>
 );
 
 

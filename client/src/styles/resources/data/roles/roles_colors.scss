@@ -38,6 +38,7 @@ $roles-col-links: (
 
 $roles-col-backgrounds: (
   'app':         map-get($reg-backgrounds, 'wild-sand'),
+  'header':      map-get($reg-backgrounds, 'black'),
   'ground':      map-get($reg-backgrounds, 'mine-shaft'),
   'button':      map-get($reg-backgrounds, 'red'),
   'input':       map-get($reg-backgrounds, 'black'),

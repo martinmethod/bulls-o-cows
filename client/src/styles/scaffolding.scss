@@ -20,7 +20,12 @@
 
 
 
-//--------------------------| HTML
+//--------------------------| Document
+
+html,
+body {
+  min-height: 100vh;
+}
 
 html {
   $min-font-size: map-get($roles-typo-font-sizes-base, 'min');
@@ -28,9 +33,6 @@ html {
 
   @include scaler(font-size, $min-font-size, $max-font-size);
 }
-
-
-//--------------------------| Body
 
 body {
   display: flex;

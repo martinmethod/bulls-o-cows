@@ -6,5 +6,20 @@
 
   //--------------------------| Base
 
+  @include translate(-50%, -50%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24em;
+
+
+  //--------------------------| SVG
+
+  svg {
+    @include filter(saturate(0));
+    @include opacity(.1);
+  }
+
 
 } // .pa-stamp

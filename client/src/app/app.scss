@@ -10,9 +10,11 @@
   @include box-shadow(map-get($reg-shadows, 'scattered'));
   @include user-select(none);
 
+  position: relative;
   min-width: map-get($reg-screens, 'min');
   max-width: map-get($reg-screens, 'max');
-  min-height: 100vh;
+  min-height: 90vh;
+  max-height: 100vh;
   margin: 0 auto;
   overflow: auto;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
