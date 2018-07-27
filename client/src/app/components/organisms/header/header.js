@@ -14,7 +14,7 @@ import './header.scss';
 //--------------------------| Component
 
 const Header = props => (
-  <header className="po-header" />
+  <header className='po-header' />
 );
 
 

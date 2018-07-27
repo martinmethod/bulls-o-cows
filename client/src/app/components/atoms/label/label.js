@@ -14,7 +14,7 @@ import './label.scss';
 //--------------------------| Component
 
 const Label = props => (
-  <div className="pa-label" />
+  <div className='pa-label' />
 );
 
 

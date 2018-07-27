@@ -14,7 +14,7 @@ import './logo.scss';
 //--------------------------| Component
 
 const Logo = props => (
-  <div className="pa-logo" />
+  <div className='pa-logo' />
 );
 
 

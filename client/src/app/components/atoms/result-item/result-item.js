@@ -14,7 +14,7 @@ import './result-item.scss';
 //--------------------------| Component
 
 const ResultItem = props => (
-  <div className="pa-result-item" />
+  <div className='pa-result-item' />
 );
 
 

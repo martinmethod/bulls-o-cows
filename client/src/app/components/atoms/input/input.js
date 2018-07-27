@@ -14,7 +14,7 @@ import './input.scss';
 //--------------------------| Component
 
 const Input = props => (
-  <div className="pa-input" />
+  <div className='pa-input' />
 );
 
 

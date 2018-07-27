@@ -14,7 +14,7 @@ import './message.scss';
 //--------------------------| Component
 
 const Message = props => (
-  <div className="pa-message" />
+  <div className='pa-message' />
 );
 
 

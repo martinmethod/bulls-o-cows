@@ -14,7 +14,7 @@ import './title.scss';
 //--------------------------| Component
 
 const Title = props => (
-  <div className="pm-title" />
+  <div className='pm-title' />
 );
 
 

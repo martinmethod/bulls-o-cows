@@ -14,7 +14,7 @@ import './footer.scss';
 //--------------------------| Component
 
 const Footer = props => (
-  <footer className="po-footer" />
+  <footer className='po-footer' />
 );
 
 

@@ -14,7 +14,7 @@ import './num.scss';
 //--------------------------| Component
 
 const Num = props => (
-  <div className="pa-num" />
+  <div className='pa-num' />
 );
 
 

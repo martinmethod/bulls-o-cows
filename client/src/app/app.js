@@ -26,7 +26,8 @@ import Stamp from './components/atoms/stamp';
 //--------------------------| Component
 
 const App = () => (
-  <div id="app">
+  <div id='app'>
+    <div className='content' />
     <Stamp />
   </div>
 );

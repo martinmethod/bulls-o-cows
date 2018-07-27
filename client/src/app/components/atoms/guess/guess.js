@@ -14,7 +14,7 @@ import './guess.scss';
 //--------------------------| Component
 
 const Guess = props => (
-  <div className="pa-guess" />
+  <div className='pa-guess' />
 );
 
 

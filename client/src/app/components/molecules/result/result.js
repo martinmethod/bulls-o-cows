@@ -14,7 +14,7 @@ import './result.scss';
 //--------------------------| Component
 
 const Result = props => (
-  <div className="pm-result" />
+  <div className='pm-result' />
 );
 
 

@@ -6,10 +6,12 @@
 
   //--------------------------| Variables
 
-  $width: 66;
-  $height: 90;
-  $ratio: $width / $height;
-  $min-width: map-get($reg-screens, 'min');
+  $ratio-x: 576;
+  $ratio-y: 1024;
+  $ratio: $ratio-x / $ratio-y; // 0.5625
+  $height: 90vh;
+  $width: $height * $ratio-x / $ratio-y; // 50.625
+  $min-width: map-get($reg-screens, 'min'); // 320
   $min-height: $min-width / $ratio;
 
 
@@ -20,18 +22,37 @@
   @include user-select(none);
 
   position: relative;
-  width: 66vh;
+  width: $width;
   min-width: $min-width;
-  max-width: map-get($reg-screens, 'max');
-  height: 90vh;
+  height: $height;
   min-height: $min-height;
-  max-height: 100vh;
   margin: 0 auto;
   overflow: auto;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
   cursor: default;
   background-color: map-get($roles-col-backgrounds, 'app');
+
+  @media screen and (max-height: #{$min-width / $ratio}) {
+    width: $min-width;
+    height: 100vh;
+    min-height: auto;
+  }
+
+  @media (max-aspect-ratio: #{$ratio-x}/#{$ratio-y}) {
+    $width-value: 100vw;
+
+    width: $width-value;
+    height: $width-value / $ratio;
+  }
+
+
+  //--------------------------| Content
+
+  > .content {
+    position: relative;
+    z-index: 1;
+  }
 
 
 } // #app

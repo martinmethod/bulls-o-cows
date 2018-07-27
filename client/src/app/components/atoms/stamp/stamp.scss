@@ -4,14 +4,21 @@
 
 .pa-stamp {
 
+  //--------------------------| Variables
+
+  $min-width-value: 316px;
+
+
   //--------------------------| Base
 
   @include translate(-50%, -50%);
 
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  width: 66vh;
+  z-index: 0;
+  width: 50vh;
+  min-width: $min-width-value;
 
 
   //--------------------------| SVG
