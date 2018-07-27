@@ -19,12 +19,21 @@
 }
 
 
-
 //--------------------------| Document
+
+html {
+  position: relative;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+}
 
 html,
 body {
   min-height: 100vh;
+  overflow: hidden;
 }
 
 html {
@@ -37,7 +46,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: hidden;
   background-color: map-get($roles-col-backgrounds, 'ground');
   -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);
 }
