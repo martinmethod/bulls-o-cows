@@ -14,7 +14,9 @@ import './title-word.scss';
 //--------------------------| Component
 
 const TitleWord = props => (
-  <div className='pa-title-word' />
+  <span className='pa-title-word'>
+    {props.children}
+  </span>
 );
 
 

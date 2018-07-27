@@ -6,5 +6,16 @@
 
   //--------------------------| Base
 
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+
+
+  //--------------------------| Logo
+
+  .pa-logo {
+    margin: 0 2em;
+  }
+
 
 } // .pm-title

@@ -13,21 +13,23 @@ import React from 'react';
 // Styles
 import './app.scss';
 
-// Organisms
-//
+// Atoms
+import Stamp from './components/atoms/stamp';
 
 // Molecules
 //
 
-// Atoms
-import Stamp from './components/atoms/stamp';
+// Organisms
+import Header from './components/organisms/header';
 
 
 //--------------------------| Component
 
 const App = () => (
   <div id='app'>
-    <div className='content' />
+    <main>
+      <Header />
+    </main>
     <Stamp />
   </div>
 );

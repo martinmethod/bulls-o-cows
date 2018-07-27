@@ -11,7 +11,8 @@ import { Provider } from 'react-redux';
 
 // Styles
 import 'normalize.css/normalize.css';
-import './styles/scaffolding.scss';
+import './styles/scaffoldings/base.scss';
+import './styles/scaffoldings/typography.scss';
 
 // Store
 import configureStore from './app/store/configureStore';

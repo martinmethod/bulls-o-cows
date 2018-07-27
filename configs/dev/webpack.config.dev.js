@@ -84,6 +84,14 @@ const config = {
             loader: 'file-loader'
           }
         ]
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       }
     ]
   },

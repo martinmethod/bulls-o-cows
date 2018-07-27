@@ -7,6 +7,7 @@
   //--------------------------| Variables
 
   $min-width-value: 316px;
+  $min-width: map-get($reg-screens, 'min'); // 320
   $ratio-w: map-get($reg-proportions-app, 'w');
   $ratio-h: map-get($reg-proportions-app, 'h');
 
@@ -26,8 +27,18 @@
     width: #{100 * $min-width-value / map-get($reg-screens, 'min')}vw;
   }
 
+  @media screen and (max-width: $min-width) {
+    @include translate(0, -50%);
+
+    left: ($min-width - $min-width-value) / 2;
+  }
+
 
   //--------------------------| SVG
+
+  svg {
+    display: block;
+  }
 
   .bull,
   .cow {
