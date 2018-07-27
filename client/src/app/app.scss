@@ -4,6 +4,15 @@
 
 #app {
 
+  //--------------------------| Variables
+
+  $width: 66;
+  $height: 90;
+  $ratio: $width / $height;
+  $min-width: map-get($reg-screens, 'min');
+  $min-height: $min-width / $ratio;
+
+
   //--------------------------| Base
 
   @include font-smoothing();
@@ -12,10 +21,10 @@
 
   position: relative;
   width: 66vh;
-  min-width: map-get($reg-screens, 'min');
+  min-width: $min-width;
   max-width: map-get($reg-screens, 'max');
   height: 90vh;
-  min-height: 436px;
+  min-height: $min-height;
   max-height: 100vh;
   margin: 0 auto;
   overflow: auto;
