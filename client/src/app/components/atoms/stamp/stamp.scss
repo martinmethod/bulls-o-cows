@@ -11,14 +11,17 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 24em;
+  width: 66vh;
 
 
   //--------------------------| SVG
 
-  svg {
-    @include filter(saturate(0));
-    @include opacity(.1);
+  circle {
+    fill: transparent;
+  }
+
+  path {
+    fill: rgba(map-get($reg-colors, 'black'), .1);
   }
 
 

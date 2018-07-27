@@ -11,9 +11,11 @@
   @include user-select(none);
 
   position: relative;
+  width: 66vh;
   min-width: map-get($reg-screens, 'min');
   max-width: map-get($reg-screens, 'max');
-  min-height: 90vh;
+  height: 90vh;
+  min-height: 436px;
   max-height: 100vh;
   margin: 0 auto;
   overflow: auto;
