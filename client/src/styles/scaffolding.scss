@@ -29,9 +29,8 @@ body {
 
 html {
   $min-font-size: map-get($roles-typo-font-sizes-base, 'min');
-  $max-font-size: map-get($roles-typo-font-sizes-base, 'max');
 
-  @include scaler(font-size, $min-font-size, $max-font-size);
+  @include scaler(font-size, $min-font-size);
 }
 
 body {

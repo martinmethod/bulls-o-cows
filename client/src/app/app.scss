@@ -6,11 +6,11 @@
 
   //--------------------------| Variables
 
-  $ratio-x: 576;
-  $ratio-y: 1024;
-  $ratio: $ratio-x / $ratio-y; // 0.5625
+  $ratio-w: map-get($reg-proportions-app, 'w');
+  $ratio-h: map-get($reg-proportions-app, 'h');
+  $ratio: $ratio-w / $ratio-h; // 0.5625
   $height: 90vh;
-  $width: $height * $ratio-x / $ratio-y; // 50.625
+  $width: $height * $ratio-w / $ratio-h; // 50.625
   $min-width: map-get($reg-screens, 'min'); // 320
   $min-height: $min-width / $ratio;
 
@@ -39,7 +39,7 @@
     min-height: auto;
   }
 
-  @media (max-aspect-ratio: #{$ratio-x}/#{$ratio-y}) {
+  @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
     $width-value: 100vw;
 
     width: $width-value;

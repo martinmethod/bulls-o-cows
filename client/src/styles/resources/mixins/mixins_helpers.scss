@@ -43,22 +43,25 @@
 
 //--------------------------| Scaler
 
-@mixin scaler($property, $min-size, $max-size, $min-vw: map-get($reg-screens, 'min'), $max-vw: map-get($reg-screens, 'max')) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-size);
-  $u4: unit($max-size);
+@mixin scaler($property, $min-size) {
+  $ratio-w: map-get($reg-proportions-app, 'w');
+  $ratio-h: map-get($reg-proportions-app, 'h');
+  $ratio: $ratio-w / $ratio-h; // 0.5625
+  $width: map-get($reg-screens, 'min');
+  $height: 100 * ($width / $ratio) / 90;
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+  @if unit($height) == unit($min-size) {
     & {
-      #{$property}: $min-size;
-
-      @media screen and (min-width: $min-vw) {
-        #{$property}: get-progressive-calc($min-size, $max-size, $min-vw, $max-vw);
+      @media screen and (min-height: $height) {
+        #{$property}: #{($min-size * 100 / $height)}vh;
       }
 
-      @media screen and (min-width: $max-vw) {
-        #{$property}: $max-size;
+      @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
+        #{$property}: #{($min-size * 100 / $width)}vw;
+      }
+
+      @media screen and (max-height: $height), screen and (max-width: $width) {
+        #{$property}: $min-size;
       }
     }
   }
