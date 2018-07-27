@@ -29,12 +29,13 @@
 
   //--------------------------| SVG
 
-  circle {
-    fill: transparent;
+  .bull,
+  .cow {
+    fill: rgba(map-get($reg-colors, 'black'), .1);
   }
 
-  path {
-    fill: rgba(map-get($reg-colors, 'black'), .1);
+  .ground {
+    fill: transparent;
   }
 
 
