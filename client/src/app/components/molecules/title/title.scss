@@ -18,4 +18,11 @@
   }
 
 
+  //--------------------------| Words
+
+  .pa-title-word {
+    @include flex(1);
+  }
+
+
 } // .pm-title
