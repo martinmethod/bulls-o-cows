@@ -64,15 +64,8 @@ class Input extends React.Component {
         value={this.props.inputValue}
         className='pa-input'
         onChange={this.onNumberChange}
-        onKeyDown={(e) => { // Safari fix
-          if (
-            (e.which < 48 || e.which > 57) &&
-            e.which !== 27 &&
-            e.which !== 8 &&
-            e.which !== 13 &&
-            e.which !== 37 &&
-            e.which !== 39
-          ) {
+        onKeyPress={(e) => { // Safari fix
+          if ('1234567890'.indexOf(e.key) === -1) {
             e.preventDefault();
           }
         }}
