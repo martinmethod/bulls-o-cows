@@ -6,5 +6,24 @@
 
   //--------------------------| Base
 
+  @include transition(all map-get($reg-transitions, '100ms') ease-in-out);
+  @include border-radius(map-get($reg-border-radiuses, 'tiny'));
+  @include padding-v(.3em);
+  @include box-shadow(map-get($reg-shadows, 'medium'));
+  @include selection(map-get($reg-colors, 'red'));
+
+  width: 4em;
+  font: map-get($roles-typo-font-weights, 'input') map-get($roles-typo-font-sizes, 'input') map-get($roles-typo-font-families, 'digits');
+  color: map-get($roles-col-texts, 'input');
+  text-indent: .28em;
+  letter-spacing: .3em;
+  background-color: map-get($roles-col-backgrounds, 'input');
+  border: 1px solid transparent;
+  outline: none;
+
+  &:focus {
+    border: map-get($reg-borders, 'white');
+  }
+
 
 } // .pa-input

@@ -18,11 +18,12 @@ import './app.scss';
 import systemDatabase from '../database/system.json';
 
 // Actions
-import { startGame, endGame } from './actions/game';
+import { newGame } from './actions/game';
 
 // Atoms
 import Button from './components/atoms/button';
 import Stamp from './components/atoms/stamp';
+import Input from './components/atoms/input';
 
 // Molecules
 //
@@ -35,20 +36,10 @@ import Footer from './components/organisms/footer';
 //--------------------------| Component
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.startGame = this.startGame.bind(this);
-    this.endGame = this.endGame.bind(this);
-  }
-
-  startGame() {
-    console.log('Start game.', this);
-    this.props.dispatch(startGame());
-  }
-
-  endGame() {
-    console.log('End game.', this);
-    this.props.dispatch(endGame());
+  componentWillMount() {
+    if (!this.props.game.number) {
+      this.props.dispatch(newGame());
+    }
   }
 
   render() {
@@ -56,20 +47,20 @@ class App extends React.Component {
       <div id='app'>
         <div>
           <Header />
-          <main>
-            <Button
-              onClick={
-                !this.props.game.active ?
-                  this.startGame :
-                  this.endGame
-              }
-            >
-              { !this.props.game.active ?
-                systemDatabase.labels.buttons.newgame :
-                systemDatabase.labels.buttons.reset
-              }
-            </Button>
-          </main>
+          {
+            this.props.game.number && (
+              <main>
+                <Input />
+                <Button
+                  onClick={() => {
+                    this.props.dispatch(newGame());
+                  }}
+                >
+                  { systemDatabase.labels.buttons.newgame }
+                </Button>
+              </main>
+            )
+          }
           <Footer />
         </div>
         <Stamp />

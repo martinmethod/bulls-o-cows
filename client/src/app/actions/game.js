@@ -2,17 +2,16 @@
 // ACTIONS: GAME
 
 
-//--------------------------| Start game
+//--------------------------| New game
 
-export const startGame = prop => ({
-  type: 'START_GAME',
-  prop
+export const newGame = () => ({
+  type: 'NEW_GAME'
 });
 
 
-//--------------------------| End game
+//--------------------------| Update input
 
-export const endGame = prop => ({
-  type: 'END_GAME',
-  prop
+export const updateInput = value => ({
+  type: 'UPDATE_INPUT',
+  value
 });

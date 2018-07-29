@@ -4,13 +4,19 @@
 
 //--------------------------| Import
 
-// import
+import numberGenerator from '../helpers/number-generator';
 
 
 //--------------------------| Default state
 
+const initialState = {
+  inputValue: '',
+  number: null,
+  guesses: []
+};
+
 const localState = JSON.parse(localStorage.getItem('state'));
-const gameReducerDefaultState = localState && localState.game ? localState.game : {};
+const gameReducerDefaultState = localState && localState.game ? localState.game : initialState;
 
 
 //--------------------------| Export
@@ -20,14 +26,16 @@ export default (state = gameReducerDefaultState, action) => {
     default:
       return state;
 
-    case 'START_GAME':
+    case 'NEW_GAME':
       return {
-        active: true
+        ...initialState,
+        number: numberGenerator()
       };
 
-    case 'END_GAME':
+    case 'UPDATE_INPUT':
       return {
-        active: false
+        ...state,
+        inputValue: action.value
       };
   }
 };

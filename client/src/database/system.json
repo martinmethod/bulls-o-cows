@@ -1,8 +1,7 @@
 {
   "labels": {
     "buttons": {
-      "newgame": "New game",
-      "reset": "Reset"
+      "newgame": "New game"
     },
     "links": {
       "shots": "Your best shots"

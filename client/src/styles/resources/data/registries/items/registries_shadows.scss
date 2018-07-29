@@ -6,7 +6,7 @@ $reg-shadows: (
 
   'scattered': 0 0 80em -2em map-get($reg-colors, 'dusty-gray'),
 
-  'medium':    '',
+  'medium':    0 0 1em map-get($reg-colors, 'dusty-gray'),
 
   'sharp':     '',
 

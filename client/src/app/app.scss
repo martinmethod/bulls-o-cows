@@ -52,7 +52,7 @@
   > div {
     @include display-flex();
     @include flex-direction(column);
-    @include justify-content(center);
+    @include justify-content(space-between);
 
     position: relative;
     z-index: 1;
@@ -66,9 +66,10 @@
   main {
     @include display-flex();
     @include flex-direction(column);
-    @include justify-content(center);
+    @include justify-content(space-between);
     @include align-items(center);
     @include flex(1);
+    @include padding-v(3em);
   }
 
 
