@@ -6,5 +6,20 @@
 
   //--------------------------| Base
 
+  @include transition(all map-get($roles-transitions, 'hyperlinks') ease-in-out);
+
+  color: map-get($roles-col-links, 'link');
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:hover {
+      color: map-get($roles-col-links, 'hover');
+    }
+  }
+
+  &:active {
+    color: map-get($roles-col-links, 'active');
+  }
+
 
 } // .pa-hyperlink

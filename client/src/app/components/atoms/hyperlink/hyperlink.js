@@ -14,7 +14,9 @@ import './hyperlink.scss';
 //--------------------------| Component
 
 const Hyperlink = props => (
-  <div className='pa-hyperlink' />
+  <a className='pa-hyperlink'>
+    {props.children}
+  </a>
 );
 
 
