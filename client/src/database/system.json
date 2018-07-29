@@ -1,1 +1,19 @@
-{}
+{
+  "labels": {
+    "buttons": {
+      "newgame": "New game",
+      "reset": "Reset"
+    },
+    "links": {
+      "shots": "Your best shots"
+    },
+    "messages": {
+      "win": "Nailed it"
+    },
+    "guesses": {
+      "try": "try",
+      "guess": "guess",
+      "result": "result"
+    }
+  }
+}
