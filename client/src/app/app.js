@@ -14,6 +14,7 @@ import React from 'react';
 import './app.scss';
 
 // Atoms
+import Button from './components/atoms/button';
 import Stamp from './components/atoms/stamp';
 
 // Molecules
@@ -21,7 +22,7 @@ import Stamp from './components/atoms/stamp';
 
 // Organisms
 import Header from './components/organisms/header';
-
+import Footer from './components/organisms/footer';
 
 //--------------------------| Component
 
@@ -29,6 +30,10 @@ const App = () => (
   <div id='app'>
     <main>
       <Header />
+      <section>
+        <Button>New game</Button>
+      </section>
+      <Footer />
     </main>
     <Stamp />
   </div>
