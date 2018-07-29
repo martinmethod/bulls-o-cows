@@ -14,7 +14,10 @@ import './button.scss';
 //--------------------------| Component
 
 const Button = props => (
-  <button className='pa-button'>
+  <button
+    className='pa-button'
+    onClick={props.onClick}
+  >
     {props.children}
   </button>
 );
