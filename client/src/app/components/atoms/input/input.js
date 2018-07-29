@@ -58,12 +58,24 @@ class Input extends React.Component {
     return (
       <input
         autoFocus
-        type='text'
-        maxLength='4'
+        type='number'
+        pattern='[0-9]*'
         placeholder='••••'
         value={this.props.inputValue}
         className='pa-input'
         onChange={this.onNumberChange}
+        onKeyDown={(e) => { // Safari fix
+          if (
+            (e.which < 48 || e.which > 57) &&
+            e.which !== 27 &&
+            e.which !== 8 &&
+            e.which !== 13 &&
+            e.which !== 37 &&
+            e.which !== 39
+          ) {
+            e.preventDefault();
+          }
+        }}
       />
     );
   }
