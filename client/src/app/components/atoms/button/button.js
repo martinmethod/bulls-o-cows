@@ -14,7 +14,9 @@ import './button.scss';
 //--------------------------| Component
 
 const Button = props => (
-  <div className='pa-button' />
+  <button className='pa-button'>
+    {props.children}
+  </button>
 );
 
 
