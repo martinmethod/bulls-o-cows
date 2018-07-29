@@ -11,6 +11,9 @@ import { connect } from 'react-redux';
 // Styles
 import './input.scss';
 
+// Database
+import systemDatabase from '../../../../database/system.json';
+
 // Actions
 import { updateInput } from '../../../actions/game';
 
@@ -46,11 +49,17 @@ class Input extends React.Component {
 
     if (
       e.target.value.length <= 4 &&
-      (!firstLetter || !firstLetter.match('0')) &&
-      (!currentLetter || currentLetter.match(/^\d*$/)) &&
+      (!firstLetter.match('0')) &&
+      (currentLetter.match(/^\d*$/)) &&
       forbiddenSymbols.indexOf(currentLetter) === -1
     ) {
       this.props.dispatch(updateInput(number));
+    }
+    else if (firstLetter.match('0')) {
+      console.log(systemDatabase.labels.validation.no_zero_first);
+    }
+    else if (forbiddenSymbols.indexOf(currentLetter) !== -1) {
+      console.log(systemDatabase.labels.validation.used_digit);
     }
   };
 
@@ -66,6 +75,7 @@ class Input extends React.Component {
         onChange={this.onNumberChange}
         onKeyPress={(e) => { // Safari fix
           if ('1234567890'.indexOf(e.key) === -1) {
+            console.log(systemDatabase.labels.validation.only_digits);
             e.preventDefault();
           }
         }}

@@ -13,6 +13,11 @@
       "try": "try",
       "guess": "guess",
       "result": "result"
+    },
+    "validation": {
+      "no_zero_first": "Number 0 cannot be first.",
+      "used_digit": "This digit is already used.",
+      "only_digits": "Please type only digits!"
     }
   }
 }
