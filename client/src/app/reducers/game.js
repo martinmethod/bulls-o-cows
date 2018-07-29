@@ -20,7 +20,14 @@ export default (state = gameReducerDefaultState, action) => {
     default:
       return state;
 
-    case '':
-      return state;
+    case 'START_GAME':
+      return {
+        active: true
+      };
+
+    case 'END_GAME':
+      return {
+        active: false
+      };
   }
 };
