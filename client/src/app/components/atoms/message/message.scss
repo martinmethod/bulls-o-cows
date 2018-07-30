@@ -6,5 +6,8 @@
 
   //--------------------------| Base
 
+  font: normal map-get($roles-typo-font-sizes, 'message') map-get($roles-typo-font-families, 'message');
+  color: map-get($roles-col-texts, 'message');
+
 
 } // .pa-message
