@@ -24,6 +24,7 @@ import { newGame } from './actions/game';
 import Button from './components/atoms/button';
 import Stamp from './components/atoms/stamp';
 import Input from './components/atoms/input';
+import Message from './components/atoms/message';
 import ValidationNote from './components/atoms/validation-note';
 
 // Molecules
@@ -31,6 +32,7 @@ import ValidationNote from './components/atoms/validation-note';
 
 // Organisms
 import Header from './components/organisms/header';
+import Guesses from './components/organisms/guesses';
 import Footer from './components/organisms/footer';
 
 
@@ -62,6 +64,18 @@ class App extends React.Component {
                     this.props.game.input.validateMessage !== '' && <ValidationNote>{this.props.game.input.validateMessage}</ValidationNote>
                   }
                 </form>
+
+                {
+                  this.props.game.guesses.length !== 0 && (
+                    <Guesses />
+                  )
+                }
+
+                {
+                  this.props.game.guesses.length === 0 && (
+                    <Message>No guesses yet</Message>
+                  )
+                }
 
                 <Button
                   onClick={() => {
