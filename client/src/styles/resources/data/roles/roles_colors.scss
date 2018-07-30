@@ -14,11 +14,11 @@ $roles-col-animals: (
 
 $roles-col-texts: (
   'title':       map-get($reg-colors, 'white'),
-  'system':      map-get($reg-colors, 'dusty-gray'),
+  'sys':         map-get($reg-colors, 'dusty-gray'),
   'input':       map-get($reg-colors, 'white'),
   'button':      map-get($reg-colors, 'white'),
   'placeholder': map-get($reg-colors, 'dove-gray'),
-  'written':     map-get($reg-colors, 'blue'),
+  'guess':       map-get($reg-colors, 'blue'),
   'null-point':  map-get($reg-colors, 'dove-gray'),
   'score-point': map-get($reg-colors, 'black'),
   'message':     map-get($reg-colors, 'red')
