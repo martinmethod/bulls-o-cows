@@ -50,6 +50,7 @@ const config = {
             options: {
               resources: [
                 './node_modules/compass-mixins/lib/_compass.scss',
+                './client/src/styles/resources/base.scss',
                 './client/src/styles/resources/functions/**/*.scss',
                 './client/src/styles/resources/data/registries/core/**/*.scss',
                 './client/src/styles/resources/data/registries/items/**/*.scss',
