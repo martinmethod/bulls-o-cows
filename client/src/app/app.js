@@ -24,6 +24,7 @@ import { newGame } from './actions/game';
 import Button from './components/atoms/button';
 import Stamp from './components/atoms/stamp';
 import Input from './components/atoms/input';
+import ValidationNote from './components/atoms/validation-note';
 
 // Molecules
 //
@@ -50,7 +51,18 @@ class App extends React.Component {
           {
             this.props.game.number && (
               <main>
-                <Input />
+                <form
+                  onSubmit={(e) => {
+                    console.log(e);
+                    e.preventDefault();
+                  }}
+                >
+                  <Input />
+                  {
+                    this.props.game.input.validateMessage !== '' && <ValidationNote>{this.props.game.input.validateMessage}</ValidationNote>
+                  }
+                </form>
+
                 <Button
                   onClick={() => {
                     this.props.dispatch(newGame());

@@ -25,6 +25,14 @@ $roles-col-texts: (
 );
 
 
+//--------------------------| Validation
+
+$roles-col-validation: (
+  'error':       map-get($reg-colors, 'red'),
+  'success':     map-get($reg-colors, 'green')
+);
+
+
 //--------------------------| Links
 
 $roles-col-links: (

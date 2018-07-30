@@ -15,3 +15,11 @@ export const updateInput = value => ({
   type: 'UPDATE_INPUT',
   value
 });
+
+
+//--------------------------| Validate input
+
+export const validateInput = message => ({
+  type: 'VALIDATE_INPUT',
+  message
+});

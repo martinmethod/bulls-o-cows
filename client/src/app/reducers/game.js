@@ -10,8 +10,11 @@ import numberGenerator from '../helpers/number-generator';
 //--------------------------| Default state
 
 const initialState = {
-  inputValue: '',
   number: null,
+  input: {
+    value: '',
+    validateMessage: ''
+  },
   guesses: []
 };
 
@@ -35,7 +38,19 @@ export default (state = gameReducerDefaultState, action) => {
     case 'UPDATE_INPUT':
       return {
         ...state,
-        inputValue: action.value
+        input: {
+          ...state.input,
+          value: action.value
+        }
+      };
+
+    case 'VALIDATE_INPUT':
+      return {
+        ...state,
+        input: {
+          ...state.input,
+          validateMessage: action.message
+        }
       };
   }
 };

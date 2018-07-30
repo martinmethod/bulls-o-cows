@@ -70,6 +70,8 @@
     @include align-items(center);
     @include flex(1);
     @include padding-v(3em);
+
+    position: relative;
   }
 
 
