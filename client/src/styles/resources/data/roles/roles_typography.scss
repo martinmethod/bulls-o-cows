@@ -5,10 +5,11 @@
 //--------------------------| Font families
 
 $roles-typo-font-families: (
-  'title':  unquote(map-get($reg-font-families, 'boc-bull')),
-  'text':   unquote(map-get($reg-font-families, 'boc-sans')),
-  'digits': unquote(map-get($reg-font-families, 'boc-mono')),
-  'sys':    unquote(map-get($reg-font-families, 'boc-sys'))
+  'title':   unquote(map-get($reg-font-families, 'boc-bull')),
+  'text':    unquote(map-get($reg-font-families, 'boc-sans')),
+  'digits':  unquote(map-get($reg-font-families, 'boc-mono')),
+  'sys':     unquote(map-get($reg-font-families, 'boc-sys')),
+  'message': unquote(map-get($reg-font-families, 'boc-bull'))
 );
 
 
@@ -24,7 +25,7 @@ $roles-typo-font-sizes-base: (
 
 $roles-typo-font-sizes: (
   'title':       map-get($reg-typo-font-sizes, '38'), // 92
-  'system':      map-get($reg-typo-font-sizes, '10'), // 24
+  'sys':         map-get($reg-typo-font-sizes, '10'), // 24
   'input':       map-get($reg-typo-font-sizes, '25'), // 60
   'button':      map-get($reg-typo-font-sizes, '17'), // 42
   'num':         map-get($reg-typo-font-sizes, '13'), // 32
