@@ -4,6 +4,9 @@
 
 $roles-offsets: (
   'header': '',
-  'guesses': '',
+  'main': map-get($reg-offsets, '32'),
+  'guesses': map-get($reg-offsets, '06'),
+  'guess-line': map-get($reg-offsets, '10'),
+  'result-item': map-get($reg-offsets, '06'),
   'footer': ''
 );
