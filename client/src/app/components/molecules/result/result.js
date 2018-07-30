@@ -10,11 +10,23 @@ import React from 'react';
 // Styles
 import './result.scss';
 
+// Atoms
+import ResultItem from '../../atoms/result-item';
+
 
 //--------------------------| Component
 
-const Result = props => (
-  <div className='pm-result' />
+const Result = ({ result }) => (
+  <div className='pm-result'>
+    <ResultItem
+      role='bull'
+      value={result.bulls}
+    />
+    <ResultItem
+      role='cow'
+      value={result.cows}
+    />
+  </div>
 );
 
 

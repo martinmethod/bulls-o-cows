@@ -4,7 +4,46 @@
 
 .pm-guess-line {
 
+  //--------------------------| Variables
+
+  $offset: map-get($roles-offsets, 'guess-line');
+
+
   //--------------------------| Base
+
+  @include display-flex();
+  @include justify-content(space-between);
+  @include align-items(center);
+  @include border-radius(map-get($reg-border-radiuses, 'tiny'));
+  @include box-shadow(map-get($roles-shadows, 'guess-line'));
+
+  padding: .6em $offset;
+  background-color: map-get($roles-col-backgrounds, 'guess-line');
+
+
+  //--------------------------| Num
+
+  .pa-num {
+    @include flex(1);
+
+    text-align: left;
+  }
+
+
+  //--------------------------| Guess
+
+  .pa-guess {
+    @include flex(1);
+  }
+
+
+  //--------------------------| Result
+
+  .pm-result {
+    @include flex(2);
+
+    text-align: right;
+  }
 
 
 } // .pm-guess-line

@@ -13,8 +13,10 @@ import './num.scss';
 
 //--------------------------| Component
 
-const Num = props => (
-  <div className='pa-num' />
+const Num = ({ children }) => (
+  <span className='pa-num'>
+    {children}
+  </span>
 );
 
 

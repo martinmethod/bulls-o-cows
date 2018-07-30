@@ -6,5 +6,8 @@
 
   //--------------------------| Base
 
+  font: map-get($roles-typo-font-weights, 'guess') map-get($roles-typo-font-sizes, 'guess') map-get($roles-typo-font-families, 'digits');
+  color: map-get($roles-col-texts, 'guess');
+
 
 } // .pa-guess

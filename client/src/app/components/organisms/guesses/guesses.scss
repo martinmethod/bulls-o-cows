@@ -6,5 +6,48 @@
 
   //--------------------------| Base
 
+  @include padding-h(map-get($roles-offsets, 'main'));
+
+  width: 100%;
+
+
+  //--------------------------| Header
+
+  header {
+    @include display-flex();
+    @include justify-content(space-between);
+
+    font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
+    color: map-get($roles-col-texts, 'sys');
+
+    span {
+      &:first-child {
+        padding-left: map-get($roles-offsets, 'guess-line');
+        text-align: left;
+      }
+
+      &:last-child {
+        padding-right: map-get($roles-offsets, 'guess-line');
+        text-align: right;
+      }
+
+      &:nth-child(1),
+      &:nth-child(2) {
+        @include flex(1);
+      }
+
+      &:nth-child(3) {
+        @include flex(2);
+      }
+    }
+  }
+
+
+  //--------------------------| Guess line
+
+  .pm-guess-line {
+    margin-top: map-get($roles-offsets, 'guesses');
+  }
+
 
 } // .po-guesses

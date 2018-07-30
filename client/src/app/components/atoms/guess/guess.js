@@ -13,8 +13,10 @@ import './guess.scss';
 
 //--------------------------| Component
 
-const Guess = props => (
-  <div className='pa-guess' />
+const Guess = ({ children }) => (
+  <span className='pa-guess'>
+    {children}
+  </span>
 );
 
 
