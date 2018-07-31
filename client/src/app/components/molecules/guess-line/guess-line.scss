@@ -17,6 +17,7 @@
   @include border-radius(map-get($reg-border-radiuses, 'tiny'));
   @include box-shadow(map-get($roles-shadows, 'guess-line'));
 
+  min-height: 4em;
   padding: .6em $offset;
   background-color: map-get($roles-col-backgrounds, 'guess-line');
 

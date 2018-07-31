@@ -54,13 +54,16 @@
 
   .list {
     @include flex(1);
+    @include display-flex();
+    @include flex-direction(column-reverse);
+    @include justify-content(flex-end);
   }
 
 
   //--------------------------| Guess line
 
   .pm-guess-line {
-    &:not(:first-child) {
+    &:not(:last-child) {
       margin-top: get-em-unit(map-get($roles-offsets, 'guesses'));
     }
   }
