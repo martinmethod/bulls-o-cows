@@ -25,7 +25,6 @@
   width: $width;
   min-width: $min-width;
   height: $height;
-  min-height: $min-height;
   margin: 0 auto;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
@@ -52,7 +51,6 @@
   main {
     @include display-flex();
     @include flex-direction(column);
-    @include justify-content(space-between);
     @include align-items(center);
     @include flex(1);
     @include margin-v(3em);
@@ -65,6 +63,8 @@
   //--------------------------| Input form
 
   form {
+    @include margin-v(get-em-unit(map-get($roles-offsets, 'modules'), 'rem'));
+
     position: relative;
     width: 100%;
 
@@ -93,32 +93,32 @@
   }
 
 
-  //--------------------------| Win message
-
-  &[data-status='win'] .pa-message {
-    margin: .8em 0 0;
-  }
-
-
   //--------------------------| Guesses
 
   .po-guesses {
-    @include flex(1);
-    @include margin-v(get-em-unit(map-get($roles-offsets, 'modules'), 'rem'));
-
     .wrapper {
       overflow: auto;
     }
   }
 
 
-  //--------------------------| Media queries
+  //--------------------------| Message
 
-  @media screen and (max-height: #{$min-width / $ratio}) {
-    width: $min-width;
-    height: 100vh;
-    min-height: auto;
+  &:not([data-status='win']) .pa-message,
+  .po-guesses {
+    @include flex(1);
   }
+
+  &:not([data-status='win']) .pa-message {
+    margin-top: 2.4em;
+  }
+
+  &[data-status='win'] .pa-message {
+    margin-bottom: 2em;
+  }
+
+
+  //--------------------------| Media queries
 
   @media screen and (orientation: landscape) and (min-width: map-get($reg-screens, 'min-h')) and (max-height: map-get($reg-screens, 'max-w')) {
     width: 100%;
@@ -148,7 +148,7 @@
         margin-top: 4em;
       }
 
-      .pa-button {
+      .new {
         @include translateX(-50%);
 
         position: absolute;
@@ -158,23 +158,25 @@
     }
 
     &:not([data-status='win']) .pa-message {
-      margin-top: 2.4em;
+      width: 50%;
+      padding: 0;
+      margin-top: 6.4em;
     }
 
     &[data-status='win'] .pa-message {
+      @include flex(none);
       @include translate(-50%, -50%);
 
       position: absolute;
-      top: 50%;
+      top: 14em;
       left: 25%;
+      width: 50%;
     }
   }
 
-  @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
-    $width-value: 100vw;
-
-    width: $width-value;
-    height: $width-value / $ratio;
+  @media screen and (max-width: map-get($reg-screens, 'max-w')) and (orientation: portrait) {
+    width: 100vw;
+    height: 100vh;
   }
 
 

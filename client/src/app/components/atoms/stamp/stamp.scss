@@ -23,7 +23,7 @@
   width: 50vh;
   min-width: $min-width-value;
 
-  @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
+  @media screen and (max-width: map-get($reg-screens, 'max-w')) and (orientation: portrait) {
     width: #{100 * $min-width-value / map-get($reg-screens, 'min-w')}vw;
   }
 

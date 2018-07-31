@@ -4,11 +4,32 @@
 
 .pa-message {
 
+  //--------------------------| Variables
+
+  $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
+
+
   //--------------------------| Base
 
-  margin: 0;
-  font: normal map-get($roles-typo-font-sizes, 'message') map-get($roles-typo-font-families, 'message');
-  color: map-get($roles-col-texts, 'message');
+  @include padding-h(get-em-unit(map-get($roles-offsets, 'main')));
+
+  width: 100%;
+  white-space: nowrap;
+
+
+  //--------------------------| Paragraph
+
+  p {
+    @include border-radius(map-get($reg-border-radiuses, 'tiny'));
+    @include box-shadow(map-get($roles-shadows, 'guess-line'));
+
+    width: 100%;
+    padding: .6em $offset;
+    margin: 0;
+    font: normal map-get($roles-typo-font-sizes, 'message') map-get($roles-typo-font-families, 'message');
+    color: map-get($roles-col-texts, 'message');
+    background-color: map-get($roles-col-backgrounds, 'guess-line');
+  }
 
 
 } // .pa-message

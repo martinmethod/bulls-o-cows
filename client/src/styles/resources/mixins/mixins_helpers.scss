@@ -56,7 +56,7 @@
         #{$property}: #{($min-size * 100 / $height)}vh;
       }
 
-      @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
+      @media screen and (max-width: $width) and (orientation: portrait) {
         #{$property}: #{($min-size * 100 / $width)}vw;
       }
 

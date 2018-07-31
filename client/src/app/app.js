@@ -63,6 +63,16 @@ class App extends React.Component {
           {
             this.props.number && (
               <main>
+                <div className='new'>
+                  <Button
+                    onClick={() => {
+                      this.props.dispatch(newGame());
+                    }}
+                  >
+                    { systemDatabase.labels.buttons.newgame }
+                  </Button>
+                </div>
+
                 <form>
                   <Input />
                   {
@@ -100,14 +110,6 @@ class App extends React.Component {
                     <Message>{systemDatabase.labels.messages.noGuesses}</Message>
                   )
                 }
-
-                <Button
-                  onClick={() => {
-                    this.props.dispatch(newGame());
-                  }}
-                >
-                  { systemDatabase.labels.buttons.newgame }
-                </Button>
               </main>
             )
           }
