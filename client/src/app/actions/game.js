@@ -23,3 +23,11 @@ export const validateInput = message => ({
   type: 'VALIDATE_INPUT',
   message
 });
+
+
+//--------------------------| Add guess
+
+export const addGuess = guess => ({
+  type: 'ADD_GUESS',
+  guess
+});

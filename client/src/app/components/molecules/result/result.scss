@@ -14,7 +14,7 @@
 
   .pa-result-item {
     &:not(:last-child) {
-      margin-right: map-get($roles-offsets, 'result-item');
+      margin-right: get-em-unit(map-get($roles-offsets, 'result-item'));
     }
   }
 

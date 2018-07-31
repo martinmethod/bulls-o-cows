@@ -6,6 +6,7 @@
 
 // Libraries
 import React from 'react';
+import { connect } from 'react-redux';
 
 // Styles
 import './guesses.scss';
@@ -19,7 +20,7 @@ import GuessLine from '../../molecules/guess-line';
 
 //--------------------------| Component
 
-const Guesses = props => (
+const Guesses = ({ guesses, input }) => (
   <div className='po-guesses'>
     <header>
       <span>{labels.guesses.try}</span>
@@ -27,40 +28,43 @@ const Guesses = props => (
       <span>{labels.guesses.result}</span>
     </header>
 
-    <GuessLine
-      num={1}
-      number={1234}
-      result={{ bulls: 0, cows: 1 }}
-    />
-    <GuessLine
-      num={2}
-      number={5678}
-      result={{ bulls: 1, cows: 1 }}
-    />
-    <GuessLine
-      num={3}
-      number={7890}
-      result={{ bulls: 0, cows: 2 }}
-    />
-    <GuessLine
-      num={4}
-      number={2579}
-      result={{ bulls: 1, cows: 0 }}
-    />
-    <GuessLine
-      num={5}
-      number={6308}
-      result={{ bulls: 0, cows: 1 }}
-    />
-    <GuessLine
-      num={6}
-      number={4075}
-      result={{ bulls: 4, cows: 0 }}
-    />
+    <div className='list'>
+      {
+        guesses.map(({ guess, result }, i) => (
+          <GuessLine
+            key={i}
+            num={(`0${(i + 1)}`).slice(-2)}
+            number={guess}
+            result={{
+              bulls: result.bulls,
+              cows: result.cows
+            }}
+          />
+        ))
+      }
+
+      {
+        input.value !== '' && (
+          <GuessLine
+            num={(`0${(guesses.length + 1)}`).slice(-2)}
+            number={input.value}
+            result={''}
+          />
+        )
+      }
+    </div>
   </div>
 );
 
 
+//--------------------------| State to Props
+
+const mapStateToProps = state => ({
+  input: state.game.input,
+  guesses: state.game.guesses
+});
+
+
 //--------------------------| Export
 
-export default Guesses;
+export default connect(mapStateToProps)(Guesses);

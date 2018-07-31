@@ -24,7 +24,7 @@ const GuessLine = ({ num, number, result }) => (
   <div className='pm-guess-line'>
     <Num>{num}</Num>
     <Guess>{number}</Guess>
-    {result && <Result result={result} />}
+    <Result result={result} />
   </div>
 );
 

@@ -5,6 +5,7 @@
 //--------------------------| Import
 
 import numberGenerator from '../helpers/number-generator';
+import guessChecker from '../helpers/guess-checker';
 
 
 //--------------------------| Default state
@@ -51,6 +52,19 @@ export default (state = gameReducerDefaultState, action) => {
           ...state.input,
           validateMessage: action.message
         }
+      };
+
+    case 'ADD_GUESS':
+      console.log('Add guess', action.guess);
+      return {
+        ...state,
+        guesses: [
+          ...state.guesses,
+          {
+            guess: action.guess,
+            result: guessChecker(state.number, action.guess)
+          }
+        ]
       };
   }
 };

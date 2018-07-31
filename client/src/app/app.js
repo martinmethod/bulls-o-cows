@@ -18,7 +18,7 @@ import './app.scss';
 import systemDatabase from '../database/system.json';
 
 // Actions
-import { newGame } from './actions/game';
+import { newGame, addGuess } from './actions/game';
 
 // Atoms
 import Button from './components/atoms/button';
@@ -40,8 +40,14 @@ import Footer from './components/organisms/footer';
 
 class App extends React.Component {
   componentWillMount() {
-    if (!this.props.game.number) {
+    if (!this.props.number) {
       this.props.dispatch(newGame());
+      this.props.dispatch(addGuess('1234'));
+      this.props.dispatch(addGuess('5678'));
+      this.props.dispatch(addGuess('7890'));
+      this.props.dispatch(addGuess('2579'));
+      this.props.dispatch(addGuess('6308'));
+      this.props.dispatch(addGuess('4075'));
     }
   }
 
@@ -51,7 +57,7 @@ class App extends React.Component {
         <div>
           <Header />
           {
-            this.props.game.number && (
+            this.props.number && (
               <main>
                 <form
                   onSubmit={(e) => {
@@ -61,18 +67,18 @@ class App extends React.Component {
                 >
                   <Input />
                   {
-                    this.props.game.input.validateMessage !== '' && <ValidationNote>{this.props.game.input.validateMessage}</ValidationNote>
+                    this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
                   }
                 </form>
 
                 {
-                  this.props.game.guesses.length !== 0 && (
+                  (this.props.guesses.length !== 0 || this.props.input.value !== '') && (
                     <Guesses />
                   )
                 }
 
                 {
-                  this.props.game.guesses.length === 0 && (
+                  this.props.guesses.length === 0 && this.props.input.value === '' && (
                     <Message>No guesses yet</Message>
                   )
                 }
@@ -87,7 +93,7 @@ class App extends React.Component {
               </main>
             )
           }
-          <Footer />
+          { this.props.scores.length !== 0 && <Footer /> }
         </div>
         <Stamp />
       </div>
@@ -98,7 +104,12 @@ class App extends React.Component {
 
 //--------------------------| State to Props
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({
+  number: state.game.number,
+  input: state.game.input,
+  guesses: state.game.guesses,
+  scores: state.scores
+});
 
 
 //--------------------------| Export

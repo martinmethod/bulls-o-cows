@@ -7,7 +7,7 @@
   //--------------------------| Variables
 
   $min-width-value: 316px;
-  $min-width: map-get($reg-screens, 'min'); // 320
+  $min-width: map-get($reg-screens, 'min-w'); // 320
   $ratio-w: map-get($reg-proportions-app, 'w');
   $ratio-h: map-get($reg-proportions-app, 'h');
 
@@ -24,7 +24,7 @@
   min-width: $min-width-value;
 
   @media (max-aspect-ratio: #{$ratio-w}/#{$ratio-h}) {
-    width: #{100 * $min-width-value / map-get($reg-screens, 'min')}vw;
+    width: #{100 * $min-width-value / map-get($reg-screens, 'min-w')}vw;
   }
 
   @media screen and (max-width: $min-width) {

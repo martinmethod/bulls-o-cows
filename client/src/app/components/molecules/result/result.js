@@ -18,14 +18,22 @@ import ResultItem from '../../atoms/result-item';
 
 const Result = ({ result }) => (
   <div className='pm-result'>
-    <ResultItem
-      role='bull'
-      value={result.bulls}
-    />
-    <ResultItem
-      role='cow'
-      value={result.cows}
-    />
+    {
+      result !== '' && (
+        <ResultItem
+          role='bull'
+          value={result.bulls}
+        />
+      )
+    }
+    {
+      result !== '' && (
+        <ResultItem
+          role='cow'
+          value={result.cows}
+        />
+      )
+    }
   </div>
 );
 

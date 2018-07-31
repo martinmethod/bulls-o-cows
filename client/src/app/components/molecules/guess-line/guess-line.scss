@@ -6,7 +6,7 @@
 
   //--------------------------| Variables
 
-  $offset: map-get($roles-offsets, 'guess-line');
+  $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
 
 
   //--------------------------| Base
@@ -34,6 +34,8 @@
 
   .pa-guess {
     @include flex(1);
+
+    text-align: left;
   }
 
 

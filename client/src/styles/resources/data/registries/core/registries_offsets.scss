@@ -3,10 +3,10 @@
 
 
 $reg-offsets: (
-  '06': get-em-unit(6),
-  '10': get-em-unit(10), // left & right in guess line
-  '17': get-em-unit(16), // below shots link
-  '24': get-em-unit(24), // above button | above message
-  '32': get-em-unit(32),
-  '36': get-em-unit(36)  // below input
+  '06': 6,
+  '10': 10, // left & right in guess line
+  '17': 16, // below shots link
+  '24': 24, // above button | above message
+  '32': 32,
+  '36': 36  // below input
 );
