@@ -10,7 +10,7 @@ A personal version of the well-known game "Bulls and Cows".
 
 *Technologies:* **ES6**, **HTML5**, **CSS3**
 
-*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org)**, **[Lodash](https://lodash.com)**, **[Compass](http://compass-style.org)**
+*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org)**, **[Compass](http://compass-style.org)**
 
 *Preprocessors:* **[Sass](http://sass-lang.com)**, **[Babel](http://babeljs.io)**
 
