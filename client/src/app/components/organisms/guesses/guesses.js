@@ -20,7 +20,7 @@ import GuessLine from '../../molecules/guess-line';
 
 //--------------------------| Component
 
-const Guesses = ({ guesses, input }) => (
+const Guesses = ({ win, guesses, input }) => (
   <div className='po-guesses'>
     <header>
       <span>{labels.guesses.try}</span>
@@ -45,7 +45,7 @@ const Guesses = ({ guesses, input }) => (
         }
 
         {
-          input.value !== '' && (
+          input.value !== '' && !win && (
             <GuessLine
               current={true}
               num={(`0${(guesses.length + 1)}`).slice(-2)}
@@ -66,6 +66,7 @@ const Guesses = ({ guesses, input }) => (
 //--------------------------| State to Props
 
 const mapStateToProps = state => ({
+  win: state.game.win,
   input: state.game.input,
   guesses: state.game.guesses
 });

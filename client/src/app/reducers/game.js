@@ -11,6 +11,7 @@ import guessChecker from '../helpers/guess-checker';
 //--------------------------| Default state
 
 const initialState = {
+  win: null,
   number: null,
   input: {
     value: '',
@@ -26,6 +27,8 @@ const gameReducerDefaultState = localState && localState.game ? localState.game 
 //--------------------------| Export
 
 export default (state = gameReducerDefaultState, action) => {
+  let result = null;
+
   switch (action.type) {
     default:
       return state;
@@ -55,18 +58,20 @@ export default (state = gameReducerDefaultState, action) => {
       };
 
     case 'ADD_GUESS':
-      console.log('Add guess', action.guess);
+      result = guessChecker(state.number, action.guess);
+
       return {
         ...state,
+        win: result.bulls === 4,
         input: {
-          value: '',
+          value: result.bulls === 4 ? state.input.value : '',
           validateMessage: ''
         },
         guesses: [
           ...state.guesses,
           {
             guess: action.guess,
-            result: guessChecker(state.number, action.guess)
+            result
           }
         ]
       };

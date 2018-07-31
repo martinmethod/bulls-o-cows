@@ -27,4 +27,14 @@
   }
 
 
+  //--------------------------| States
+
+  #app[data-status='win'] & {
+    pointer-events: none;
+    background-color: map-get($roles-col-backgrounds, 'success');
+    border-color: transparent;
+    -webkit-text-fill-color: map-get($roles-col-texts, 'input');
+  }
+
+
 } // .pa-input

@@ -21,7 +21,7 @@ import enter from '../assets/icons/enter.svg';
 import systemDatabase from '../database/system.json';
 
 // Actions
-import { newGame, addGuess } from './actions/game';
+import { newGame, addGuess, validateInput } from './actions/game';
 
 // Atoms
 import Button from './components/atoms/button';
@@ -39,24 +39,25 @@ import Guesses from './components/organisms/guesses';
 import Footer from './components/organisms/footer';
 
 
+//--------------------------| Definitions
+
+const {
+  checked
+} = systemDatabase.labels.validation;
+
+
 //--------------------------| Component
 
 class App extends React.Component {
   componentWillMount() {
     if (!this.props.number) {
       this.props.dispatch(newGame());
-      this.props.dispatch(addGuess('1234'));
-      this.props.dispatch(addGuess('5678'));
-      this.props.dispatch(addGuess('7890'));
-      this.props.dispatch(addGuess('2579'));
-      this.props.dispatch(addGuess('6308'));
-      this.props.dispatch(addGuess('4075'));
     }
   }
 
   render() {
     return (
-      <div id='app'>
+      <div id='app' data-status={this.props.win ? 'win' : ''}>
         <div>
           <Header />
           {
@@ -68,11 +69,25 @@ class App extends React.Component {
                     this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
                   }
                   {
-                    this.props.input.value.length === 4 && (
-                      <picture dangerouslySetInnerHTML={{ __html: enter }} />
+                    this.props.input.value.length === 4 && !this.props.win && (
+                      <picture
+                        dangerouslySetInnerHTML={{ __html: enter }}
+                        onClick={() => {
+                          if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
+                            this.props.dispatch(validateInput(checked));
+                          }
+                          else {
+                            this.props.dispatch(addGuess(this.props.input.value));
+                          }
+                        }}
+                      />
                     )
                   }
                 </form>
+
+                {
+                  this.props.win && <Message>{systemDatabase.labels.messages.win}</Message>
+                }
 
                 {
                   (this.props.guesses.length !== 0 || this.props.input.value !== '') && (
@@ -82,7 +97,7 @@ class App extends React.Component {
 
                 {
                   this.props.guesses.length === 0 && this.props.input.value === '' && (
-                    <Message>No guesses yet</Message>
+                    <Message>{systemDatabase.labels.messages.noGuesses}</Message>
                   )
                 }
 
@@ -108,6 +123,7 @@ class App extends React.Component {
 //--------------------------| State to Props
 
 const mapStateToProps = state => ({
+  win: state.game.win,
   number: state.game.number,
   input: state.game.input,
   guesses: state.game.guesses,
