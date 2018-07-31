@@ -15,17 +15,29 @@ import './input.scss';
 import systemDatabase from '../../../../database/system.json';
 
 // Actions
-import { validateInput, updateInput } from '../../../actions/game';
+import { validateInput, updateInput, addGuess } from '../../../actions/game';
 
 
 //--------------------------| Definitions
 
-const { noZeroFirst, usedDigit, onlyDigits } = systemDatabase.labels.validation;
+const {
+  noZeroFirst,
+  usedDigit,
+  onlyDigits,
+  allDigits,
+  checked
+} = systemDatabase.labels.validation;
 
 
 //--------------------------| Component
 
 class Input extends React.Component {
+  constructor(props) {
+    super(props);
+    this.setInputRef = this.setInputRef.bind(this);
+    this.focusInput = this.focusInput.bind(this);
+  }
+
   onValueChange = (e) => {
     const { value } = e.target;
     const firstChar = value.charAt(0);
@@ -77,9 +89,26 @@ class Input extends React.Component {
     }
   };
 
+  focusInput() {
+    this.inputRef.focus();
+  }
+
+  componentDidMount() {
+    this.focusInput();
+  }
+
+  componentDidUpdate() {
+    this.focusInput();
+  }
+
+  setInputRef(node) {
+    this.inputRef = node;
+  }
+
   render() {
     return (
       <input
+        ref={this.setInputRef}
         autoFocus
         type='number'
         pattern='[0-9]*'
@@ -89,7 +118,21 @@ class Input extends React.Component {
         onChange={this.onValueChange}
         onKeyPress={(e) => { // Fix for Safari that prevents writing non-digit characters
           if ('1234567890'.indexOf(e.key) === -1) {
-            this.props.dispatch(validateInput(onlyDigits));
+            if (this.props.inputValue.length < 4) {
+              this.props.dispatch(validateInput(onlyDigits));
+
+              if (e.key === 'Enter') {
+                this.props.dispatch(validateInput(allDigits));
+              }
+            }
+            else if (e.key === 'Enter') {
+              if (this.props.guesses.find(g => g.guess === this.props.inputValue)) {
+                this.props.dispatch(validateInput(checked));
+              }
+              else {
+                this.props.dispatch(addGuess(this.props.inputValue));
+              }
+            }
             e.preventDefault();
           }
         }}
@@ -102,6 +145,8 @@ class Input extends React.Component {
 //--------------------------| State to Props
 
 const mapStateToProps = state => ({
+  number: state.game.number,
+  guesses: state.game.guesses,
   inputValue: state.game.input.value
 });
 

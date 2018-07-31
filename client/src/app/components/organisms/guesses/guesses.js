@@ -28,30 +28,36 @@ const Guesses = ({ guesses, input }) => (
       <span>{labels.guesses.result}</span>
     </header>
 
-    <div className='list'>
-      {
-        guesses.map(({ guess, result }, i) => (
-          <GuessLine
-            key={i}
-            num={(`0${(i + 1)}`).slice(-2)}
-            number={guess}
-            result={{
-              bulls: result.bulls,
-              cows: result.cows
-            }}
-          />
-        ))
-      }
+    <div className='wrapper'>
+      <div className='list'>
+        {
+          guesses.map(({ guess, result }, i) => (
+            <GuessLine
+              key={i}
+              num={(`0${(i + 1)}`).slice(-2)}
+              number={guess}
+              result={{
+                bulls: result.bulls,
+                cows: result.cows
+              }}
+            />
+          ))
+        }
 
-      {
-        input.value !== '' && (
-          <GuessLine
-            num={(`0${(guesses.length + 1)}`).slice(-2)}
-            number={input.value}
-            result={''}
-          />
-        )
-      }
+        {
+          input.value !== '' && (
+            <GuessLine
+              current={true}
+              num={(`0${(guesses.length + 1)}`).slice(-2)}
+              number={input.value}
+              result={{
+                bulls: '•',
+                cows: '•'
+              }}
+            />
+          )
+        }
+      </div>
     </div>
   </div>
 );

@@ -17,7 +17,6 @@
   @include border-radius(map-get($reg-border-radiuses, 'tiny'));
   @include box-shadow(map-get($roles-shadows, 'guess-line'));
 
-  min-height: 4em;
   padding: .6em $offset;
   background-color: map-get($roles-col-backgrounds, 'guess-line');
 
@@ -46,6 +45,17 @@
     @include flex(2);
 
     text-align: right;
+  }
+
+
+  //--------------------------| States
+
+  &[data-current] {
+    background-color: rgba(map-get($reg-colors, 'yellow'), .8);
+
+    .pa-guess {
+      color: lighten(map-get($roles-col-texts, 'guess'), 15%);
+    }
   }
 
 

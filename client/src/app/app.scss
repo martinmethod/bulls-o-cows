@@ -67,6 +67,18 @@
   form {
     position: relative;
     width: 100%;
+
+    picture {
+      @include translate(20%, -50%);
+
+      position: absolute;
+      top: 50%;
+      width: 2.2em;
+
+      svg {
+        fill: map-get($roles-col-texts, 'sys');
+      }
+    }
   }
 
 
@@ -76,7 +88,7 @@
     @include flex(1);
     @include margin-v(get-em-unit(map-get($roles-offsets, 'modules'), 'rem'));
 
-    .list {
+    .wrapper {
       overflow: auto;
     }
   }

@@ -17,7 +17,9 @@
     "validation": {
       "noZeroFirst": "Number 0 cannot be first.",
       "usedDigit": "This digit is already used.",
-      "onlyDigits": "Please type only digits!"
+      "onlyDigits": "Please type only digits!",
+      "allDigits": "Please fill all four digits!",
+      "checked": "This number is already checked."
     }
   }
 }

@@ -20,11 +20,11 @@ import Result from '../../molecules/result';
 
 //--------------------------| Component
 
-const GuessLine = ({ num, number, result }) => (
-  <div className='pm-guess-line'>
-    <Num>{num}</Num>
-    <Guess>{number}</Guess>
-    <Result result={result} />
+const GuessLine = props => (
+  <div className='pm-guess-line' data-current={props.current}>
+    <Num>{props.num}</Num>
+    <Guess>{props.number}</Guess>
+    <Result result={props.result} />
   </div>
 );
 

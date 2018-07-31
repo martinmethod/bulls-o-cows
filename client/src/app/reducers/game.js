@@ -58,6 +58,10 @@ export default (state = gameReducerDefaultState, action) => {
       console.log('Add guess', action.guess);
       return {
         ...state,
+        input: {
+          value: '',
+          validateMessage: ''
+        },
         guesses: [
           ...state.guesses,
           {

@@ -50,10 +50,16 @@
   }
 
 
+  //--------------------------| Wrapper
+
+  .wrapper {
+    @include flex(1);
+  }
+
+
   //--------------------------| List
 
   .list {
-    @include flex(1);
     @include display-flex();
     @include flex-direction(column-reverse);
     @include justify-content(flex-end);

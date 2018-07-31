@@ -14,6 +14,9 @@ import { connect } from 'react-redux';
 // Styles
 import './app.scss';
 
+// Icons
+import enter from '../assets/icons/enter.svg';
+
 // Database
 import systemDatabase from '../database/system.json';
 
@@ -59,15 +62,15 @@ class App extends React.Component {
           {
             this.props.number && (
               <main>
-                <form
-                  onSubmit={(e) => {
-                    console.log(e);
-                    e.preventDefault();
-                  }}
-                >
+                <form>
                   <Input />
                   {
                     this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
+                  }
+                  {
+                    this.props.input.value.length === 4 && (
+                      <picture dangerouslySetInnerHTML={{ __html: enter }} />
+                    )
                   }
                 </form>
 
