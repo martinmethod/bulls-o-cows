@@ -1,7 +1,7 @@
 {
   "name": "bulls-o-cows",
   "title": "Bulls`O`Cows",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A personal version of the well-known game 'Bulls and Cows'",
   "main": "index.js",
   "scripts": {
