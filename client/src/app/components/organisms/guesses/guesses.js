@@ -7,8 +7,11 @@
 // Libraries
 import React from 'react';
 import { connect } from 'react-redux';
+import CustomScroll from 'react-custom-scroll';
 
 // Styles
+import 'react-custom-scroll/dist/customScroll.css';
+import '../../../../styles/external/custom-scrollbar.scss';
 import './guesses.scss';
 
 // Database
@@ -31,46 +34,50 @@ const Guesses = ({ win, guesses, input }) => (
       <span>{labels.guesses.result}</span>
     </header>
 
-    <div className='wrapper'>
-      {
-        guesses.length === 0 && input.value === '' && (
-          <Message>{labels.messages.noGuesses}</Message>
-        )
-      }
+    <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
+      <CustomScroll heightRelativeToParent='100%'>
+        <div className='wrapper'>
+          {
+            guesses.length === 0 && input.value === '' && (
+              <Message>{labels.messages.noGuesses}</Message>
+            )
+          }
 
-      {
-        (guesses.length !== 0 || input.value !== '') && (
-          <div className='list'>
-            {
-              guesses.map(({ guess, result }, i) => (
-                <GuessLine
-                  key={i}
-                  num={(`0${(i + 1)}`).slice(-2)}
-                  number={guess}
-                  result={{
-                    bulls: result.bulls,
-                    cows: result.cows
-                  }}
-                />
-              ))
-            }
+          {
+            (guesses.length !== 0 || input.value !== '') && (
+              <div className='list'>
+                {
+                  guesses.map(({ guess, result }, i) => (
+                    <GuessLine
+                      key={i}
+                      num={(`0${(i + 1)}`).slice(-2)}
+                      number={guess}
+                      result={{
+                        bulls: result.bulls,
+                        cows: result.cows
+                      }}
+                    />
+                  ))
+                }
 
-            {
-              input.value !== '' && !win && (
-                <GuessLine
-                  current={true}
-                  num={(`0${(guesses.length + 1)}`).slice(-2)}
-                  number={input.value}
-                  result={{
-                    bulls: '•',
-                    cows: '•'
-                  }}
-                />
-              )
-            }
-          </div>
-        )
-      }
+                {
+                  input.value !== '' && !win && (
+                    <GuessLine
+                      current={true}
+                      num={(`0${(guesses.length + 1)}`).slice(-2)}
+                      number={input.value}
+                      result={{
+                        bulls: '•',
+                        cows: '•'
+                      }}
+                    />
+                  )
+                }
+              </div>
+            )
+          }
+        </div>
+      </CustomScroll>
     </div>
   </div>
 );

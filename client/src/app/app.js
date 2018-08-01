@@ -101,6 +101,7 @@ class App extends React.Component {
                       this.props.win && <Message>{systemDatabase.labels.messages.win}</Message>
                     }
 
+
                     <Guesses />
                   </div>
                 </div>
