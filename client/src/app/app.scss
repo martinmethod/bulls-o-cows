@@ -50,13 +50,8 @@
 
   main {
     @include display-flex();
-    @include flex-direction(column);
-    @include align-items(center);
     @include flex(1);
     @include margin-v(3em);
-
-    position: relative;
-    overflow: hidden;
   }
 
 
@@ -93,6 +88,31 @@
   }
 
 
+  //--------------------------| Body
+
+  .body {
+    @include display-flex();
+    @include flex-direction(column);
+    @include align-items(center);
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+
+  //--------------------------| Playground
+
+  .playground {
+    @include display-flex();
+    @include flex-direction(column);
+    @include flex(1);
+    @include padding-h(get-em-unit(map-get($roles-offsets, 'main')));
+
+    width: 100%;
+  }
+
+
   //--------------------------| Guesses
 
   .po-guesses {
@@ -102,16 +122,7 @@
   }
 
 
-  //--------------------------| Message
-
-  &:not([data-status='win']) .pa-message,
-  .po-guesses {
-    @include flex(1);
-  }
-
-  &:not([data-status='win']) .pa-message {
-    margin-top: 2.4em;
-  }
+  //--------------------------| Messages
 
   &[data-status='win'] .pa-message {
     margin-bottom: 2em;
@@ -120,47 +131,46 @@
 
   //--------------------------| Media queries
 
-  @media screen and (orientation: landscape) and (min-width: map-get($reg-screens, 'min-h')) and (max-height: map-get($reg-screens, 'max-w')) {
+  @media screen and (orientation: landscape) and (min-width: map-get($reg-screens, 'max-w')) and (max-height: map-get($reg-screens, 'min-h')) {
     width: 100%;
-    max-width: map-get($reg-screens, 'max-w');
+    max-width: 820px;
     height: 100vh;
 
     main {
+      margin: 1em 3em;
+    }
+
+    .body {
       @include flex-wrap(wrap);
       @include flex-direction(row);
       @include align-items(flex-start);
 
-      margin: 1em 3em;
-
-      form {
-        @include align-self(flex-start);
-
-        width: 50%;
-        margin-top: 6.4em;
-      }
-
-      .po-guesses {
-        @include flex(auto);
-        @include padding-h(0);
-
-        width: 50%;
-        height: calc(100% - 6em);
-        margin-top: 4em;
-      }
-
-      .new {
-        @include translateX(-50%);
-
-        position: absolute;
-        top: 0;
-        left: 50%;
-      }
+      height: 100%;
+      padding: 0;
     }
 
-    &:not([data-status='win']) .pa-message {
+    .new {
+      @include translateX(-50%);
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+
+    form {
       width: 50%;
-      padding: 0;
       margin-top: 6.4em;
+    }
+
+    .playground {
+      width: 50%;
+      height: calc(100% - 6em);
+      padding: 0;
+      margin-top: 4em;
+
+      .po-guesses {
+        height: 100%;
+      }
     }
 
     &[data-status='win'] .pa-message {
@@ -170,7 +180,7 @@
       position: absolute;
       top: 14em;
       left: 25%;
-      width: 50%;
+      width: 40%;
     }
   }
 

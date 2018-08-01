@@ -11,8 +11,6 @@
 
   //--------------------------| Base
 
-  @include padding-h(get-em-unit(map-get($roles-offsets, 'main')));
-
   width: 100%;
   white-space: nowrap;
 
@@ -22,11 +20,14 @@
   p {
     @include border-radius(map-get($reg-border-radiuses, 'tiny'));
     @include box-shadow(map-get($roles-shadows, 'guess-line'));
+    @include margin-h(.2em);
 
     width: 100%;
+    min-height: 4rem;
     padding: .6em $offset;
     margin: 0;
     font: normal map-get($roles-typo-font-sizes, 'message') map-get($roles-typo-font-families, 'message');
+    line-height: 1.1;
     color: map-get($roles-col-texts, 'message');
     background-color: map-get($roles-col-backgrounds, 'guess-line');
   }

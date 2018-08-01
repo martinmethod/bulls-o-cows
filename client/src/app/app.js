@@ -63,53 +63,47 @@ class App extends React.Component {
           {
             this.props.number && (
               <main>
-                <div className='new'>
-                  <Button
-                    onClick={() => {
-                      this.props.dispatch(newGame());
-                    }}
-                  >
-                    { systemDatabase.labels.buttons.newgame }
-                  </Button>
-                </div>
+                <div className='body'>
+                  <div className='new'>
+                    <Button
+                      onClick={() => {
+                        this.props.dispatch(newGame());
+                      }}
+                    >
+                      { systemDatabase.labels.buttons.newgame }
+                    </Button>
+                  </div>
 
-                <form>
-                  <Input />
-                  {
-                    this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
-                  }
-                  {
-                    this.props.input.value.length === 4 && !this.props.win && (
-                      <picture
-                        dangerouslySetInnerHTML={{ __html: enter }}
-                        onClick={() => {
-                          if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
-                            this.props.dispatch(validateInput(checked));
-                          }
-                          else {
-                            this.props.dispatch(addGuess(this.props.input.value));
-                          }
-                        }}
-                      />
-                    )
-                  }
-                </form>
+                  <form>
+                    <Input />
+                    {
+                      this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
+                    }
+                    {
+                      this.props.input.value.length === 4 && !this.props.win && (
+                        <picture
+                          dangerouslySetInnerHTML={{ __html: enter }}
+                          onClick={() => {
+                            if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
+                              this.props.dispatch(validateInput(checked));
+                            }
+                            else {
+                              this.props.dispatch(addGuess(this.props.input.value));
+                            }
+                          }}
+                        />
+                      )
+                    }
+                  </form>
 
-                {
-                  this.props.win && <Message>{systemDatabase.labels.messages.win}</Message>
-                }
+                  <div className='playground'>
+                    {
+                      this.props.win && <Message>{systemDatabase.labels.messages.win}</Message>
+                    }
 
-                {
-                  (this.props.guesses.length !== 0 || this.props.input.value !== '') && (
                     <Guesses />
-                  )
-                }
-
-                {
-                  this.props.guesses.length === 0 && this.props.input.value === '' && (
-                    <Message>{systemDatabase.labels.messages.noGuesses}</Message>
-                  )
-                }
+                  </div>
+                </div>
               </main>
             )
           }

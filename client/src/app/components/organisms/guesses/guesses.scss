@@ -8,7 +8,6 @@
 
   @include display-flex();
   @include flex-direction(column);
-  @include padding-h(get-em-unit(map-get($roles-offsets, 'main')));
 
   width: 100%;
 
@@ -22,6 +21,10 @@
     padding: get-em-unit(map-get($roles-offsets, 'guesses'));
     font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
     color: map-get($roles-col-texts, 'sys');
+
+    &[data-visible='false'] {
+      visibility: hidden;
+    }
 
     span {
       &:first-child {
@@ -54,6 +57,8 @@
 
   .wrapper {
     @include flex(1);
+
+    padding: .2em;
   }
 
 
