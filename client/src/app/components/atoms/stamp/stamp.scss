@@ -23,11 +23,11 @@
   width: 50vh;
   min-width: $min-width-value;
 
-  @media screen and (max-width: map-get($reg-screens, 'max-w')) and (orientation: portrait) {
+  @include mq-screens-small-portrait() {
     width: #{100 * $min-width-value / map-get($reg-screens, 'min-w')}vw;
   }
 
-  @media screen and (max-width: $min-width) {
+  @include mq-screens-small() {
     @include translate(0, -50%);
 
     left: ($min-width - $min-width-value) / 2;

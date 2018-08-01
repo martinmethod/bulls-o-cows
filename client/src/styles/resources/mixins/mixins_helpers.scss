@@ -47,20 +47,20 @@
   $ratio-w: map-get($reg-proportions-app, 'w');
   $ratio-h: map-get($reg-proportions-app, 'h');
   $ratio: $ratio-w / $ratio-h; // 0.5625
-  $width: map-get($reg-screens, 'min-w');
-  $height: 100 * ($width / $ratio) / 90;
+  $ratio-width: map-get($reg-screens, 'min-w');
+  $ratio-height: 100 * ($ratio-width / $ratio) / 90;
 
-  @if unit($height) == unit($min-size) {
+  @if unit($ratio-height) == unit($min-size) {
     & {
-      @media screen and (min-height: $height) {
-        #{$property}: #{($min-size * 100 / $height)}vh;
+      @include mq-proportions-min-height() {
+        #{$property}: #{($min-size * 100 / $ratio-height)}vh;
       }
 
-      @media screen and (max-width: $width) and (orientation: portrait) {
-        #{$property}: #{($min-size * 100 / $width)}vw;
+      @include mq-screens-small-portrait() {
+        #{$property}: #{($min-size * 100 / $ratio-width)}vw;
       }
 
-      @media screen and (max-height: $height), screen and (max-width: $width) {
+      @include mq-proportions-max-width-or-max-height() {
         #{$property}: $min-size;
       }
     }

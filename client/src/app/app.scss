@@ -131,7 +131,7 @@
 
   //--------------------------| Media queries
 
-  @media screen and (orientation: landscape) and (min-width: map-get($reg-screens, 'max-w')) and (max-height: map-get($reg-screens, 'min-h')) {
+  @include mq-screens-big-landscape() {
     width: 100%;
     max-width: 820px;
     height: 100vh;
@@ -184,7 +184,7 @@
     }
   }
 
-  @media screen and (max-width: map-get($reg-screens, 'max-w')) and (orientation: portrait) {
+  @include mq-screens-small-portrait() {
     width: 100vw;
     height: 100vh;
   }

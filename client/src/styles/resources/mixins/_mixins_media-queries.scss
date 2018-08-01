@@ -1,0 +1,64 @@
+//====================================================|
+// MIXINS: MEDIA QUERIES
+
+
+//--------------------------| Variables
+
+// Ratio
+$ratio-w: map-get($reg-proportions-app, 'w');
+$ratio-h: map-get($reg-proportions-app, 'h');
+$ratio:   $ratio-w / $ratio-h; // 0.5625
+
+// Screen dimensions
+$screen-min-width:  map-get($reg-screens, 'min-w');
+$screen-max-width:  map-get($reg-screens, 'max-w');
+$screen-min-height: map-get($reg-screens, 'min-h');
+
+// Proportional dimensions
+$prop-width: $screen-min-width;
+$prop-height: 100 * ($prop-width / $ratio) / 90;
+
+
+//--------------------------| Small width screen no matter the orientation (< 320px)
+
+@mixin mq-screens-small() {
+  @media screen and (max-width: $screen-min-width) {
+    @content;
+  }
+}
+
+
+//--------------------------| Small portrait screens (less than 576px of width)
+
+@mixin mq-screens-small-portrait() {
+  @media screen and (max-width: $screen-max-width) and (orientation: portrait) {
+    @content;
+  }
+}
+
+
+//--------------------------| Landscape screen with big width (> 576px) and small height (< 480px)
+
+@mixin mq-screens-big-landscape() {
+  @media screen and (orientation: landscape) and (min-width: $screen-max-width) and (max-height: $screen-min-height) {
+    @content;
+  }
+}
+
+
+//--------------------------| Proportional min-height
+
+@mixin mq-proportions-min-height() {
+  @media screen and (min-height: $prop-height) {
+    @content;
+  }
+}
+
+
+//--------------------------| Proportional max-width or max-height
+
+@mixin mq-proportions-max-width-or-max-height() {
+  @media screen and (max-height: $prop-height), screen and (max-width: $prop-width) {
+    @content;
+  }
+}
