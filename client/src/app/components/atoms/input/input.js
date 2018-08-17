@@ -126,6 +126,9 @@ class Input extends React.Component {
         value={this.props.inputValue}
         className={styles.root}
         onChange={this.onValueChange}
+        onWheel={(e) => {
+          e.preventDefault();
+        }}
         onBlur={() => {
           if (this.props.inputValue.length === 4) {
             this.printGuess();
