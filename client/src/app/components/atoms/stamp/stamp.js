@@ -11,13 +11,15 @@ import React from 'react';
 import styles from './stamp.scss';
 
 // Icons
-import logo from '../../../../assets/icons/logo.svg';
+import LogoSVG from '../../../../assets/icons/logo.svg';
 
 
 //--------------------------| Component
 
 const Stamp = props => (
-  <picture className={styles.root} dangerouslySetInnerHTML={{ __html: logo }} />
+  <picture className={styles.root}>
+    <LogoSVG />
+  </picture>
 );
 
 

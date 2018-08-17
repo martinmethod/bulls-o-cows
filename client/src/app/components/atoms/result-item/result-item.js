@@ -18,11 +18,11 @@ import cow from '../../../../assets/icons/cow.svg';
 //--------------------------| Component
 
 const ResultItem = ({ role, value, className }) => {
-  const icon = role === 'bull' ? bull : cow;
+  const Icon = { bull, cow }[role];
 
   return (
     <div className={`${styles.root} ${className}`} data-role={role} data-value={value}>
-      <i className={styles.icon} dangerouslySetInnerHTML={{ __html: icon }} />
+      <i className={styles.icon}><Icon /></i>
       <span className={styles.value}>{value}</span>
     </div>
   );

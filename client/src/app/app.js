@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 import styles from './app.scss';
 
 // Icons
-import enter from '../assets/icons/enter.svg';
+import EnterSVG from '../assets/icons/enter.svg';
 
 // Database
 import systemDatabase from '../database/system.json';
@@ -82,7 +82,6 @@ class App extends React.Component {
                     {
                       this.props.input.value.length === 4 && !this.props.win && (
                         <picture
-                          dangerouslySetInnerHTML={{ __html: enter }}
                           onClick={() => {
                             if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
                               this.props.dispatch(validateInput(checked));
@@ -91,7 +90,9 @@ class App extends React.Component {
                               this.props.dispatch(addGuess(this.props.input.value));
                             }
                           }}
-                        />
+                        >
+                          <EnterSVG />
+                        </picture>
                       )
                     }
                   </form>

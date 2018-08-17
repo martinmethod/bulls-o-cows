@@ -78,12 +78,6 @@ const config = {
         ]
       },
       {
-        test: /\.svg/,
-        use: {
-          loader: 'svg-inline-loader'
-        }
-      },
-      {
         loader: 'babel-loader',
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,

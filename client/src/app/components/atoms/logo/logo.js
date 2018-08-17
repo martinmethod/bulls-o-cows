@@ -11,13 +11,15 @@ import React from 'react';
 import styles from './logo.scss';
 
 // Icons
-import logo from '../../../../assets/icons/logo.svg';
+import LogoSVG from '../../../../assets/icons/logo.svg';
 
 
 //--------------------------| Component
 
 const Logo = ({ className }) => (
-  <picture className={`${styles.root} ${className}`} dangerouslySetInnerHTML={{ __html: logo }} />
+  <picture className={`${styles.root} ${className}`}>
+    <LogoSVG />
+  </picture>
 );
 
 
