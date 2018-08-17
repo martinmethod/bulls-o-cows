@@ -2,12 +2,9 @@
 // NUM
 
 
-.pa-num {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   font: normal map-get($roles-typo-font-sizes, 'num') map-get($roles-typo-font-families, 'digits');
   color: map-get($roles-col-texts, 'sys');
-
-
-} // .pa-num
+}

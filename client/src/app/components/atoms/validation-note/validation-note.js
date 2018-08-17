@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './validation-note.scss';
+import styles from './validation-note.scss';
 
 
 //--------------------------| Component
 
-const ValidationNote = props => (
-  <p className='pa-validation-note'>
-    {props.children}
+const ValidationNote = ({ children }) => (
+  <p className={styles.root}>
+    {children}
   </p>
 );
 

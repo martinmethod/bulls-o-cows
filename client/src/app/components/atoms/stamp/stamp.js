@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './stamp.scss';
+import styles from './stamp.scss';
 
 // Icons
 import logo from '../../../../assets/icons/logo.svg';
@@ -17,7 +17,7 @@ import logo from '../../../../assets/icons/logo.svg';
 //--------------------------| Component
 
 const Stamp = props => (
-  <picture className='pa-stamp' dangerouslySetInnerHTML={{ __html: logo }} />
+  <picture className={styles.root} dangerouslySetInnerHTML={{ __html: logo }} />
 );
 
 

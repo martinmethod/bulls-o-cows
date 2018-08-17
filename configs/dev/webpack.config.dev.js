@@ -25,6 +25,7 @@ const config = {
     rules: [
       {
         test: /\.s?css$/,
+        include: /node_modules/,
         use: [
           {
             loader: 'style-loader' // creates style nodes from JS strings,
@@ -32,8 +33,25 @@ const config = {
           {
             loader: 'css-loader', // translates CSS into CommonJS
             options: {
-              // modules: true,
-              sourceMap: true
+              modules: false
+            }
+          }
+        ]
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader' // creates style nodes from JS strings,
+          },
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+            options: {
+              modules: true,
+              sourceMap: true,
+              camelCase: 'dashes',
+              localIdentName: '[name]__[local]__[hash:base64:5]'
             }
           },
           {

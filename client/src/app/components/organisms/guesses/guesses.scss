@@ -2,85 +2,82 @@
 // GUESSES
 
 
-.po-guesses {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
   @include flex-direction(column);
 
   width: 100%;
   height: 100%;
+}
 
 
-  //--------------------------| Header
+//--------------------------| Head
 
-  header {
-    @include display-flex();
-    @include justify-content(space-between);
+.head {
+  @include display-flex();
+  @include justify-content(space-between);
 
-    padding: get-em-unit(map-get($roles-offsets, 'guesses'));
-    font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
-    color: map-get($roles-col-texts, 'sys');
+  padding: get-em-unit(map-get($roles-offsets, 'guesses'));
+  font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
+  color: map-get($roles-col-texts, 'sys');
 
-    &[data-visible='false'] {
-      visibility: hidden;
+  &[data-visible='false'] {
+    visibility: hidden;
+  }
+
+  span {
+    &:first-child {
+      padding-left: get-em-unit(map-get($roles-offsets, 'guess-line'));
+      text-align: left;
     }
 
-    span {
-      &:first-child {
-        padding-left: get-em-unit(map-get($roles-offsets, 'guess-line'));
-        text-align: left;
-      }
+    &:last-child {
+      padding-right: get-em-unit(map-get($roles-offsets, 'guess-line'));
+      text-align: right;
+    }
 
-      &:last-child {
-        padding-right: get-em-unit(map-get($roles-offsets, 'guess-line'));
-        text-align: right;
-      }
+    &:nth-child(1),
+    &:nth-child(2) {
+      @include flex(1);
+    }
 
-      &:nth-child(1),
-      &:nth-child(2) {
-        @include flex(1);
-      }
+    &:nth-child(2) {
+      text-align: left;
+    }
 
-      &:nth-child(2) {
-        text-align: left;
-      }
-
-      &:nth-child(3) {
-        @include flex(2);
-      }
+    &:nth-child(3) {
+      @include flex(2);
     }
   }
+}
 
 
-  //--------------------------| Wrapper
+//--------------------------| Wrapper
 
-  .wrapper {
-    @include flex(1);
+.wrapper {
+  @include flex(1);
 
-    padding: .2em;
+  padding: .2em;
+}
+
+
+//--------------------------| List
+
+.list {
+  @include display-flex();
+  @include flex-direction(column-reverse);
+  @include justify-content(flex-end);
+
+  margin-bottom: 3em;
+}
+
+
+//--------------------------| Guess line
+
+.guess-line {
+  &:not(:last-child) {
+    margin-top: get-em-unit(map-get($roles-offsets, 'guesses'));
   }
-
-
-  //--------------------------| List
-
-  .list {
-    @include display-flex();
-    @include flex-direction(column-reverse);
-    @include justify-content(flex-end);
-
-    margin-bottom: 3em;
-  }
-
-
-  //--------------------------| Guess line
-
-  .pm-guess-line {
-    &:not(:last-child) {
-      margin-top: get-em-unit(map-get($roles-offsets, 'guesses'));
-    }
-  }
-
-
-} // .po-guesses
+}

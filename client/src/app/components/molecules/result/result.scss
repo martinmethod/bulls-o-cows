@@ -2,21 +2,18 @@
 // RESULT
 
 
-.pm-result {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
   @include justify-content(flex-end);
+}
 
 
-  //--------------------------| Item
+//--------------------------| Result item
 
-  .pa-result-item {
-    &:not(:last-child) {
-      margin-right: get-em-unit(map-get($roles-offsets, 'result-item'));
-    }
+.result-item {
+  &:not(:last-child) {
+    margin-right: get-em-unit(map-get($roles-offsets, 'result-item'));
   }
-
-
-} // .pm-result
+}

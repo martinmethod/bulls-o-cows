@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './hyperlink.scss';
+import styles from './hyperlink.scss';
 
 
 //--------------------------| Component
 
-const Hyperlink = props => (
-  <a className='pa-hyperlink'>
-    {props.children}
+const Hyperlink = ({ children }) => (
+  <a className={styles.root}>
+    {children}
   </a>
 );
 

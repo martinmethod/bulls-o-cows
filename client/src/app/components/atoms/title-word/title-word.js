@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './title-word.scss';
+import styles from './title-word.scss';
 
 
 //--------------------------| Component
 
-const TitleWord = props => (
-  <span className='pa-title-word'>
-    {props.children}
+const TitleWord = ({ children, className }) => (
+  <span className={`${styles.root} ${className}`}>
+    {children}
   </span>
 );
 

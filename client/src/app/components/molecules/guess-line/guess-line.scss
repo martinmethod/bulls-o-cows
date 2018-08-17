@@ -2,15 +2,14 @@
 // GUESS LINE
 
 
-.pm-guess-line {
+//--------------------------| Variables
 
-  //--------------------------| Variables
-
-  $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
+$offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
 
 
-  //--------------------------| Base
+//--------------------------| Root
 
+.root {
   @include display-flex();
   @include justify-content(space-between);
   @include align-items(center);
@@ -21,43 +20,38 @@
   padding: .6em $offset;
   background-color: map-get($roles-col-backgrounds, 'guess-line');
 
-
-  //--------------------------| Num
-
-  .pa-num {
-    @include flex(1);
-
-    text-align: left;
-  }
-
-
-  //--------------------------| Guess
-
-  .pa-guess {
-    @include flex(1);
-
-    text-align: left;
-  }
-
-
-  //--------------------------| Result
-
-  .pm-result {
-    @include flex(2);
-
-    text-align: right;
-  }
-
-
-  //--------------------------| States
-
   &[data-current] {
     background-color: rgba(map-get($reg-colors, 'yellow'), .8);
 
-    .pa-guess {
+    .guess {
       color: lighten(map-get($roles-col-texts, 'guess'), 15%);
     }
   }
+}
 
 
-} // .pm-guess-line
+//--------------------------| Num
+
+.num {
+  @include flex(1);
+
+  text-align: left;
+}
+
+
+//--------------------------| Guess
+
+.guess {
+  @include flex(1);
+
+  text-align: left;
+}
+
+
+//--------------------------| Result
+
+.result {
+  @include flex(2);
+
+  text-align: right;
+}

@@ -12,7 +12,7 @@ import CustomScroll from 'react-custom-scroll';
 // Styles
 import 'react-custom-scroll/dist/customScroll.css';
 import '../../../../styles/external/custom-scrollbar.scss';
-import './guesses.scss';
+import styles from './guesses.scss';
 
 // Database
 import { labels } from '../../../../database/system.json';
@@ -26,9 +26,14 @@ import GuessLine from '../../molecules/guess-line';
 
 //--------------------------| Component
 
-const Guesses = ({ win, guesses, input }) => (
-  <div className='po-guesses'>
-    <header data-visible={guesses.length !== 0 || input.value !== ''}>
+const Guesses = ({
+  win,
+  guesses,
+  input,
+  className
+}) => (
+  <div className={`${styles.root} ${className}`}>
+    <header className={styles.head} data-visible={guesses.length !== 0 || input.value !== ''}>
       <span>{labels.guesses.try}</span>
       <span>{labels.guesses.guess}</span>
       <span>{labels.guesses.result}</span>
@@ -36,7 +41,7 @@ const Guesses = ({ win, guesses, input }) => (
 
     <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>
       <CustomScroll heightRelativeToParent='100%'>
-        <div className='wrapper'>
+        <div className={styles.wrapper}>
           {
             guesses.length === 0 && input.value === '' && (
               <Message>{labels.messages.noGuesses}</Message>
@@ -45,13 +50,14 @@ const Guesses = ({ win, guesses, input }) => (
 
           {
             (guesses.length !== 0 || input.value !== '') && (
-              <div className='list'>
+              <div className={styles.list}>
                 {
                   guesses.map(({ guess, result }, i) => (
                     <GuessLine
                       key={i}
                       num={(`0${(i + 1)}`).slice(-2)}
                       number={guess}
+                      className={styles.guessLine}
                       result={{
                         bulls: result.bulls,
                         cows: result.cows
@@ -66,6 +72,7 @@ const Guesses = ({ win, guesses, input }) => (
                       current={true}
                       num={(`0${(guesses.length + 1)}`).slice(-2)}
                       number={input.value}
+                      className={styles.guessLine}
                       result={{
                         bulls: '•',
                         cows: '•'

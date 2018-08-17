@@ -8,13 +8,13 @@
 import React from 'react';
 
 // Styles
-import './num.scss';
+import styles from './num.scss';
 
 
 //--------------------------| Component
 
-const Num = ({ children }) => (
-  <span className='pa-num'>
+const Num = ({ children, className }) => (
+  <span className={`${styles.root} ${className}`}>
     {children}
   </span>
 );

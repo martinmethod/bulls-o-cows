@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './input.scss';
+import styles from './input.scss';
 
 // Database
 import systemDatabase from '../../../../database/system.json';
@@ -124,7 +124,7 @@ class Input extends React.Component {
         pattern='[0-9]*'
         placeholder='••••'
         value={this.props.inputValue}
-        className='pa-input'
+        className={styles.root}
         onChange={this.onValueChange}
         onBlur={() => {
           if (this.props.inputValue.length === 4) {

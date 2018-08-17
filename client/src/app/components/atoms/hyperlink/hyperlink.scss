@@ -2,10 +2,9 @@
 // HYPERLINK
 
 
-.pa-hyperlink {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include transition(all map-get($roles-transitions, 'hyperlinks') ease-in-out);
 
   color: map-get($roles-col-links, 'link');
@@ -20,6 +19,4 @@
   &:active {
     color: map-get($roles-col-links, 'active');
   }
-
-
-} // .pa-hyperlink
+}

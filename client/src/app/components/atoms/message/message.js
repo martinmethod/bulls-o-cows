@@ -8,15 +8,15 @@
 import React from 'react';
 
 // Styles
-import './message.scss';
+import styles from './message.scss';
 
 
 //--------------------------| Component
 
-const Message = props => (
-  <div className='pa-message'>
-    <p>
-      { props.children }
+const Message = ({ children, className }) => (
+  <div className={`${styles.root} ${className}`}>
+    <p className={styles.paragraph}>
+      { children }
     </p>
   </div>
 );

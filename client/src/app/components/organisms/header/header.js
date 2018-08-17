@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './header.scss';
+import styles from './header.scss';
 
 // Molecules
 import Title from '../../molecules/title';
@@ -17,7 +17,7 @@ import Title from '../../molecules/title';
 //--------------------------| Component
 
 const Header = props => (
-  <header className='po-header'>
+  <header className={styles.root}>
     <Title />
   </header>
 );

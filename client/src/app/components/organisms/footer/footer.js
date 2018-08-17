@@ -9,7 +9,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './footer.scss';
+import styles from './footer.scss';
 
 // Database
 import systemDatabase from '../../../../database/system.json';
@@ -21,7 +21,7 @@ import Hyperlink from '../../atoms/hyperlink';
 //--------------------------| Component
 
 const Footer = props => (
-  <footer className='po-footer'>
+  <footer className={styles.root}>
     {props.scores.list && <Hyperlink>{systemDatabase.labels.links.shots}</Hyperlink>}
   </footer>
 );

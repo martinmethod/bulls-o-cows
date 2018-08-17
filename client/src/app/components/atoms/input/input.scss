@@ -2,10 +2,9 @@
 // INPUT
 
 
-.pa-input {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include appearance(none);
   @include transition(all map-get($reg-transitions, '100ms') ease-in-out);
   @include border-radius(map-get($reg-border-radiuses, 'tiny'));
@@ -26,15 +25,10 @@
     border: map-get($reg-borders, 'white');
   }
 
-
-  //--------------------------| States
-
-  #app[data-status='win'] & {
+  &[disabled] {
     pointer-events: none;
     background-color: map-get($roles-col-backgrounds, 'success');
     border-color: transparent;
     -webkit-text-fill-color: map-get($roles-col-texts, 'input');
   }
-
-
-} // .pa-input
+}

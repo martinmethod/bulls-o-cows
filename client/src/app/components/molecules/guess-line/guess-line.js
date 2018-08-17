@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './guess-line.scss';
+import styles from './guess-line.scss';
 
 // Atoms
 import Num from '../../atoms/num';
@@ -20,11 +20,17 @@ import Result from '../../molecules/result';
 
 //--------------------------| Component
 
-const GuessLine = props => (
-  <div className='pm-guess-line' data-current={props.current}>
-    <Num>{props.num}</Num>
-    <Guess>{props.number}</Guess>
-    <Result result={props.result} />
+const GuessLine = ({
+  current,
+  num,
+  number,
+  result,
+  className
+}) => (
+  <div className={`${styles.root} ${className}`} data-current={current}>
+    <Num className={styles.num}>{num}</Num>
+    <Guess className={styles.guess}>{number}</Guess>
+    <Result className={styles.result} result={result} />
   </div>
 );
 

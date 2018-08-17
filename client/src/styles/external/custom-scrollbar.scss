@@ -2,28 +2,32 @@
 // EXTERNAL: CUSTOM SCROLLBAR
 
 
-.custom-scroll {
+:global {
 
-  //--------------------------| Handle
+  .custom-scroll {
 
-  .custom-scroll-handle {
-    pointer-events: all;
-    cursor: pointer;
-  }
+    //--------------------------| Handle
 
-
-  //--------------------------| Bar
-
-  .inner-handle {
-    @include transition(background-color .15s linear);
-
-    background-color: rgba(map-get($reg-colors, 'black'), .3);
-
-    &:hover,
-    &:active {
-      background-color: rgba(map-get($reg-colors, 'black'), .6);
+    .custom-scroll-handle {
+      pointer-events: all;
+      cursor: pointer;
     }
-  }
 
 
-} // .custom-scroll
+    //--------------------------| Bar
+
+    .inner-handle {
+      @include transition(background-color .15s linear);
+
+      background-color: rgba(map-get($reg-colors, 'black'), .3);
+
+      &:hover,
+      &:active {
+        background-color: rgba(map-get($reg-colors, 'black'), .6);
+      }
+    }
+
+
+  } // .custom-scroll
+
+} // .global

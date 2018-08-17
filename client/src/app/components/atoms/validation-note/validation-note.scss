@@ -2,10 +2,9 @@
 // VALIDATION NOTE
 
 
-.pa-validation-note {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   position: absolute;
   top: 3.8em;
   left: 0;
@@ -13,6 +12,4 @@
   font-weight: map-get($roles-typo-font-weights, 'validation');
   color: map-get($roles-col-validation, 'error');
   text-align: center;
-
-
-} // .pa-validation-note
+}

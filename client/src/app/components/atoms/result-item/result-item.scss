@@ -2,10 +2,9 @@
 // RESULT ITEM
 
 
-.pa-result-item {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
   @include align-items(center);
 
@@ -21,29 +20,27 @@
     font-weight: map-get($roles-typo-font-weights, 'score-point');
     color: map-get($roles-col-texts, 'score-point');
   }
+}
 
 
-  //--------------------------| Icon
+//--------------------------| Icon
 
-  i {
-    width: 1.2em;
-    margin-right: .2em;
-  }
+.icon {
+  width: 1.2em;
+  margin-right: .2em;
 
-  &[data-role='bull'] svg {
+  [data-role='bull'] & svg {
     fill: map-get($roles-col-animals, 'bull');
   }
 
-  &[data-role='cow'] svg {
+  [data-role='cow'] & svg {
     fill: map-get($roles-col-animals, 'cow');
   }
+}
 
 
-  //--------------------------| Value
+//--------------------------| Value
 
-  span {
-    font-style: normal;
-  }
-
-
-} // .pa-result-item
+.value {
+  font-style: normal;
+}

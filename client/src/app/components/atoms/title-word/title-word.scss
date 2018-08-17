@@ -2,12 +2,9 @@
 // TITLE WORD
 
 
-.pa-title-word {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   font: normal map-get($roles-typo-font-sizes, 'title') map-get($roles-typo-font-families, 'title');
   color: map-get($roles-col-texts, 'title');
-
-
-} // .pa-title-word
+}

@@ -34,12 +34,29 @@ const config = {
     rules: [
       {
         test: /\.s?css$/,
+        include: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader', // translates CSS into CommonJS
             options: {
-              // modules: true,
+              modules: false
+            }
+          }
+        ]
+      },
+      {
+        test: /\.s?css$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+            options: {
+              modules: true,
+              sourceMap: true,
+              camelCase: 'dashes',
+              localIdentName: '[hash:base64:5]'
             }
           },
           {

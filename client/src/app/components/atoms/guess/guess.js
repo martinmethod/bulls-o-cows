@@ -8,13 +8,13 @@
 import React from 'react';
 
 // Styles
-import './guess.scss';
+import styles from './guess.scss';
 
 
 //--------------------------| Component
 
-const Guess = ({ children }) => (
-  <span className='pa-guess'>
+const Guess = ({ children, className }) => (
+  <span className={`${styles.root} ${className}`}>
     {children}
   </span>
 );

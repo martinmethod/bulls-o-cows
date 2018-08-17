@@ -12,7 +12,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 // Styles
-import './app.scss';
+import styles from './app.scss';
 
 // Icons
 import enter from '../assets/icons/enter.svg';
@@ -57,14 +57,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div id='app' data-status={this.props.win ? 'win' : ''}>
-        <div>
+      <div className={styles.root} data-status={this.props.win ? 'win' : ''}>
+        <div className={styles.inner}>
           <Header />
           {
             this.props.number && (
-              <main>
-                <div className='body'>
-                  <div className='new'>
+              <main className={styles.main}>
+                <div className={styles.body}>
+                  <div className={styles.new}>
                     <Button
                       onClick={() => {
                         this.props.dispatch(newGame());
@@ -74,7 +74,7 @@ class App extends React.Component {
                     </Button>
                   </div>
 
-                  <form>
+                  <form className={styles.inputForm}>
                     <Input />
                     {
                       this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
@@ -96,13 +96,17 @@ class App extends React.Component {
                     }
                   </form>
 
-                  <div className='playground'>
+                  <div className={styles.playground}>
                     {
-                      this.props.win && <Message>{systemDatabase.labels.messages.win}</Message>
+                      this.props.win &&
+                      <Message
+                        className={styles.winLabel}
+                      >
+                        {systemDatabase.labels.messages.win}
+                      </Message>
                     }
 
-
-                    <Guesses />
+                    <Guesses className={styles.guesses} />
                   </div>
                 </div>
               </main>

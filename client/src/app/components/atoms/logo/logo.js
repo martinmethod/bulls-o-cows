@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './logo.scss';
+import styles from './logo.scss';
 
 // Icons
 import logo from '../../../../assets/icons/logo.svg';
@@ -16,8 +16,8 @@ import logo from '../../../../assets/icons/logo.svg';
 
 //--------------------------| Component
 
-const Logo = props => (
-  <picture className='pa-logo' dangerouslySetInnerHTML={{ __html: logo }} />
+const Logo = ({ className }) => (
+  <picture className={`${styles.root} ${className}`} dangerouslySetInnerHTML={{ __html: logo }} />
 );
 
 

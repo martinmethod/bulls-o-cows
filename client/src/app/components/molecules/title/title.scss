@@ -2,27 +2,24 @@
 // TITLE
 
 
-.pm-title {
+//--------------------------| Root
 
-  //--------------------------| Base
-
+.root {
   @include display-flex();
   @include justify-content(center);
   @include align-items(center);
+}
 
 
-  //--------------------------| Logo
+//--------------------------| Logo
 
-  .pa-logo {
-    margin: 0 2em;
-  }
-
-
-  //--------------------------| Words
-
-  .pa-title-word {
-    @include flex(1);
-  }
+.logo {
+  margin: 0 2em;
+}
 
 
-} // .pm-title
+//--------------------------| Words
+
+.title-word {
+  @include flex(1);
+}

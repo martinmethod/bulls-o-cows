@@ -8,7 +8,7 @@
 import React from 'react';
 
 // Styles
-import './title.scss';
+import styles from './title.scss';
 
 // Atoms
 import TitleWord from '../../atoms/title-word';
@@ -18,10 +18,10 @@ import Logo from '../../atoms/logo';
 //--------------------------| Component
 
 const Title = props => (
-  <div className='pm-title'>
-    <TitleWord>Bulls</TitleWord>
-    <Logo />
-    <TitleWord>Cows</TitleWord>
+  <div className={styles.root}>
+    <TitleWord className={styles.titleWord}>Bulls</TitleWord>
+    <Logo className={styles.logo} />
+    <TitleWord className={styles.titleWord}>Cows</TitleWord>
   </div>
 );
 

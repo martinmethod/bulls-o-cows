@@ -8,14 +8,14 @@
 import React from 'react';
 
 // Styles
-import './button.scss';
+import styles from './button.scss';
 
 
 //--------------------------| Component
 
 const Button = props => (
   <button
-    className='pa-button'
+    className={styles.root}
     onClick={props.onClick}
   >
     {props.children}
