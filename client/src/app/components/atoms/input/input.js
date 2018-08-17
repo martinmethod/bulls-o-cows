@@ -32,12 +32,6 @@ const {
 //--------------------------| Component
 
 class Input extends React.Component {
-  constructor(props) {
-    super(props);
-    this.setInputRef = this.setInputRef.bind(this);
-    this.focusInput = this.focusInput.bind(this);
-  }
-
   onValueChange = (e) => {
     const { value } = e.target;
     const firstChar = value.charAt(0);
@@ -89,6 +83,14 @@ class Input extends React.Component {
     }
   };
 
+  setInputRef = (node) => {
+    this.inputRef = node;
+  };
+
+  focusInput = () => {
+    this.inputRef.focus();
+  };
+
   printGuess() {
     if (this.props.guesses.find(g => g.guess === this.props.inputValue)) {
       this.props.dispatch(validateInput(checked));
@@ -98,20 +100,12 @@ class Input extends React.Component {
     }
   }
 
-  focusInput() {
-    this.inputRef.focus();
-  }
-
   componentDidMount() {
     this.focusInput();
   }
 
   componentDidUpdate() {
     this.focusInput();
-  }
-
-  setInputRef(node) {
-    this.inputRef = node;
   }
 
   render() {
