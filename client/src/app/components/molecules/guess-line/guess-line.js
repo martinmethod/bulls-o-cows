@@ -15,7 +15,7 @@ import Num from '../../atoms/num';
 import Guess from '../../atoms/guess';
 
 // Molecules
-import Result from '../../molecules/result';
+import Result from '../result';
 
 
 //--------------------------| Component

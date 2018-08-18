@@ -18,7 +18,16 @@
     "comma-dangle": ["error", "never"],
     "brace-style": ["error", "stroustrup"],
     "spaced-comment": 0,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "operator-linebreak": ["error", "after"]
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "16.2.0"
+    },
+    "propWrapperFunctions": [ "forbidExtraProps" ]
   },
   "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"]
 }

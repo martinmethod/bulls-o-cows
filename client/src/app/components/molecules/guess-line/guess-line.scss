@@ -22,10 +22,6 @@ $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
 
   &[data-current] {
     background-color: rgba(map-get($reg-colors, 'yellow'), .8);
-
-    .guess {
-      color: lighten(map-get($roles-col-texts, 'guess'), 15%);
-    }
   }
 }
 
@@ -45,6 +41,10 @@ $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
   @include flex(1);
 
   text-align: left;
+
+  .root[data-current] & {
+    color: lighten(map-get($roles-col-texts, 'guess'), 15%);
+  }
 }
 
 
