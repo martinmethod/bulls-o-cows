@@ -34,9 +34,9 @@ const Guesses = ({
 }) => (
   <div className={`${styles.root} ${className}`}>
     <header className={styles.head} data-visible={guesses.length !== 0 || input.value !== ''}>
-      <span>{labels.guesses.try}</span>
-      <span>{labels.guesses.guess}</span>
-      <span>{labels.guesses.result}</span>
+      <span className={styles.label}>{labels.guesses.try}</span>
+      <span className={styles.label}>{labels.guesses.guess}</span>
+      <span className={styles.label}>{labels.guesses.result}</span>
     </header>
 
     <div style={{ flex: 1, minHeight: 0, minWidth: 0 }}>

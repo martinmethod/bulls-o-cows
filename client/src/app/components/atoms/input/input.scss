@@ -12,11 +12,11 @@
   @include selection(map-get($reg-colors, 'red'));
 
   width: 4em;
-  padding: .3em 0;
+  padding: 0.3em 0;
   font: map-get($roles-typo-font-weights, 'input') map-get($roles-typo-font-sizes, 'input') map-get($roles-typo-font-families, 'digits');
   color: map-get($roles-col-texts, 'input');
-  text-indent: .28em;
-  letter-spacing: .3em;
+  text-indent: 0.28em;
+  letter-spacing: 0.3em;
   background-color: map-get($roles-col-backgrounds, 'input');
   border: 1px solid transparent;
   outline: none;

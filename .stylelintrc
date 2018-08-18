@@ -5,9 +5,7 @@
     "stylelint-config-recess-order"
   ],
   "rules": {
-    "max-nesting-depth": 3,
-    "max-empty-lines": null,
-    "number-leading-zero": "never",
+    "max-empty-lines": 2,
     "order/properties-alphabetical-order": null
   }
 }

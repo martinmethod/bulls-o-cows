@@ -63,28 +63,31 @@ $min-height: $min-width / $ratio;
 
   position: relative;
   width: 100%;
+}
 
-  picture {
-    @include translate(20%, -50%);
 
-    position: absolute;
-    top: 50%;
-    width: 2.2em;
-    cursor: pointer;
+//--------------------------| Enter
 
-    svg {
-      fill: map-get($reg-colors, 'green');
+.enter {
+  @include translate(20%, -50%);
+
+  position: absolute;
+  top: 50%;
+  width: 2.2em;
+  cursor: pointer;
+
+  svg {
+    fill: map-get($reg-colors, 'green');
+  }
+
+  @media (hover: hover) {
+    &:hover svg {
+      fill: light(map-get($reg-colors, 'green'), 10%);
     }
+  }
 
-    @media (hover: hover) {
-      &:hover svg {
-        fill: light(map-get($reg-colors, 'green'), 10%);
-      }
-    }
-
-    &:active svg {
-      fill: light(map-get($reg-colors, 'green'), 20%);
-    }
+  &:active svg {
+    fill: light(map-get($reg-colors, 'green'), 20%);
   }
 }
 

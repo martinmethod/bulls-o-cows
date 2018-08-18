@@ -13,7 +13,7 @@ $bgr-color: map-get($roles-col-backgrounds, 'button');
   @include transition(all map-get($roles-transitions, 'buttons') ease-in-out);
   @include border-radius(map-get($reg-border-radiuses, 'tiny'));
 
-  padding: .3em 2em .5em;
+  padding: 0.3em 2em 0.5em;
   font-size: map-get($roles-typo-font-sizes, 'button');
   line-height: 1;
   color: map-get($roles-col-texts, 'button');

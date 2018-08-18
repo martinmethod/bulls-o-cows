@@ -82,6 +82,7 @@ class App extends React.Component {
                     {
                       this.props.input.value.length === 4 && !this.props.win && (
                         <picture
+                          className={styles.enter}
                           onClick={() => {
                             if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
                               this.props.dispatch(validateInput(checked));

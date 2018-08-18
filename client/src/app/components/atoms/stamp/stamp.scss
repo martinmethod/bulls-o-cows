@@ -28,7 +28,7 @@ $ratio-h: map-get($reg-proportions-app, 'h');
 
   [class='bull'],
   [class='cow'] {
-    fill: rgba(map-get($reg-colors, 'black'), .1);
+    fill: rgba(map-get($reg-colors, 'black'), 0.1);
   }
 
   [class='ground'] {

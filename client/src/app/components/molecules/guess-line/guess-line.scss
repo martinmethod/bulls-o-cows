@@ -17,11 +17,11 @@ $offset: get-em-unit(map-get($roles-offsets, 'guess-line'));
   @include box-shadow(map-get($roles-shadows, 'guess-line'));
 
   min-height: 4rem;
-  padding: .6em $offset;
+  padding: 0.6em $offset;
   background-color: map-get($roles-col-backgrounds, 'guess-line');
 
   &[data-current] {
-    background-color: rgba(map-get($reg-colors, 'yellow'), .8);
+    background-color: rgba(map-get($reg-colors, 'yellow'), 0.8);
   }
 }
 

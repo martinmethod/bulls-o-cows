@@ -27,7 +27,7 @@
 
 .icon {
   width: 1.2em;
-  margin-right: .2em;
+  margin-right: 0.2em;
 
   [data-role='bull'] & svg {
     fill: map-get($roles-col-animals, 'bull');

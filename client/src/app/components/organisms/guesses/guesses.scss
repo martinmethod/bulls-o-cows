@@ -26,30 +26,33 @@
   &[data-visible='false'] {
     visibility: hidden;
   }
+}
 
-  span {
-    &:first-child {
-      padding-left: get-em-unit(map-get($roles-offsets, 'guess-line'));
-      text-align: left;
-    }
 
-    &:last-child {
-      padding-right: get-em-unit(map-get($roles-offsets, 'guess-line'));
-      text-align: right;
-    }
+//--------------------------| Label
 
-    &:nth-child(1),
-    &:nth-child(2) {
-      @include flex(1);
-    }
+.label {
+  &:first-child {
+    padding-left: get-em-unit(map-get($roles-offsets, 'guess-line'));
+    text-align: left;
+  }
 
-    &:nth-child(2) {
-      text-align: left;
-    }
+  &:last-child {
+    padding-right: get-em-unit(map-get($roles-offsets, 'guess-line'));
+    text-align: right;
+  }
 
-    &:nth-child(3) {
-      @include flex(2);
-    }
+  &:nth-child(1),
+  &:nth-child(2) {
+    @include flex(1);
+  }
+
+  &:nth-child(2) {
+    text-align: left;
+  }
+
+  &:nth-child(3) {
+    @include flex(2);
   }
 }
 
@@ -59,7 +62,7 @@
 .wrapper {
   @include flex(1);
 
-  padding: .2em;
+  padding: 0.2em;
 }
 
 
