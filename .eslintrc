@@ -25,9 +25,13 @@
     "react": {
       "createClass": "createReactClass",
       "pragma": "React",
-      "version": "16.2.0"
+      "version": "16.4.2"
     },
     "propWrapperFunctions": [ "forbidExtraProps" ]
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb-base"]
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb-base"
+  ]
 }
