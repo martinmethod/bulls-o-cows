@@ -134,13 +134,22 @@ class App extends React.Component {
 
 //--------------------------| State to Props
 
-const mapStateToProps = state => ({
-  win: state.game.win,
-  number: state.game.number,
-  input: state.game.input,
-  guesses: state.game.guesses,
-  scores: state.scores
-});
+const mapStateToProps = (state) => {
+  const {
+    win,
+    number,
+    input,
+    guesses
+  } = state.game;
+
+  return {
+    scores: state.scores,
+    win,
+    number,
+    input,
+    guesses
+  };
+};
 
 
 //--------------------------| Export
