@@ -49,7 +49,7 @@ const {
 //--------------------------| Component
 
 class App extends React.Component {
-  componentWillMount() {
+  componentDidMount() {
     if (!this.props.number) {
       this.props.dispatch(newGame());
     }
