@@ -31,3 +31,10 @@ export const addGuess = guess => ({
   type: 'ADD_GUESS',
   guess
 });
+
+
+//--------------------------| Win game
+
+export const winGame = () => ({
+  type: 'WIN_GAME'
+});

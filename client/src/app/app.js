@@ -20,8 +20,17 @@ import EnterSVG from '../assets/icons/enter.svg';
 // Database
 import systemDatabase from '../database/system.json';
 
+// Helpers
+
+import scoresChecker from './helpers/scores-checker';
+
 // Actions
-import { newGame, addGuess, validateInput } from './actions/game';
+import {
+  newGame,
+  addGuess,
+  validateInput,
+  winGame
+} from './actions/game';
 
 // Atoms
 import Button from './components/atoms/button';
@@ -48,22 +57,41 @@ const {
 
 //--------------------------| Component
 
-class App extends React.Component {
+class App extends React.PureComponent {
   componentDidMount() {
-    if (!this.props.number) {
+    if (!this.props.game.number) {
       this.props.dispatch(newGame());
     }
   }
 
+  getSnapshotBeforeUpdate(prevProps) {
+    const { game, dispatch } = this.props;
+
+    if (
+      prevProps.game.guesses.length !== game.guesses.length &&
+      game.guesses.length > 0 &&
+      game.guesses[game.guesses.length - 1].result.bulls === 4
+    ) {
+      dispatch(winGame());
+    }
+
+    return null;
+  }
+
+  componentDidUpdate() {
+    if (this.props.game.win) {
+      scoresChecker(this.props.game);
+    }
+  }
+
   render() {
+    const { game, scores, dispatch } = this.props;
     const {
-      win,
-      number,
       input,
+      win,
       guesses,
-      scores,
-      dispatch
-    } = this.props;
+      number
+    } = game;
 
     return (
       <div className={styles.root} data-status={win ? 'win' : ''}>
@@ -134,22 +162,7 @@ class App extends React.Component {
 
 //--------------------------| State to Props
 
-const mapStateToProps = (state) => {
-  const {
-    win,
-    number,
-    input,
-    guesses
-  } = state.game;
-
-  return {
-    scores: state.scores,
-    win,
-    number,
-    input,
-    guesses
-  };
-};
+const mapStateToProps = state => state;
 
 
 //--------------------------| Export

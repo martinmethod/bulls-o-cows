@@ -36,7 +36,8 @@ export default (state = gameReducerDefaultState, action) => {
     case 'NEW_GAME':
       return {
         ...initialState,
-        number: numberGenerator()
+        number: numberGenerator(),
+        startedAt: new Date()
       };
 
     case 'UPDATE_INPUT':
@@ -62,7 +63,6 @@ export default (state = gameReducerDefaultState, action) => {
 
       return {
         ...state,
-        win: result.bulls === 4,
         input: {
           value: result.bulls === 4 ? state.input.value : '',
           validateMessage: ''
@@ -74,6 +74,13 @@ export default (state = gameReducerDefaultState, action) => {
             result
           }
         ]
+      };
+
+    case 'WIN_GAME':
+      return {
+        ...state,
+        win: true,
+        endedAt: new Date()
       };
   }
 };

@@ -10,7 +10,10 @@
 //--------------------------| Default state
 
 const localState = JSON.parse(localStorage.getItem('state'));
-const scoresReducerDefaultState = localState && localState.scores ? localState.scores : [];
+const scoresReducerDefaultState = localState && localState.scores ? localState.scores : {
+  byGuesses: [],
+  byTime: []
+};
 
 
 //--------------------------| Export
@@ -20,7 +23,16 @@ export default (state = scoresReducerDefaultState, action) => {
     default:
       return state;
 
-    case '':
-      return state;
+    case 'UPDATE_SCORES_BY_TIME':
+      return {
+        ...state,
+        byTime: action.scores
+      };
+
+    case 'UPDATE_SCORES_BY_GUESSES':
+      return {
+        ...state,
+        byGuesses: action.scores
+      };
   }
 };
