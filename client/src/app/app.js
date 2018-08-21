@@ -56,18 +56,27 @@ class App extends React.Component {
   }
 
   render() {
+    const {
+      win,
+      number,
+      input,
+      guesses,
+      scores,
+      dispatch
+    } = this.props;
+
     return (
-      <div className={styles.root} data-status={this.props.win ? 'win' : ''}>
+      <div className={styles.root} data-status={win ? 'win' : ''}>
         <div className={styles.inner}>
           <Header />
           {
-            this.props.number && (
+            number && (
               <main className={styles.main}>
                 <div className={styles.body}>
                   <div className={styles.new}>
                     <Button
                       onClick={() => {
-                        this.props.dispatch(newGame());
+                        dispatch(newGame());
                       }}
                     >
                       { systemDatabase.labels.buttons.newgame }
@@ -77,18 +86,18 @@ class App extends React.Component {
                   <form className={styles.inputForm}>
                     <Input />
                     {
-                      this.props.input.validateMessage !== '' && <ValidationNote>{this.props.input.validateMessage}</ValidationNote>
+                      input.validateMessage !== '' && <ValidationNote>{input.validateMessage}</ValidationNote>
                     }
                     {
-                      this.props.input.value.length === 4 && !this.props.win && (
+                      input.value.length === 4 && !win && (
                         <picture
                           className={styles.enter}
                           onClick={() => {
-                            if (this.props.guesses.find(g => g.guess === this.props.input.value)) {
-                              this.props.dispatch(validateInput(checked));
+                            if (guesses.find(g => g.guess === input.value)) {
+                              dispatch(validateInput(checked));
                             }
                             else {
-                              this.props.dispatch(addGuess(this.props.input.value));
+                              dispatch(addGuess(input.value));
                             }
                           }}
                         >
@@ -100,7 +109,7 @@ class App extends React.Component {
 
                   <div className={styles.playground}>
                     {
-                      this.props.win &&
+                      win &&
                       <Message
                         className={styles.winLabel}
                       >
@@ -114,7 +123,7 @@ class App extends React.Component {
               </main>
             )
           }
-          { this.props.scores.length !== 0 && <Footer /> }
+          { scores.length !== 0 && <Footer /> }
         </div>
         <Stamp />
       </div>
