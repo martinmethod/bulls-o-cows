@@ -1,6 +1,8 @@
 //====================================================|
-// GUESS CHECKER
+// GUESS HANDLER
 
+
+//--------------------------| Export
 
 export default (number, guess) => {
   let bulls = 0;
@@ -17,5 +19,8 @@ export default (number, guess) => {
     }
   }
 
-  return { bulls, cows };
+  return {
+    guess,
+    result: { bulls, cows }
+  };
 };

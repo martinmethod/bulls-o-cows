@@ -2,10 +2,25 @@
 // ACTIONS: GAME
 
 
+//--------------------------| Import
+
+// Libraries
+import moment from 'moment';
+
+// Store
+import stateStore from '../store/getStore';
+
+// Services
+import numberGenerator from '../services/number-generator';
+import scoresHandler from '../services/scores-handler';
+
+
 //--------------------------| New game
 
 export const newGame = () => ({
-  type: 'NEW_GAME'
+  type: 'NEW_GAME',
+  number: numberGenerator(),
+  startedAt: moment()
 });
 
 
@@ -35,6 +50,14 @@ export const addGuess = guess => ({
 
 //--------------------------| Win game
 
-export const winGame = () => ({
-  type: 'WIN_GAME'
-});
+export const winGame = () => {
+  const endedAt = moment();
+  const { game, scores } = stateStore.getState();
+
+  console.log(scoresHandler({ ...game, endedAt }, scores));
+
+  return {
+    type: 'WIN_GAME',
+    endedAt
+  };
+};

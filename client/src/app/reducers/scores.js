@@ -23,16 +23,11 @@ export default (state = scoresReducerDefaultState, action) => {
     default:
       return state;
 
-    case 'UPDATE_SCORES_BY_TIME':
+    case 'UPDATE_SCORES':
       return {
         ...state,
-        byTime: action.scores
-      };
-
-    case 'UPDATE_SCORES_BY_GUESSES':
-      return {
-        ...state,
-        byGuesses: action.scores
+        byTime: action.scores.byTime,
+        byGuesses: action.scores.byGuesses
       };
   }
 };

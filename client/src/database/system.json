@@ -20,7 +20,8 @@
       "usedDigit": "This digit is already used.",
       "onlyDigits": "Please type only digits!",
       "allDigits": "Please fill all four digits!",
-      "checked": "This number is already checked."
+      "checked": "This number is already checked.",
+      "onlyFourDigits": "The number should contain only 4 digits."
     }
   }
 }

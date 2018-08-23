@@ -20,16 +20,18 @@ import Hyperlink from '../../atoms/hyperlink';
 
 //--------------------------| Component
 
-const Footer = props => (
+const Footer = ({ scores }) => (
   <footer className={styles.root}>
-    {props.scores.list && <Hyperlink>{systemDatabase.labels.links.shots}</Hyperlink>}
+    {scores.list && <Hyperlink>{systemDatabase.labels.links.shots}</Hyperlink>}
   </footer>
 );
 
 
 //--------------------------| State to Props
 
-const mapStateToProps = state => state;
+const mapStateToProps = state => ({
+  scores: state.scores
+});
 
 
 //--------------------------| Export

@@ -2,17 +2,15 @@
 // ACTIONS: SCORES
 
 
-//--------------------------| Update scores by time
+//--------------------------| Update scores
 
-export const updateScoresByTime = scores => ({
-  type: 'UPDATE_SCORES_BY_TIME',
+export const updateScores = scores => ({
+  type: 'UPDATE_SCORES',
   scores
 });
 
 
-//--------------------------| Update scores by guesses
-
-export const updateScoresByGuesses = scores => ({
-  type: 'UPDATE_SCORES_BY_GUESSES',
+export const setScores = scores => ({
+  type: 'SET_SCORES',
   scores
 });
