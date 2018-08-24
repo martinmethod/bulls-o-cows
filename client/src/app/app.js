@@ -28,12 +28,12 @@ import Footer from './components/organisms/footer';
 
 //--------------------------| Component
 
-const App = ({ gameState, scoresLength }) => (
+const App = ({ gameState, scores }) => (
   <div className={styles.root} data-status={gameState === 'win' ? 'win' : ''}>
     <div className={styles.inner}>
       <Header />
       { gameState && <Main /> }
-      { scoresLength !== 0 && <Footer /> }
+      { (scores.byTime.length !== 0 || scores.byGuesses.length !== 0) && <Footer /> }
     </div>
     <Stamp />
   </div>
@@ -44,7 +44,7 @@ const App = ({ gameState, scoresLength }) => (
 
 const mapStateToProps = state => ({
   gameState: state.game.state,
-  scoresLength: state.scores.length
+  scores: state.scores
 });
 
 
