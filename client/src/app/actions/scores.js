@@ -7,11 +7,6 @@
 import scoresHandler from '../services/scores-handler';
 
 
-//--------------------------| Definitions
-
-const durationMeasure = 'seconds';
-
-
 //--------------------------| Update scores
 
 export default ({ guesses, startedAt, endedAt }, scores) => ({
@@ -22,8 +17,7 @@ export default ({ guesses, startedAt, endedAt }, scores) => ({
       date: endedAt
     }),
     byTime: scoresHandler(scores.byTime, {
-      //moment.duration(byTime.result, durationMeasure).humanize(),
-      result: endedAt.diff(startedAt, durationMeasure),
+      result: endedAt.diff(startedAt, 'seconds'),
       date: endedAt
     })
   }

@@ -6,34 +6,23 @@
 
 // Libraries
 import React from 'react';
-import { connect } from 'react-redux';
 
 // Styles
 import styles from './footer.scss';
 
-// Database
-import systemDatabase from '../../../../database/system.json';
-
 // Atoms
-import Hyperlink from '../../atoms/hyperlink';
+import Scores from '../scores';
 
 
 //--------------------------| Component
 
-const Footer = ({ scores }) => (
+const Footer = () => (
   <footer className={styles.root}>
-    {scores.list && <Hyperlink>{systemDatabase.labels.links.shots}</Hyperlink>}
+    <Scores />
   </footer>
 );
 
 
-//--------------------------| State to Props
-
-const mapStateToProps = state => ({
-  scores: state.scores
-});
-
-
 //--------------------------| Export
 
-export default connect(mapStateToProps)(Footer);
+export default Footer;

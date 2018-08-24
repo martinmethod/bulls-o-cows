@@ -25,6 +25,7 @@ $min-height: $min-width / $ratio;
   min-width: $min-width;
   height: $height;
   margin: 0 auto;
+  overflow: hidden;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
   cursor: default;

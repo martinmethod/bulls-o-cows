@@ -1,0 +1,38 @@
+//====================================================|
+// SCORES
+
+
+//--------------------------| Root
+
+.root {
+  //
+}
+
+
+//--------------------------| Results
+
+.results {
+  @include transition(transform map-get($roles-transitions, 'popovers') ease-in-out);
+  @include translateY(-100%);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  overflow: hidden;
+  background: map-get($roles-col-backgrounds, 'app');
+
+  &.opened {
+    @include translateY(0);
+  }
+
+  a {
+    @include translateX(-50%);
+
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+  }
+}

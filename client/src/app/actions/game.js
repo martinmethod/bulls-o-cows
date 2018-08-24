@@ -55,7 +55,6 @@ export const addGuess = guess => ({
 export const winGame = () => {
   const endedAt = moment();
   const { game, scores } = stateStore.getState();
-  console.log('winGame', game, scores);
 
   stateStore.dispatch(updateScores({ ...game, endedAt }, scores));
 
