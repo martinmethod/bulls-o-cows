@@ -12,7 +12,9 @@ import stateStore from '../store/getStore';
 
 // Services
 import numberGenerator from '../services/number-generator';
-import scoresHandler from '../services/scores-handler';
+
+// Actions
+import updateScores from './scores';
 
 
 //--------------------------| New game
@@ -53,8 +55,9 @@ export const addGuess = guess => ({
 export const winGame = () => {
   const endedAt = moment();
   const { game, scores } = stateStore.getState();
+  console.log('winGame', game, scores);
 
-  console.log(scoresHandler({ ...game, endedAt }, scores));
+  stateStore.dispatch(updateScores({ ...game, endedAt }, scores));
 
   return {
     type: 'WIN_GAME',

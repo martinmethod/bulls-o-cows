@@ -33,7 +33,7 @@ const App = ({ gameState, scores }) => (
     <div className={styles.inner}>
       <Header />
       { gameState && <Main /> }
-      { (scores.byTime.length !== 0 || scores.byGuesses.length !== 0) && <Footer /> }
+      { (scores.byTime || scores.byGuesses) && <Footer /> }
     </div>
     <Stamp />
   </div>
