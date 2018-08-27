@@ -8,14 +8,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
+import humanizeDuration from 'humanize-duration';
 
 // Styles
 import styles from './scores.scss';
 
+// Icons
+import ScoreSVG from '../../../../assets/icons/score.svg';
+
 // Database
-import systemDatabase from '../../../../database/system.json';
+import { labels } from '../../../../database/system.json';
 
 // Atoms
+import Score from '../../atoms/score';
 import Hyperlink from '../../atoms/hyperlink';
 
 
@@ -39,17 +44,34 @@ class Scores extends React.PureComponent {
     return (
       <div className={styles.root}>
         <Hyperlink handleClick={this.handleClick}>
-          {systemDatabase.labels.links.shots}
+          {labels.links.shots}
         </Hyperlink>
         <div className={`${styles.results} ${toggleClass}`}>
-          {
-           <p>Best time: {moment.duration(scores.byTime.result, 'seconds').humanize()}</p>
-          }
-          {
-            <p>Best guesses: {scores.byGuesses.result}</p>
-          }
+          <picture className={styles.icon}>
+            <ScoreSVG />
+          </picture>
+
+          <div>
+            {
+              <Score
+                className={styles.score}
+                label={labels.scores.guesses}
+                value={`Just ${scores.byGuesses.result} ${scores.byGuesses.result > 1 ? 'guesses' : 'guess'}`}
+                date={moment(scores.byGuesses.date).calendar()}
+              />
+            }
+            {
+              <Score
+                className={styles.score}
+                label={labels.scores.time}
+                value={humanizeDuration(moment.duration(scores.byTime.result, 'milliseconds'), { round: true })}
+                date={moment(scores.byTime.date).calendar()}
+              />
+            }
+          </div>
+
           <Hyperlink handleClick={this.handleClick}>
-            {systemDatabase.labels.buttons.close}
+            {labels.buttons.back}
           </Hyperlink>
         </div>
       </div>

@@ -57,7 +57,7 @@ const Guesses = ({
                       key={i}
                       num={(`0${(i + 1)}`).slice(-2)}
                       number={guess}
-                      className={styles.guessLine}
+                      className={styles.guessLine}p
                       result={{
                         bulls: result.bulls,
                         cows: result.cows

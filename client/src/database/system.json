@@ -2,14 +2,18 @@
   "labels": {
     "buttons": {
       "newgame": "New game",
-      "close": "Close"
+      "back": "Back to the game"
     },
     "links": {
-      "shots": "Your best shots"
+      "shots": "Your best scores"
     },
     "messages": {
       "noGuesses": "No guesses yet",
       "win": "Nailed it"
+    },
+    "scores": {
+      "guesses": "Best guess record",
+      "time": "Best time record"
     },
     "guesses": {
       "try": "try",

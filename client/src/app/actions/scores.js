@@ -17,7 +17,7 @@ export default ({ guesses, startedAt, endedAt }, scores) => ({
       date: endedAt
     }),
     byTime: scoresHandler(scores.byTime, {
-      result: endedAt.diff(startedAt, 'seconds'),
+      result: endedAt.diff(startedAt, 'milliseconds'),
       date: endedAt
     })
   }

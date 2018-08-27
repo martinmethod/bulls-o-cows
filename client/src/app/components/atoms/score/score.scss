@@ -1,0 +1,38 @@
+//====================================================|
+// SCORE
+
+
+//--------------------------| Root
+
+.root {
+  //
+}
+
+
+//--------------------------| Label
+
+.label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  color: map-get($roles-col-texts, 'sys');
+
+  &::after {
+    content: ':';
+  }
+}
+
+
+//--------------------------| Value
+
+.value {
+  font-size: 2em;
+  font-weight: map-get($roles-typo-font-weights, 'score');
+}
+
+
+//--------------------------| Date
+
+.date {
+  display: block;
+}
