@@ -15,7 +15,10 @@ import './styles/scaffoldings/base.scss';
 import './styles/scaffoldings/typography.scss';
 
 // Store
-import configureStore from './app/store/configureStore';
+import stateStore from './app/store/getStore';
+
+// Actions
+import { newGame } from './app/actions/game';
 
 // Images
 import './assets/images/logo.png';
@@ -36,11 +39,16 @@ document.body.appendChild(root);
 
 //--------------------------| State store
 
-const stateStore = configureStore();
-
 stateStore.subscribe(() => {
   localStorage.setItem('state', JSON.stringify(stateStore.getState()));
 });
+
+
+//--------------------------| Start a game (if no such)
+
+if (!stateStore.getState().game.state) {
+  stateStore.dispatch(newGame());
+}
 
 
 //--------------------------| Render

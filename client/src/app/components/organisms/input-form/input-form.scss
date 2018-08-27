@@ -1,0 +1,38 @@
+//====================================================|
+// INPUT FORM
+
+
+//--------------------------| Root
+
+.root {
+  @include margin-v(get-em-unit(map-get($roles-offsets, 'modules'), 'rem'));
+
+  position: relative;
+  width: 100%;
+}
+
+
+//--------------------------| Enter
+
+.enter {
+  @include translate(20%, -50%);
+
+  position: absolute;
+  top: 50%;
+  width: 2.2em;
+  cursor: pointer;
+
+  svg {
+    fill: map-get($reg-colors, 'green');
+  }
+
+  @media (hover: hover) {
+    &:hover svg {
+      fill: light(map-get($reg-colors, 'green'), 10%);
+    }
+  }
+
+  &:active svg {
+    fill: light(map-get($reg-colors, 'green'), 20%);
+  }
+}

@@ -4,5 +4,6 @@
 
 $roles-transitions: (
   'buttons':    map-get($reg-transitions, '100ms'),
-  'hyperlinks': map-get($reg-transitions, '100ms')
+  'hyperlinks': map-get($reg-transitions, '100ms'),
+  'popovers': map-get($reg-transitions, '200ms')
 );

@@ -2,16 +2,10 @@
 // REDUCERS: GAME
 
 
-//--------------------------| Import
-
-import numberGenerator from '../helpers/number-generator';
-import guessChecker from '../helpers/guess-checker';
-
-
 //--------------------------| Default state
 
 const initialState = {
-  win: null,
+  state: null,
   number: null,
   input: {
     value: '',
@@ -27,8 +21,6 @@ const gameReducerDefaultState = localState && localState.game ? localState.game 
 //--------------------------| Export
 
 export default (state = gameReducerDefaultState, action) => {
-  let result = null;
-
   switch (action.type) {
     default:
       return state;
@@ -36,7 +28,9 @@ export default (state = gameReducerDefaultState, action) => {
     case 'NEW_GAME':
       return {
         ...initialState,
-        number: numberGenerator()
+        number: action.number,
+        state: 'play',
+        startedAt: action.startedAt
       };
 
     case 'UPDATE_INPUT':
@@ -58,22 +52,23 @@ export default (state = gameReducerDefaultState, action) => {
       };
 
     case 'ADD_GUESS':
-      result = guessChecker(state.number, action.guess);
-
       return {
         ...state,
-        win: result.bulls === 4,
         input: {
-          value: result.bulls === 4 ? state.input.value : '',
+          value: action.guess.result.bulls === 4 ? state.input.value : '',
           validateMessage: ''
         },
         guesses: [
           ...state.guesses,
-          {
-            guess: action.guess,
-            result
-          }
+          action.guess
         ]
+      };
+
+    case 'WIN_GAME':
+      return {
+        ...state,
+        state: 'win',
+        endedAt: action.endedAt
       };
   }
 };

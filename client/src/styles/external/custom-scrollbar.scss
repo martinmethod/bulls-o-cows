@@ -4,11 +4,11 @@
 
 :global {
 
-  .custom-scroll {
+  .rcs-custom-scroll {
 
     //--------------------------| Handle
 
-    .custom-scroll-handle {
+    .rcs-custom-scroll-handle {
       pointer-events: all;
       cursor: pointer;
     }
@@ -16,7 +16,7 @@
 
     //--------------------------| Bar
 
-    .inner-handle {
+    .rcs-inner-handle {
       @include transition(background-color .15s linear);
 
       background-color: rgba(map-get($reg-colors, 'black'), .3);
@@ -27,6 +27,6 @@
       }
     }
 
-  } // .custom-scroll
+  } // .rcs-custom-scroll
 
 } // :global

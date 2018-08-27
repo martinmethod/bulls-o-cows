@@ -14,73 +14,71 @@ import styles from './input.scss';
 // Database
 import systemDatabase from '../../../../database/system.json';
 
+// Services
+import inputValidator from '../../../services/input-validator';
+
 // Actions
-import { validateInput, updateInput, addGuess } from '../../../actions/game';
+import { validateInput, updateInput } from '../../../actions/game';
 
 
 //--------------------------| Definitions
 
-const {
-  noZeroFirst,
-  usedDigit,
-  onlyDigits,
-  allDigits,
-  checked
-} = systemDatabase.labels.validation;
+const { onlyDigits, allDigits } = systemDatabase.labels.validation;
 
 
 //--------------------------| Component
 
-class Input extends React.Component {
-  onValueChange = (e) => {
+class Input extends React.PureComponent {
+  handleKeyPress = (e) => {
+    const { submitGuess, inputValue, dispatch } = this.props;
+
+    if ('1234567890'.indexOf(e.key) === -1) { // if not a digit
+      if (inputValue.length < 4) {
+        dispatch(validateInput(onlyDigits));
+      }
+      e.preventDefault();
+    }
+
+    if (e.key === 'Enter') {
+      if (inputValue.length < 4) {
+        dispatch(validateInput(allDigits));
+      }
+      else {
+        submitGuess();
+      }
+    }
+  };
+
+  handleChange = (e) => {
+    const { inputValue, dispatch } = this.props;
     const { value } = e.target;
-    const firstChar = value.charAt(0);
-    const currentChar = value.charAt(value.length - 1);
-    const prevNum = this.props.inputValue.split('');
-    const forbiddenSymbols = ['e', '.'].concat(prevNum);
+    const prevNum = inputValue.split('');
 
     // remove forbidden symbol on deletion
     if (value.length < prevNum.length) {
-      for (let i = 0; i < value.length; i += 1) {
-        const index = prevNum.indexOf(value[i]);
-        if (index > -1) {
-          prevNum.splice(index, 1);
-        }
-      }
-
-      const prevNumIndex = forbiddenSymbols.indexOf(prevNum[0]);
-      if (prevNumIndex > -1) {
-        forbiddenSymbols.splice(prevNumIndex, 1);
-      }
-      const currentCharIndex = forbiddenSymbols.indexOf(currentChar);
-      if (currentCharIndex > -1) {
-        forbiddenSymbols.splice(currentCharIndex, 1);
-      }
+      this.removeUsedSymbol(value, prevNum);
     }
 
-    // less than or equal to 4 digits
-    if (value.length <= 4) {
-      // current character is not digit
-      if (!currentChar.match(/^\d*$/)) {
-        this.props.dispatch(validateInput(onlyDigits));
-      }
+    // validate
+    const { error: validationError } = inputValidator(value, prevNum);
+    dispatch(validateInput(validationError || ''));
 
-      // first digit is 0
-      else if (firstChar.match('0')) {
-        this.props.dispatch(validateInput(noZeroFirst));
-      }
-
-      // current digit is already used
-      else if (prevNum.indexOf(currentChar) !== -1) {
-        this.props.dispatch(validateInput(usedDigit));
-      }
-
-      // all good
-      else {
-        this.props.dispatch(validateInput(''));
-        this.props.dispatch(updateInput(value));
-      }
+    // update the input (if no validation errors)
+    if (!validationError) {
+      dispatch(updateInput(value));
     }
+  };
+
+  handleBlur = () => {
+    const { inputValue, submitGuess } = this.props;
+
+    if (inputValue.length === 4) {
+      submitGuess();
+    }
+  };
+
+  disableScrolling = (e) => {
+    e.preventDefault();
   };
 
   setInputRef = (node) => {
@@ -91,14 +89,26 @@ class Input extends React.Component {
     this.inputRef.focus();
   };
 
-  printGuess() {
-    if (this.props.guesses.find(g => g.guess === this.props.inputValue)) {
-      this.props.dispatch(validateInput(checked));
+  removeUsedSymbol = (value, prevNum) => {
+    const forbiddenSymbols = ['e', '.'].concat(prevNum);
+    const currentChar = value.charAt(value.length - 1);
+
+    for (let i = 0; i < value.length; i += 1) {
+      const index = prevNum.indexOf(value[i]);
+      if (index > -1) {
+        prevNum.splice(index, 1);
+      }
     }
-    else {
-      this.props.dispatch(addGuess(this.props.inputValue));
+
+    const prevNumIndex = forbiddenSymbols.indexOf(prevNum[0]);
+    if (prevNumIndex > -1) {
+      forbiddenSymbols.splice(prevNumIndex, 1);
     }
-  }
+    const currentCharIndex = forbiddenSymbols.indexOf(currentChar);
+    if (currentCharIndex > -1) {
+      forbiddenSymbols.splice(currentCharIndex, 1);
+    }
+  };
 
   componentDidMount() {
     this.focusInput();
@@ -109,40 +119,22 @@ class Input extends React.Component {
   }
 
   render() {
+    const { inputValue, gameState } = this.props;
+
     return (
       <input
-        ref={this.setInputRef}
         autoFocus
+        className={styles.root}
         type='number'
-        disabled={this.props.win}
         pattern='[0-9]*'
         placeholder='••••'
-        value={this.props.inputValue}
-        className={styles.root}
-        onChange={this.onValueChange}
-        onWheel={(e) => {
-          e.preventDefault();
-        }}
-        onBlur={() => {
-          if (this.props.inputValue.length === 4) {
-            this.printGuess();
-          }
-        }}
-        onKeyPress={(e) => { // Fix for Safari that prevents writing non-digit characters
-          if ('1234567890'.indexOf(e.key) === -1) {
-            if (this.props.inputValue.length < 4) {
-              this.props.dispatch(validateInput(onlyDigits));
-
-              if (e.key === 'Enter') {
-                this.props.dispatch(validateInput(allDigits));
-              }
-            }
-            else if (e.key === 'Enter') {
-              this.printGuess();
-            }
-            e.preventDefault();
-          }
-        }}
+        value={inputValue}
+        disabled={gameState === 'win'}
+        ref={this.setInputRef}
+        onKeyPress={this.handleKeyPress} // Safari fix that prevents writing non-digit characters
+        onChange={this.handleChange}
+        onBlur={this.handleBlur}
+        onWheel={this.disableScrolling} // Disable mouse scrolling
       />
     );
   }
@@ -152,9 +144,7 @@ class Input extends React.Component {
 //--------------------------| State to Props
 
 const mapStateToProps = state => ({
-  win: state.game.win,
-  number: state.game.number,
-  guesses: state.game.guesses,
+  gameState: state.game.state,
   inputValue: state.game.input.value
 });
 

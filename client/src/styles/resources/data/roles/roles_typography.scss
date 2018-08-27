@@ -53,5 +53,6 @@ $roles-typo-font-weights: (
   'guess':       map-get($reg-font-weights, 'bold'),
   'null-point':  map-get($reg-font-weights, 'normal'),
   'score-point': map-get($reg-font-weights, 'bold'),
-  'validation':  map-get($reg-font-weights, 'bold')
+  'validation':  map-get($reg-font-weights, 'bold'),
+  'score':       map-get($reg-font-weights, 'bold')
 );

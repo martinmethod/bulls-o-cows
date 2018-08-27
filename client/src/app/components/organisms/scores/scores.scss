@@ -1,0 +1,69 @@
+//====================================================|
+// SCORES
+
+
+//--------------------------| Root
+
+.root {
+  //
+}
+
+
+//--------------------------| Results
+
+.results {
+  @include transition(transform map-get($roles-transitions, 'popovers') ease-in-out);
+  @include translateY(-100%);
+  @include display-flex();
+  @include flex-direction(column);
+  @include justify-content(center);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  background: map-get($roles-col-backgrounds, 'app');
+
+  &.opened {
+    @include translateY(0);
+  }
+
+  a {
+    @include translateX(-50%);
+
+    position: absolute;
+    bottom: 0.5em;
+    left: 50%;
+  }
+}
+
+
+//--------------------------| Score
+
+.score {
+  + .score {
+    margin-top: 3em;
+  }
+}
+
+
+//--------------------------| Icon
+
+.icon {
+  @include translateX(-50%);
+
+  position: absolute;
+  top: -1em;
+  left: 50%;
+  height: auto;
+
+  @media screen and (orientation: portrait) {
+    width: 50%;
+  }
+
+  @media screen and (orientation: landscape) {
+    width: 20vh;
+  }
+}

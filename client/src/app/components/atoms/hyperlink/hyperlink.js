@@ -13,8 +13,11 @@ import styles from './hyperlink.scss';
 
 //--------------------------| Component
 
-const Hyperlink = ({ children }) => (
-  <a className={styles.root}>
+const Hyperlink = ({ children, handleClick }) => (
+  <a
+    className={styles.root}
+    onClick={handleClick}
+  >
     {children}
   </a>
 );
