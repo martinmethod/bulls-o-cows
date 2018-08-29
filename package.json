@@ -49,6 +49,7 @@
     "babel-eslint": "^9.0.0",
     "babel-loader": "^8.0.0",
     "babel-plugin-inline-react-svg": "^0.5.4",
+    "browserslist": "^4.1.0",
     "chalk": "^2.4.0",
     "clean-webpack-plugin": "^0.1.19",
     "compass-mixins": "^0.12.10",
