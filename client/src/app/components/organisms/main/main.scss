@@ -37,6 +37,14 @@
 }
 
 
+//--------------------------| Input form
+
+.input-form {
+  width: 100%;
+  margin-top: get-em-unit(map-get($roles-offsets, 'modules'), 'rem');
+}
+
+
 //--------------------------| Win label
 
 .win-label {

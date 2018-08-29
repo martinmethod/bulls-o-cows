@@ -58,10 +58,10 @@ class InputForm extends React.PureComponent {
   };
 
   render() {
-    const { input, gameState } = this.props;
+    const { input, gameState, className } = this.props;
 
     return (
-      <form className={styles.root}>
+      <form className={`${styles.root} ${className}`}>
         <Input submitGuess={this.submitGuess} />
         {
           input.validateMessage !== '' && <ValidationNote>{input.validateMessage}</ValidationNote>

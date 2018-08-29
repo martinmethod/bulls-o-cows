@@ -5,10 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include margin-v(get-em-unit(map-get($roles-offsets, 'modules'), 'rem'));
-
   position: relative;
-  width: 100%;
+  margin-bottom: get-em-unit(map-get($roles-offsets, 'modules'), 'rem');
 }
 
 

@@ -41,7 +41,7 @@ const Main = ({ gameState, dispatch }) => (
         </Button>
       </div>
 
-      <InputForm />
+      <InputForm className={styles.inputForm} />
 
       <div className={styles.playground}>
         {
