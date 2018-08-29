@@ -21,8 +21,8 @@ const Score = ({
 }) => (
   <div className={`${styles.root} ${className}`}>
     <label className={styles.label}>{label}</label>
-    <span className={styles.date}>{date}</span>
     <span className={styles.value}>{value}</span>
+    <span className={styles.date}>{date}</span>
   </div>
 );
 

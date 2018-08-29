@@ -6,7 +6,8 @@
 
 $reg-borders: (
   'transparent': 1px solid transparent,
-  'white':       1px solid map-get($reg-colors, 'white')
+  'white':       1px solid map-get($reg-colors, 'white'),
+  'separator':   1px solid rgba(map-get($reg-colors, 'dusty-gray'), 0.3)
 );
 
 

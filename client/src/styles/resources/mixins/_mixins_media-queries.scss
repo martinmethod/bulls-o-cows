@@ -40,7 +40,7 @@ $prop-height: 100 * ($prop-width / $ratio) / 90;
 //--------------------------| Landscape screen with big width (> 576px) and small height (< 480px)
 
 @mixin mq-screens-big-landscape() {
-  @media screen and (orientation: landscape) and (min-width: $screen-max-width) and (max-height: $screen-min-height) {
+  @media screen and (orientation: landscape) and (min-width: $screen-min-height) and (max-height: $screen-min-height) {
     @content;
   }
 }

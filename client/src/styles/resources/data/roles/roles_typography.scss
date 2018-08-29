@@ -9,7 +9,7 @@ $roles-typo-font-families: (
   'text':    unquote(map-get($reg-font-families, 'boc-sans')),
   'digits':  unquote(map-get($reg-font-families, 'boc-mono')),
   'sys':     unquote(map-get($reg-font-families, 'boc-sys')),
-  'message': unquote(map-get($reg-font-families, 'boc-bull'))
+  'message': unquote(map-get($reg-font-families, 'boc-sans'))
 );
 
 
@@ -24,15 +24,15 @@ $roles-typo-font-sizes-base: (
 //--------------------------| Font sizes hierarchy
 
 $roles-typo-font-sizes: (
-  'title':       map-get($reg-typo-font-sizes, '38'), // 92
-  'sys':         map-get($reg-typo-font-sizes, '10'), // 24
-  'input':       map-get($reg-typo-font-sizes, '25'), // 60
-  'button':      map-get($reg-typo-font-sizes, '17'), // 42
-  'num':         map-get($reg-typo-font-sizes, '13'), // 32
-  'guess':       map-get($reg-typo-font-sizes, '17'), // 42
-  'result':      map-get($reg-typo-font-sizes, '17'), // 42
-  'hyperlink':   map-get($reg-typo-font-sizes, '13'), // 32
-  'message':     map-get($reg-typo-font-sizes, '17')  // 72
+  'title':       map-get($reg-typo-font-sizes, '38'),
+  'sys':         map-get($reg-typo-font-sizes, '10'),
+  'input':       map-get($reg-typo-font-sizes, '25'),
+  'button':      map-get($reg-typo-font-sizes, '17'),
+  'num':         map-get($reg-typo-font-sizes, '13'),
+  'guess':       map-get($reg-typo-font-sizes, '17'),
+  'result':      map-get($reg-typo-font-sizes, '17'),
+  'hyperlink':   map-get($reg-typo-font-sizes, '13'),
+  'message':     map-get($reg-typo-font-sizes, '13')
 );
 
 
@@ -46,13 +46,14 @@ $roles-typo-line-heights: (
 //--------------------------| Font weights
 
 $roles-typo-font-weights: (
-  'title':       map-get($reg-font-weights, 'normal'),
-  'text':        map-get($reg-font-weights, 'normal'),
-  'sys':         map-get($reg-font-weights, 'normal'),
+  'title':       map-get($reg-font-weights, 'regular'),
+  'text':        map-get($reg-font-weights, 'regular'),
+  'sys':         map-get($reg-font-weights, 'regular'),
   'input':       map-get($reg-font-weights, 'bold'),
   'guess':       map-get($reg-font-weights, 'bold'),
-  'null-point':  map-get($reg-font-weights, 'normal'),
+  'null-point':  map-get($reg-font-weights, 'regular'),
   'score-point': map-get($reg-font-weights, 'bold'),
   'validation':  map-get($reg-font-weights, 'bold'),
-  'score':       map-get($reg-font-weights, 'bold')
+  'score':       map-get($reg-font-weights, 'bold'),
+  'message':     map-get($reg-font-weights, 'regular')
 );

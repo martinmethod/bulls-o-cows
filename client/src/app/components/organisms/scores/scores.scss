@@ -23,6 +23,7 @@
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: 2;
   overflow: hidden;
   background: map-get($roles-col-backgrounds, 'app');
 
@@ -43,8 +44,15 @@
 //--------------------------| Score
 
 .score {
+  width: 75%;
+  margin: 0 auto;
+
   + .score {
-    margin-top: 3em;
+    $offset: 1.5em;
+
+    padding-top: $offset;
+    margin-top: $offset;
+    border-top: map-get($reg-borders, 'separator');
   }
 }
 

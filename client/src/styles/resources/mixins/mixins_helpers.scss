@@ -66,3 +66,17 @@
     }
   }
 }
+
+
+//--------------------------| White line
+
+@mixin white-line() {
+  @include border-radius(map-get($reg-border-radiuses, 'tiny'));
+  @include box-shadow(map-get($roles-shadows, 'white-line'));
+  @include display-flex();
+  @include justify-content(center);
+  @include align-items(center);
+  @include padding-h(get-em-unit(map-get($roles-offsets, 'guess-line')));
+
+  min-height: 3rem;
+}
