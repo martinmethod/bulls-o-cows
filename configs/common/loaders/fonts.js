@@ -1,5 +1,5 @@
 //====================================================|
-// WEBPACK DEV LOADERS: IMAGES
+// WEBPACK DEV LOADERS: FONTS
 
 
 //--------------------------| Export
