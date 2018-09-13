@@ -9,15 +9,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-// Styles
-import './styles/scaffoldings/base.scss';
-import './styles/scaffoldings/typography.scss';
-
 // Store
 import stateStore from './app/store/getStore';
 
 // Actions
 import { newGame } from './app/actions/game';
+
+// Styles
+import './styles/scaffoldings/base.scss';
+import './styles/scaffoldings/typography.scss';
 
 // Images
 import './assets/images/logo.png';
