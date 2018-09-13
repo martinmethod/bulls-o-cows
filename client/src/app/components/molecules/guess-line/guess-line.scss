@@ -5,11 +5,11 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include justify-content(space-between);
-  @include align-items(center);
   @include white-line();
 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: map-get($roles-col-backgrounds, 'guess-line');
 
   &[data-current] {
@@ -21,8 +21,7 @@
 //--------------------------| Num
 
 .num {
-  @include flex(1);
-
+  flex: 1;
   text-align: left;
 }
 
@@ -30,8 +29,7 @@
 //--------------------------| Guess
 
 .guess {
-  @include flex(1);
-
+  flex: 1;
   text-align: left;
 
   .root[data-current] & {
@@ -43,7 +41,6 @@
 //--------------------------| Result
 
 .result {
-  @include flex(2);
-
+  flex: 2;
   text-align: right;
 }

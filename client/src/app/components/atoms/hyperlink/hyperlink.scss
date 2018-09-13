@@ -5,10 +5,9 @@
 //--------------------------| Root
 
 .root {
-  @include transition(all map-get($roles-transitions, 'hyperlinks') ease-in-out);
-
   color: map-get($roles-col-links, 'link');
   cursor: pointer;
+  transition: all map-get($roles-transitions, 'hyperlinks') ease-in-out;
 
   @media (hover: hover) {
     &:hover {

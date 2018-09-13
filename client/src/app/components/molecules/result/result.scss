@@ -5,8 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include justify-content(flex-end);
+  display: flex;
+  justify-content: flex-end;
 }
 
 

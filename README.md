@@ -10,11 +10,11 @@ A personal version of the well-known game "Bulls and Cows".
 
 *Technologies:* **ES6**, **HTML5**, **CSS3**
 
-*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org)**, **[Compass](http://compass-style.org)**
-
-*Preprocessors:* **[Sass](http://sass-lang.com)**, **[Babel](http://babeljs.io)**
+*Libraries:* **[React](https://reactjs.org)**, **[Redux](https://redux.js.org)**, **[Moment.js](http://momentjs.com)**
 
 *Linters:* **[ESLint](https://eslint.org)**, **[stylelint](https://stylelint.io)**
+
+*Compilers:* **[Babel](http://babeljs.io)**, **[PostCSS](https://postcss.org)**, **[Sass](http://sass-lang.com)**
 
 *Bundler:* **[Webpack](http://webpack.js.org)**
 

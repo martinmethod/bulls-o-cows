@@ -10,7 +10,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
 // Styles
-import 'normalize.css/normalize.css';
 import './styles/scaffoldings/base.scss';
 import './styles/scaffoldings/typography.scss';
 

@@ -13,12 +13,11 @@
 //--------------------------| Enter
 
 .enter {
-  @include translate(20%, -50%);
-
   position: absolute;
   top: 50%;
   width: 2.2em;
   cursor: pointer;
+  transform: translate(20%, -50%);
 
   svg {
     fill: map-get($reg-colors, 'green');

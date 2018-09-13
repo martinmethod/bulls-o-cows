@@ -12,10 +12,18 @@
 //    we force a non-overlapping, non-auto-hiding scrollbar to counteract.
 // 6. Change the default tap highlight to be completely transparent in iOS.
 
+
+//--------------------------| Normalize
+
+@import 'normalize.css';
+
+
+//--------------------------| Box model
+
 *,
 *::before,
 *::after {
-  @include box-sizing(border-box); // 1
+  box-sizing: border-box; // 1
 }
 
 
@@ -43,12 +51,17 @@ html {
 }
 
 body {
-  @include display-flex();
-  @include flex-direction(column);
-  @include justify-content(center);
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: map-get($roles-col-backgrounds, 'ground');
   -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);
+}
+
+:global {
+  #root {
+    text-align: center;
+  }
 }
 
 
@@ -56,10 +69,8 @@ body {
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  @include appearance(none);
-
   margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  appearance: none; /* display: none; <- Crashes Chrome on hover */
 }
 
 

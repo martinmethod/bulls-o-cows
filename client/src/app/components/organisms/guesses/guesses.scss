@@ -5,9 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include flex-direction(column);
-
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
 }
@@ -16,9 +15,8 @@
 //--------------------------| Head
 
 .head {
-  @include display-flex();
-  @include justify-content(space-between);
-
+  display: flex;
+  justify-content: space-between;
   padding: get-em-unit(map-get($roles-offsets, 'guesses'));
   font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
   color: map-get($roles-col-texts, 'sys');
@@ -44,7 +42,7 @@
 
   &:nth-child(1),
   &:nth-child(2) {
-    @include flex(1);
+    flex: 1;
   }
 
   &:nth-child(2) {
@@ -52,7 +50,7 @@
   }
 
   &:nth-child(3) {
-    @include flex(2);
+    flex: 2;
   }
 }
 
@@ -60,8 +58,7 @@
 //--------------------------| Wrapper
 
 .wrapper {
-  @include flex(1);
-
+  flex: 1;
   padding: 0.2em;
 }
 
@@ -69,10 +66,9 @@
 //--------------------------| List
 
 .list {
-  @include display-flex();
-  @include flex-direction(column-reverse);
-  @include justify-content(flex-end);
-
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
   margin-bottom: 0.2em;
 }
 

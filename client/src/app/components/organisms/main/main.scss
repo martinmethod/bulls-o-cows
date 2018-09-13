@@ -5,9 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include flex(1);
-
+  display: flex;
+  flex: 1;
   margin-top: 3em;
 }
 
@@ -15,11 +14,10 @@
 //--------------------------| Body
 
 .body {
-  @include display-flex();
-  @include flex-direction(column);
-  @include align-items(center);
-
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   overflow: hidden;
 }
@@ -28,11 +26,11 @@
 //--------------------------| Playground
 
 .playground {
-  @include display-flex();
-  @include flex-direction(column);
-  @include flex(1);
   @include padding-h(get-em-unit(map-get($roles-offsets, 'main')));
 
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -67,20 +65,18 @@
   }
 
   .body {
-    @include flex-wrap(wrap);
-    @include flex-direction(row);
-    @include align-items(flex-start);
-
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
     height: 100%;
     padding: 0;
   }
 
   .new {
-    @include translateX(-50%);
-
     position: absolute;
     top: 0;
     left: 50%;
+    transform: translateX(-50%);
   }
 
   .input-form {
@@ -100,12 +96,11 @@
   }
 
   .win-label {
-    @include flex(none);
-    @include translate(-50%, -50%);
-
     position: absolute;
     top: 14em;
     left: 25%;
+    flex: none;
     width: 40%;
+    transform: translate(-50%, -50%);
   }
 }

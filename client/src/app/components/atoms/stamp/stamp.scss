@@ -13,14 +13,13 @@ $ratio-h: map-get($reg-proportions-app, 'h');
 //--------------------------| Root
 
 .root {
-  @include translate(-50%, -50%);
-
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 0;
   width: 50vh;
   min-width: $min-width-value;
+  transform: translate(-50%, -50%);
 
   svg {
     display: block;
@@ -47,8 +46,7 @@ $ratio-h: map-get($reg-proportions-app, 'h');
 
 @include mq-screens-small() {
   .root {
-    @include translate(0, -50%);
-
     left: ($min-width - $min-width-value) / 2;
+    transform: translate(0, -50%);
   }
 }

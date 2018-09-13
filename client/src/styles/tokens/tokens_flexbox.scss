@@ -5,5 +5,5 @@
 //--------------------------|
 
 .flex {
-  @include display-flex();
+  display: flex;
 }

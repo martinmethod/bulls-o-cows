@@ -5,9 +5,8 @@
 //--------------------------| Root
 
 .root {
-  @include display-flex();
-  @include align-items(center);
-
+  display: flex;
+  align-items: center;
   font-family: map-get($roles-typo-font-families, 'digits');
   font-size: map-get($roles-typo-font-sizes, 'result');
 

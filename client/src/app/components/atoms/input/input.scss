@@ -5,10 +5,6 @@
 //--------------------------| Root
 
 .root {
-  @include appearance(none);
-  @include transition(all map-get($reg-transitions, '100ms') ease-in-out);
-  @include border-radius(map-get($reg-border-radiuses, 'tiny'));
-  @include box-shadow(map-get($reg-shadows, 'medium'));
   @include selection(map-get($reg-colors, 'red'));
 
   width: 4em;
@@ -19,7 +15,11 @@
   letter-spacing: 0.3em;
   background-color: map-get($roles-col-backgrounds, 'input');
   border: 1px solid transparent;
+  border-radius: map-get($reg-border-radiuses, 'tiny');
   outline: none;
+  box-shadow: map-get($reg-shadows, 'medium');
+  appearance: none;
+  transition: all map-get($reg-transitions, '100ms') ease-in-out;
 
   &:focus {
     border: map-get($reg-borders, 'white');

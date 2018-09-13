@@ -17,8 +17,6 @@ $min-height: $min-width / $ratio;
 
 .root {
   @include font-smoothing();
-  @include box-shadow(map-get($reg-shadows, 'scattered'));
-  @include user-select(none);
 
   position: relative;
   width: $width;
@@ -29,19 +27,20 @@ $min-height: $min-width / $ratio;
   font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
   text-align: center;
   cursor: default;
+  user-select: none;
   background-color: map-get($roles-col-backgrounds, 'app');
+  box-shadow: map-get($reg-shadows, 'scattered');
 }
 
 
 //--------------------------| Inner
 
 .inner {
-  @include display-flex();
-  @include flex-direction(column);
-  @include justify-content(space-between);
-
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
 }

@@ -4,22 +4,12 @@
 
 //--------------------------| Import
 
+const glob = require('glob');
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const pkg = require('../../package.json');
-const banner = require('./banner');
-
-
-//--------------------------| Definitions
-
-const dist = path.join(__dirname, '../../client/dist');
+const loaders = glob.sync(`${__dirname}/loaders/**/*.js`).map(file => require( path.resolve( file ) ));
+const plugins = glob.sync(`${__dirname}/plugins/**/*.js`).map(file => require( path.resolve( file ) ));
+const commonLoaders = glob.sync(`${__dirname}/../common/loaders/**/*.js`).map(file => require( path.resolve( file ) ));
+const commonPlugins = glob.sync(`${__dirname}/../common/plugins/**/*.js`).map(file => require( path.resolve( file ) ));
 
 
 //--------------------------| Configuration
@@ -28,162 +18,13 @@ const config = {
   mode: 'production',
   entry: './client/src/index.js',
   output: {
-    path: dist,
+    path: path.join(__dirname, '../../client/dist'),
     filename: 'app.[chunkhash].js'
   },
   module: {
-    rules: [
-      {
-        test: /\.s?css$/,
-        include: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-            options: {
-              modules: false
-            }
-          }
-        ]
-      },
-      {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-            options: {
-              modules: true,
-              sourceMap: true,
-              camelCase: 'dashes',
-              localIdentName: '[hash:base64:5]'
-            }
-          },
-          {
-            loader: 'sass-loader', // compiles Sass to CSS
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [
-                './node_modules/compass-mixins/lib/_compass.scss',
-                './client/src/styles/resources/base.scss',
-                './client/src/styles/resources/functions/**/*.scss',
-                './client/src/styles/resources/data/registries/core/**/*.scss',
-                './client/src/styles/resources/data/registries/items/**/*.scss',
-                './client/src/styles/resources/data/roles/**/*.scss',
-                './client/src/styles/resources/mixins/**/*.scss',
-                './client/src/styles/resources/functions/**/*.scss'
-              ]
-            },
-          }
-        ]
-      },
-      {
-        loader: 'babel-loader',
-        test: /\.js$/,
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[ext]'
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'fonts/[name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+    rules: [...loaders, ...commonLoaders]
   },
-  plugins: [
-    new CleanWebpackPlugin(['client/dist', 'production.zip'], {
-      root:     path.join(__dirname, '../../'),
-      verbose:  true,
-      dry:      false
-    }),
-    new HtmlWebpackPlugin({
-      title: pkg.title,
-      cover: `${pkg.homepage}/images/logo.png`,
-      homepage: pkg.homepage,
-      description: pkg.description,
-      template: './client/src/markup/index.html',
-      minify: {
-        minifyCSS: true,
-        minifyJS: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        preserveLineBreaks: false
-      }
-    }),
-    new MiniCssExtractPlugin({
-      filename: "app.[chunkhash].css"
-    }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true
-    }),
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        compress: {
-          drop_debugger: true,
-          drop_console: true
-        },
-        output: {
-          comments: false
-        }
-      }
-    }),
-    new FaviconsWebpackPlugin({
-      // Your source logo
-      logo: './client/src/assets/images/logo.png',
-      // The prefix for all image files (might be a folder or a name)
-      prefix: 'icons-[hash]/',
-      // Emit all stats of the generated icons
-      emitStats: false,
-      // The name of the json containing all favicon information
-      statsFilename: 'iconstats-[hash].json',
-      // Generate a cache file with control hashes and
-      // don't rebuild the favicons until those hashes change
-      persistentCache: false,
-      // Inject the html into the html-webpack-plugin
-      inject: true,
-      // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-      background: '#fff',
-      // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-      title: pkg.title
-    }),
-    new FileManagerPlugin({
-      onEnd: {
-        archive: [
-          {
-            source: dist,
-            destination: './production.zip'
-          }
-        ]
-      }
-    }),
-    new webpack.BannerPlugin({ banner }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  ]
+  plugins: [...plugins, ...commonPlugins]
 };
 
 
