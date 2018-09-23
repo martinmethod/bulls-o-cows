@@ -1,0 +1,7 @@
+/* ===================================================|
+/* ROLES: SHADOWS */
+
+
+:root {
+  --role-shadow-white-line: var(--swatch-shadow-medium);
+}

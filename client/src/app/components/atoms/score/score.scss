@@ -15,7 +15,7 @@
   display: block;
   margin-bottom: 0.5em;
   font-size: 1.2em;
-  color: map-get($roles-col-texts, 'sys');
+  color: var(--role-col-text-sys);
 
   &::after {
     content: ':';
@@ -27,7 +27,7 @@
 
 .value {
   font-size: 2em;
-  font-weight: map-get($roles-typo-font-weights, 'score');
+  font-weight: var(--role-typo-font-weight-score);
 }
 
 

@@ -39,7 +39,7 @@
 
 .input-form {
   width: 100%;
-  margin-top: get-em-unit(map-get($roles-offsets, 'modules'), 'rem');
+  margin-top: var(--role-offset-modules);
 }
 
 
@@ -50,9 +50,9 @@
   margin-bottom: 2em;
 
   p {
-    font-family: unquote(map-get($reg-font-families, 'boc-bull'));
-    font-weight: map-get($roles-typo-font-weights, 'sys');
-    color: map-get($reg-colors, 'red');
+    font-family: var(--swatch-typo-font-family-boc-bull);
+    font-weight: var(--role-typo-font-weight-sys);
+    color: var(--swatch-col-red);
   }
 }
 

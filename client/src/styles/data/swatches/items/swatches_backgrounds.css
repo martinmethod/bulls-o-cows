@@ -1,0 +1,13 @@
+/* ===================================================|
+/* SWATCHES: BACKGROUNDS */
+
+
+:root {
+  --swatch-bgr-white:      var(--swatch-col-white);
+  --swatch-bgr-mine-shaft: var(--swatch-col-mine-shaft);
+  --swatch-bgr-black:      var(--swatch-col-black);
+  --swatch-bgr-wild-sand:  var(--swatch-col-wild-sand);
+  --swatch-bgr-red:        var(--swatch-col-red);
+  --swatch-bgr-green:      var(--swatch-col-green);
+  --swatch-bgr-glass:      color-mod(var(--swatch-col-white) a(75%));
+}

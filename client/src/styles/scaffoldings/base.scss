@@ -46,16 +46,31 @@ body {
 
 html {
   $min-font-size: map-get($roles-typo-font-sizes-base, 'min');
+  $ratio-w: map-get($reg-proportions-app, 'w');
+  $ratio-h: map-get($reg-proportions-app, 'h');
+  $ratio: $ratio-w / $ratio-h; // 0.5625
+  $ratio-width: map-get($reg-screens, 'min-w');
+  $ratio-height: 100 * ($ratio-width / $ratio) / 90;
 
-  @include scaler(font-size, $min-font-size);
+  @include mq-proportions-min-height {
+    font-size: #{($min-font-size * 100 / $ratio-height)}vh;
+  }
+
+  @include mq-screens-small-portrait {
+    font-size: #{($min-font-size * 100 / $ratio-width)}vw;
+  }
+
+  @include mq-proportions-max-width-or-max-height {
+    font-size: var(--role-typo-font-size-base-min);
+  }
 }
 
 body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: map-get($roles-col-backgrounds, 'ground');
-  -webkit-tap-highlight-color: rgba(map-get($reg-colors, 'black'), 0);
+  background-color: var(--swatch-bgr-mine-shaft);
+  -webkit-tap-highlight-color: color-mod(var(--swatch-col-black) a(0%));
 }
 
 :global {
@@ -77,5 +92,5 @@ input::-webkit-inner-spin-button {
 //--------------------------| Text
 
 strong {
-  font-weight: map-get($reg-font-weights, 'bold');
+  font-weight: var(--swatch-typo-font-weight-bold);
 }

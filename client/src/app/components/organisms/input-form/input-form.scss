@@ -20,16 +20,16 @@
   transform: translate(20%, -50%);
 
   svg {
-    fill: map-get($reg-colors, 'green');
+    fill: var(--swatch-col-green);
   }
 
   @media (hover: hover) {
     &:hover svg {
-      fill: light(map-get($reg-colors, 'green'), 10%);
+      fill: color-mod(var(--swatch-col-green) w(10%));
     }
   }
 
   &:active svg {
-    fill: light(map-get($reg-colors, 'green'), 20%);
+    fill: color-mod(var(--swatch-col-green) w(20%));
   }
 }

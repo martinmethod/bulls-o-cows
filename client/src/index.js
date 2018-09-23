@@ -16,6 +16,7 @@ import stateStore from './app/store/getStore';
 import { newGame } from './app/actions/game';
 
 // Styles
+import './styles/data/bundle.scss';
 import './styles/scaffoldings/base.scss';
 import './styles/scaffoldings/typography.scss';
 

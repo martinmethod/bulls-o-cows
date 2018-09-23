@@ -1,0 +1,12 @@
+/* ===================================================|
+/* ROLES: BUTTONS */
+
+
+:root {
+
+  /* -------------------------| Types */
+
+  --role-button-primary-col-txt: var(--swatch-col-white);
+  --role-button-primary-col-bgr: var(--swatch-col-red);
+
+}

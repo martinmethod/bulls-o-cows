@@ -9,26 +9,26 @@
 
   width: 4em;
   padding: 0.3em 0;
-  font: map-get($roles-typo-font-weights, 'input') map-get($roles-typo-font-sizes, 'input') map-get($roles-typo-font-families, 'digits');
-  color: map-get($roles-col-texts, 'input');
+  font: var(--role-typo-font-weight-input) var(--role-typo-font-size-input) var(--role-typo-font-family-digits);
+  color: var(--role-col-text-input);
   text-indent: 0.28em;
   letter-spacing: 0.3em;
-  background-color: map-get($roles-col-backgrounds, 'input');
+  background-color: var(--role-col-bgr-input);
   border: 1px solid transparent;
-  border-radius: map-get($reg-border-radiuses, 'tiny');
+  border-radius: var(--swatch-border-radius-tiny);
   outline: none;
-  box-shadow: map-get($reg-shadows, 'medium');
+  box-shadow: var(--swatch-shadow-medium);
   appearance: none;
-  transition: all map-get($reg-transitions, '100ms') ease-in-out;
+  transition: all var(--swatch-transition-100ms) ease-in-out;
 
   &:focus {
-    border: map-get($reg-borders, 'white');
+    border: var(--swatch-border-type-white);
   }
 
   &[disabled] {
     pointer-events: none;
-    background-color: map-get($roles-col-backgrounds, 'success');
+    background-color: var(--role-col-bgr-success);
     border-color: transparent;
-    -webkit-text-fill-color: map-get($roles-col-texts, 'input');
+    -webkit-text-fill-color: var(--role-col-text-input);
   }
 }

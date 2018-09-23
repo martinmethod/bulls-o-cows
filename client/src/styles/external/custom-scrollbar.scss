@@ -17,12 +17,12 @@
     //--------------------------| Bar
 
     .rcs-inner-handle {
-      background-color: rgba(map-get($reg-colors, 'black'), 0.3);
+      background-color: color-mod(var(--swatch-col-black) a(30%));
       transition: background-color 0.15s linear;
 
       &:hover,
       &:active {
-        background-color: rgba(map-get($reg-colors, 'black'), 0.6);
+        background-color: color-mod(var(--swatch-col-black) a(60%));
       }
     }
 

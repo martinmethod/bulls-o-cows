@@ -22,10 +22,12 @@ const config = {
     filename: 'app.[chunkhash].js'
   },
   module: {
-    rules: [...loaders, ...commonLoaders]
+    rules: [...commonLoaders, ...loaders]
   },
-  plugins: [...plugins, ...commonPlugins]
+  plugins: [...commonPlugins, ...plugins]
 };
+
+console.log(config);
 
 
 //--------------------------| Export

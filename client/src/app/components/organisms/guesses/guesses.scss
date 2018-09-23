@@ -17,9 +17,9 @@
 .head {
   display: flex;
   justify-content: space-between;
-  padding: get-em-unit(map-get($roles-offsets, 'guesses'));
-  font: map-get($roles-typo-font-weights, 'sys') map-get($roles-typo-font-sizes, 'sys') map-get($roles-typo-font-families, 'sys');
-  color: map-get($roles-col-texts, 'sys');
+  padding: var(--role-offset-guesses);
+  font: var(--role-typo-font-weight-sys) var(--role-typo-font-size-sys) var(--role-typo-font-family-sys);
+  color: var(--role-col-text-sys);
 
   &[data-visible='false'] {
     visibility: hidden;
@@ -31,12 +31,12 @@
 
 .label {
   &:first-child {
-    padding-left: get-em-unit(map-get($roles-offsets, 'guess-line'));
+    padding-left: var(--role-offset-guess-line);
     text-align: left;
   }
 
   &:last-child {
-    padding-right: get-em-unit(map-get($roles-offsets, 'guess-line'));
+    padding-right: var(--role-offset-guess-line);
     text-align: right;
   }
 
@@ -77,6 +77,6 @@
 
 .guess-line {
   &:not(:last-child) {
-    margin-top: get-em-unit(map-get($roles-offsets, 'guesses'));
+    margin-top: var(--role-offset-guesses);
   }
 }

@@ -5,17 +5,17 @@
 //--------------------------| Root
 
 .root {
-  color: map-get($roles-col-links, 'link');
+  color: var(--role-col-link-link);
   cursor: pointer;
-  transition: all map-get($roles-transitions, 'hyperlinks') ease-in-out;
+  transition: all var(--role-transition-hyperlinks) ease-in-out;
 
   @media (hover: hover) {
     &:hover {
-      color: map-get($roles-col-links, 'hover');
+      color: var(--role-col-link-hover);
     }
   }
 
   &:active {
-    color: map-get($roles-col-links, 'active');
+    color: var(--role-col-link-active);
   }
 }

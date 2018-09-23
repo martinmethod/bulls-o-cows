@@ -9,7 +9,7 @@
   top: 3.8em;
   left: 0;
   width: 100%;
-  font-weight: map-get($roles-typo-font-weights, 'validation');
-  color: map-get($roles-col-validation, 'error');
+  font-weight: var(--role-typo-font-weight-validation);
+  color: var(--role-col-validation-error);
   text-align: center;
 }

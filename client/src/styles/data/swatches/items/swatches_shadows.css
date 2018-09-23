@@ -1,0 +1,9 @@
+/* ===================================================|
+/* SWATCHES: SHADOWS */
+
+
+:root {
+  --swatch-shadow-scattered: 0 0 80em -2em var(--swatch-col-dusty-gray);
+  --swatch-shadow-medium:    0 0 0.6em color-mod(var(--swatch-col-dusty-gray) a(30%));
+  --swatch-shadow-sharp:     '';
+}

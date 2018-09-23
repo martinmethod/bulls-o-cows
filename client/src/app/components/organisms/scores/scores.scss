@@ -2,13 +2,6 @@
 // SCORES
 
 
-//--------------------------| Root
-
-.root {
-  //
-}
-
-
 //--------------------------| Results
 
 .results {
@@ -22,8 +15,8 @@
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
-  background: map-get($roles-col-backgrounds, 'app');
-  transition: transform map-get($roles-transitions, 'popovers') ease-in-out;
+  background: var(--role-col-bgr-app);
+  transition: transform var(--role-transition-popovers) ease-in-out;
   transform: translateY(-100%);
 
   &.opened {
@@ -46,11 +39,11 @@
   margin: 0 auto;
 
   + .score {
-    $offset: 1.5em;
+    --offset: 1.5em;
 
-    padding-top: $offset;
-    margin-top: $offset;
-    border-top: map-get($reg-borders, 'separator');
+    padding-top: var(--offset);
+    margin-top: var(--offset);
+    border-top: var(--swatch-border-type-separator);
   }
 }
 

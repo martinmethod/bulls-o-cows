@@ -1,0 +1,18 @@
+/* ===================================================|
+/* SWATCHES: BORDERS */
+
+
+:root {
+
+  /* -------------------------| Types */
+
+  --swatch-border-type-transparent: 1px solid transparent;
+  --swatch-border-type-white:       1px solid var(--swatch-col-white);
+  --swatch-border-type-separator:   1px solid color-mod(var(--swatch-col-dusty-gray) a(30%));
+
+
+  /* -------------------------| Radiuses */
+
+  --swatch-border-radius-tiny: 5px;
+
+}

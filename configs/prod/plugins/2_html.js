@@ -11,10 +11,7 @@ const { title, homepage, description} = require('../../../package.json');
 //--------------------------| Configuration
 
 const plugin = new HtmlWebpackPlugin({
-  title,
-  homepage,
-  description,
-  cover: `${homepage}/images/logo.png`,
+  hash: true,
   template: './client/src/markup/index.html',
   minify: {
     minifyCSS: true,
@@ -22,7 +19,11 @@ const plugin = new HtmlWebpackPlugin({
     removeComments: true,
     collapseWhitespace: true,
     preserveLineBreaks: false
-  }
+  },
+  cover: `${homepage}/images/logo.png`,
+  title,
+  homepage,
+  description
 });
 
 

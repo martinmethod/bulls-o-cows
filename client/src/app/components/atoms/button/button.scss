@@ -2,32 +2,27 @@
 // BUTTON
 
 
-//--------------------------| Variables
-
-$bgr-color: map-get($roles-col-backgrounds, 'button');
-
-
 //--------------------------| Root
 
 .root {
   padding: 0.3em 2em 0.5em;
-  font-size: map-get($roles-typo-font-sizes, 'button');
+  font-size: var(--role-typo-font-size-button);
   line-height: 1;
-  color: map-get($roles-col-texts, 'button');
+  color: var(--role-col-text-button);
   cursor: pointer;
-  background-color: $bgr-color;
+  background-color: var(--role-col-bgr-button);
   border: 0;
-  border-radius: map-get($reg-border-radiuses, 'tiny');
+  border-radius: var(--swatch-border-radius-tiny);
   outline: none;
-  transition: all map-get($roles-transitions, 'buttons') ease-in-out;
+  transition: all var(--role-transition-buttons) ease-in-out;
 
   @media (hover: hover) {
     &:hover {
-      background-color: light($bgr-color, 10%);
+      background-color: color-mod(var(--role-col-bgr-button) w(10%));
     }
   }
 
   &:active {
-    background-color: light($bgr-color, 20%);
+    background-color: color-mod(var(--role-col-bgr-button) w(20%));
   }
 }

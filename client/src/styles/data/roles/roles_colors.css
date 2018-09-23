@@ -1,0 +1,48 @@
+/* ===================================================|
+/* ROLES: COLORS */
+
+
+:root {
+
+  /* -------------------------| Animals */
+
+  --role-col-animal-bull: var(--swatch-col-red);
+  --role-col-animal-cow:  var(--swatch-col-green);
+
+
+  /* -------------------------| Text */
+
+  --role-col-text-title:       var(--swatch-col-white);
+  --role-col-text-sys:         var(--swatch-col-dusty-gray);
+  --role-col-text-input:       var(--swatch-col-white);
+  --role-col-text-button:      var(--swatch-col-white);
+  --role-col-text-placeholder: var(--swatch-col-dove-gray);
+  --role-col-text-guess:       var(--swatch-col-blue);
+  --role-col-text-null-point:  var(--swatch-col-dove-gray);
+  --role-col-text-score-point: var(--swatch-col-black);
+
+
+  /* -------------------------| Validation */
+
+  --role-col-validation-error:   var(--swatch-col-red);
+  --role-col-validation-success: var(--swatch-col-green);
+
+
+  /* -------------------------| Links */
+
+  --role-col-link-link:   var(--swatch-col-green);
+  --role-col-link-hover:  color-mod(var(--role-col-link-link) w(20%));
+  --role-col-link-active: color-mod(var(--role-col-link-link) w(30%));
+
+
+  /* -------------------------| Backgrounds */
+
+  --role-col-bgr-app:        var(--swatch-bgr-wild-sand);
+  --role-col-bgr-header:     var(--swatch-bgr-black);
+  --role-col-bgr-ground:     var(--swatch-bgr-mine-shaft);
+  --role-col-bgr-button:     var(--swatch-bgr-red);
+  --role-col-bgr-input:      var(--swatch-bgr-black);
+  --role-col-bgr-success:    var(--swatch-bgr-green);
+  --role-col-bgr-guess-line: var(--swatch-bgr-glass);
+
+}

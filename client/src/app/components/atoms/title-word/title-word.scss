@@ -5,6 +5,6 @@
 //--------------------------| Root
 
 .root {
-  font: normal map-get($roles-typo-font-sizes, 'title') map-get($roles-typo-font-families, 'title');
-  color: map-get($roles-col-texts, 'title');
+  font: normal var(--role-typo-font-size-title) var(--role-typo-font-family-title);
+  color: var(--role-col-text-title);
 }

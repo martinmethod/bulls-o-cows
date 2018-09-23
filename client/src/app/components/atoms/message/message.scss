@@ -17,6 +17,6 @@
 
   width: 100%;
   margin: 0;
-  font: map-get($roles-typo-font-weights, 'message') map-get($roles-typo-font-sizes, 'message') map-get($roles-typo-font-families, 'message');
-  background-color: map-get($roles-col-backgrounds, 'guess-line');
+  font: var(--role-typo-font-weight-message) var(--role-typo-font-size-message) var(--role-typo-font-family-message);
+  background-color: var(--role-col-bgr-guess-line);
 }

@@ -14,7 +14,7 @@ module.exports = {
   exclude: /node_modules/,
   use: [
     {
-      loader: 'style-loader', // compiles Sass to CSS (required due to Hot Module Replacement)
+      loader: 'style-loader',
       options: {
         sourceMap: true
       }

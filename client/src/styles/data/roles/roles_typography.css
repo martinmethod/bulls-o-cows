@@ -1,0 +1,54 @@
+/* ===================================================|
+/* ROLES: TYPOGRAPHY */
+
+
+
+:root {
+
+  /* -------------------------| Font families */
+
+  --role-typo-font-family-title:   var(--swatch-typo-font-family-boc-bull);
+  --role-typo-font-family-text:    var(--swatch-typo-font-family-boc-sans);
+  --role-typo-font-family-digits:  var(--swatch-typo-font-family-boc-mono);
+  --role-typo-font-family-sys:     var(--swatch-typo-font-family-boc-sys);
+  --role-typo-font-family-message: var(--swatch-typo-font-family-boc-sans);
+
+
+  /* -------------------------| Font sizes range */
+
+  --role-typo-font-size-base-min: 10;
+  --role-typo-font-size-base-max: 18;
+
+
+  /* -------------------------| Font sizes hierarchy */
+
+  --role-typo-font-size-title:     var(--swatch-typo-font-size-38);
+  --role-typo-font-size-sys:       var(--swatch-typo-font-size-10);
+  --role-typo-font-size-input:     var(--swatch-typo-font-size-25);
+  --role-typo-font-size-button:    var(--swatch-typo-font-size-17);
+  --role-typo-font-size-num:       var(--swatch-typo-font-size-13);
+  --role-typo-font-size-guess:     var(--swatch-typo-font-size-17);
+  --role-typo-font-size-result:    var(--swatch-typo-font-size-17);
+  --role-typo-font-size-hyperlink: var(--swatch-typo-font-size-13);
+  --role-typo-font-size-message:   var(--swatch-typo-font-size-13);
+
+
+  /* -------------------------| Line-heights */
+
+  --role-typo-line-height-text:    var(--swatch-typo-line-height-normal);
+
+
+  /* -------------------------| Font weights */
+
+  --role-typo-font-weight-title:       var(--swatch-typo-font-weight-regular);
+  --role-typo-font-weight-text:        var(--swatch-typo-font-weight-regular);
+  --role-typo-font-weight-sys:         var(--swatch-typo-font-weight-regular);
+  --role-typo-font-weight-input:       var(--swatch-typo-font-weight-bold);
+  --role-typo-font-weight-guess:       var(--swatch-typo-font-weight-bold);
+  --role-typo-font-weight-null-point:  var(--swatch-typo-font-weight-regular);
+  --role-typo-font-weight-score-point: var(--swatch-typo-font-weight-bold);
+  --role-typo-font-weight-validation:  var(--swatch-typo-font-weight-bold);
+  --role-typo-font-weight-score:       var(--swatch-typo-font-weight-bold);
+  --role-typo-font-weight-message:     var(--swatch-typo-font-weight-regular);
+
+}

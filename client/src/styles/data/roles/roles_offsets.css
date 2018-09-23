@@ -1,0 +1,12 @@
+/* ===================================================|
+/* ROLES: OFFSETS */
+
+
+:root {
+  --role-offset-header:      '';
+  --role-offset-main:        var(--swatch-offset-32);
+  --role-offset-guesses:     var(--swatch-offset-06);
+  --role-offset-guess-line:  var(--swatch-offset-10);
+  --role-offset-result-item: var(--swatch-offset-06);
+  --role-offset-modules:     var(--swatch-offset-24);
+}

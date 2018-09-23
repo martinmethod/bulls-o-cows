@@ -1,0 +1,12 @@
+/* ===================================================|
+/* SWATCHES: OFFSETS */
+
+
+:root {
+  --swatch-offset-06: 0.6rem;
+  --swatch-offset-10: 1.0rem; /* left & right in guess line */
+  --swatch-offset-16: 1.6rem; /* below shots link */
+  --swatch-offset-24: 2.4rem; /* above button | above message */
+  --swatch-offset-32: 3.2rem;
+  --swatch-offset-36: 3.6rem; /* below input */
+}

@@ -1,0 +1,9 @@
+/* ===================================================|
+/* ROLES: TRANSITIONS */
+
+
+:root {
+  --role-transition-buttons:    var(--swatch-transition-100ms);
+  --role-transition-hyperlinks: var(--swatch-transition-100ms);
+  --role-transition-popovers:   var(--swatch-transition-200ms);
+}

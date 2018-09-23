@@ -1,0 +1,36 @@
+/* ===================================================|
+/* SWATCHES: COLORS */
+
+
+:root {
+
+  /* -------------------------| Mono */
+
+  --swatch-col-black:      #000;
+  --swatch-col-mine-shaft: #333;
+  --swatch-col-dove-gray:  #666;
+  --swatch-col-dusty-gray: #999;
+  --swatch-col-wild-sand:  #f5f5f5;
+  --swatch-col-white:      #fff;
+
+
+  /* -------------------------| Red */
+
+  --swatch-col-red:        #c00;
+
+
+  /* -------------------------| Green */
+
+  --swatch-col-green:      #060;
+
+
+  /* -------------------------| Blue */
+
+  --swatch-col-blue:       #009;
+
+
+  /* -------------------------| Yellow */
+
+  --swatch-col-yellow:     #ffd;
+
+}

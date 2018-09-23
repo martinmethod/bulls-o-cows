@@ -1,0 +1,9 @@
+/* ===================================================|
+/* SWATCHES: SCREENS */
+
+
+:root {
+  --swatch-screen-min-w: 320px;
+  --swatch-screen-max-w: 576px;
+  --swatch-screen-min-h: 480px;
+}

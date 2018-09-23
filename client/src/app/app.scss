@@ -2,34 +2,30 @@
 // APP
 
 
-//--------------------------| Variables
-
-$ratio-w: map-get($reg-proportions-app, 'w');
-$ratio-h: map-get($reg-proportions-app, 'h');
-$ratio: $ratio-w / $ratio-h; // 0.5625
-$height: 90vh;
-$width: $height * $ratio-w / $ratio-h; // 50.625
-$min-width: map-get($reg-screens, 'min-w'); // 320
-$min-height: $min-width / $ratio;
-
-
 //--------------------------| Root
 
 .root {
+  --ratio-w: var(--swatch-proportion-app-w);
+  --ratio-h: var(--swatch-proportion-app-h);
+  --ratio: calc(var(--ratio-w) / var(--ratio-h));
+  --height: 90vh;
+  --width: calc(var(--height) * var(--ratio-w) / var(--ratio-h)); // 50.625;
+  --min-width: var(--swatch-screen-min-w); // 320
+
   @include font-smoothing();
 
   position: relative;
-  width: $width;
-  min-width: $min-width;
-  height: $height;
+  width: var(--width);
+  min-width: var(--min-width);
+  height: var(--height);
   margin: 0 auto;
   overflow: hidden;
-  font: map-get($roles-typo-font-weights, 'text') 1em map-get($roles-typo-font-families, 'text');
+  font: var(--role-typo-font-weight-text) 1em var(--role-typo-font-family-text);
   text-align: center;
   cursor: default;
   user-select: none;
-  background-color: map-get($roles-col-backgrounds, 'app');
-  box-shadow: map-get($reg-shadows, 'scattered');
+  background-color: var(--role-col-bgr-app);
+  box-shadow: var(--swatch-shadow-scattered);
 }
 
 
@@ -48,7 +44,7 @@ $min-height: $min-width / $ratio;
 
 //--------------------------| Media queries
 
-@include mq-screens-big-landscape() {
+@include mq-screens-big-landscape {
   .root {
     width: 100%;
     max-width: 820px;
@@ -56,7 +52,7 @@ $min-height: $min-width / $ratio;
   }
 }
 
-@include mq-screens-small-portrait() {
+@include mq-screens-small-portrait {
   .root {
     width: 100vw;
     height: 100vh;

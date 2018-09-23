@@ -1,0 +1,35 @@
+/* ===================================================|
+/* SWATCHES: TYPOGRAPHY */
+
+
+:root {
+
+  /* -------------------------| Font families */
+
+  --swatch-typo-font-family-boc-bull: "Bull";
+  --swatch-typo-font-family-boc-sans: "Open Sans", sans-serif;
+  --swatch-typo-font-family-boc-mono: "Courier New", monospace;
+  --swatch-typo-font-family-boc-sys:  "Verdana", sans-serif;
+
+
+  /* -------------------------| Font sizes */
+
+  --swatch-typo-font-size-10: 1.000rem;
+  --swatch-typo-font-size-13: 1.333rem;
+  --swatch-typo-font-size-17: 1.750rem;
+  --swatch-typo-font-size-25: 2.500rem;
+  --swatch-typo-font-size-30: 3.000rem;
+  --swatch-typo-font-size-38: 3.833rem;
+
+
+  /* -------------------------| Font weights */
+
+  --swatch-typo-font-weight-regular: 400;
+  --swatch-typo-font-weight-bold:    700;
+
+
+  /* -------------------------| Line-heights */
+
+  --swatch-typo-line-height-normal: normal;
+
+}

@@ -1,0 +1,8 @@
+/* ===================================================|
+/* SWATCHES: TRANSITIONS */
+
+
+:root {
+  --swatch-transition-100ms: 0.1s;
+  --swatch-transition-200ms: 0.2s;
+}

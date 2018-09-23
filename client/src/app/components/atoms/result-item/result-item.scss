@@ -7,17 +7,17 @@
 .root {
   display: flex;
   align-items: center;
-  font-family: map-get($roles-typo-font-families, 'digits');
-  font-size: map-get($roles-typo-font-sizes, 'result');
+  font-family: var(--role-typo-font-family-digits);
+  font-size: var(--role-typo-font-size-result);
 
   &[data-value='0'] {
-    font-weight: map-get($roles-typo-font-weights, 'null-point');
-    color: map-get($roles-col-texts, 'score-point');
+    font-weight: var(--role-typo-font-weight-null-point);
+    color: var(--role-col-text-score-point);
   }
 
   &:not([data-value='0']) {
-    font-weight: map-get($roles-typo-font-weights, 'score-point');
-    color: map-get($roles-col-texts, 'score-point');
+    font-weight: var(--role-typo-font-weight-score-point);
+    color: var(--role-col-text-score-point);
   }
 }
 
@@ -29,11 +29,11 @@
   margin-right: 0.2em;
 
   [data-role='bull'] & svg {
-    fill: map-get($roles-col-animals, 'bull');
+    fill: var(--role-col-animal-bull);
   }
 
   [data-role='cow'] & svg {
-    fill: map-get($roles-col-animals, 'cow');
+    fill: var(--role-col-animal-cow);
   }
 }
 

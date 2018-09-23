@@ -10,10 +10,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: map-get($roles-col-backgrounds, 'guess-line');
+  background-color: var(--role-col-bgr-guess-line);
 
   &[data-current] {
-    background-color: rgba(map-get($reg-colors, 'yellow'), 0.8);
+    background-color: color-mod(var(--swatch-col-yellow) a(80%));
   }
 }
 
@@ -33,7 +33,7 @@
   text-align: left;
 
   .root[data-current] & {
-    color: lighten(map-get($roles-col-texts, 'guess'), 15%);
+    color: color-mod(var(--role-col-text-guess) l(40%));
   }
 }
 
